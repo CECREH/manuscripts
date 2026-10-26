@@ -1,0 +1,537 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://cecreh.example/schemas/manuscripts-v1.json",
+  "title": "CECREH manuscript register",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "dataClass",
+    "snapshotDate",
+    "staleAfterDays",
+    "coverageNote",
+    "maintenance",
+    "records"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "dataClass": {
+      "enum": [
+        "synthetic_demo",
+        "confidential"
+      ]
+    },
+    "snapshotDate": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "staleAfterDays": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 365
+    },
+    "coverageNote": {
+      "$ref": "#/$defs/text"
+    },
+    "maintenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "primary",
+        "backup"
+      ],
+      "properties": {
+        "primary": {
+          "$ref": "#/$defs/nullableText"
+        },
+        "backup": {
+          "$ref": "#/$defs/nullableText"
+        }
+      }
+    },
+    "records": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/record"
+      }
+    }
+  },
+  "$defs": {
+    "text": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 4000
+    },
+    "nullableText": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1,
+      "maxLength": 4000
+    },
+    "date": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "url": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^https://[^\\s]+$",
+      "maxLength": 2500
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "confirmedOn",
+        "confirmedBy",
+        "note"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "candidate",
+            "confirmed"
+          ]
+        },
+        "confirmedOn": {
+          "$ref": "#/$defs/date"
+        },
+        "confirmedBy": {
+          "$ref": "#/$defs/nullableText"
+        },
+        "note": {
+          "$ref": "#/$defs/text"
+        }
+      }
+    },
+    "writing": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "stage",
+        "confirmedOn",
+        "confirmedBy",
+        "note"
+      ],
+      "properties": {
+        "stage": {
+          "enum": [
+            "unconfirmed",
+            "planning",
+            "analysis",
+            "drafting",
+            "internal_revision",
+            "coauthor_review",
+            "ready_to_submit",
+            "journal_revision",
+            "complete",
+            "paused"
+          ]
+        },
+        "confirmedOn": {
+          "$ref": "#/$defs/date"
+        },
+        "confirmedBy": {
+          "$ref": "#/$defs/nullableText"
+        },
+        "note": {
+          "$ref": "#/$defs/nullableText"
+        }
+      }
+    },
+    "journal": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "name",
+        "confirmedOn",
+        "confirmedBy",
+        "note"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "unconfirmed",
+            "not_submitted",
+            "submitted",
+            "under_review",
+            "revision_requested",
+            "accepted",
+            "published",
+            "withdrawn",
+            "rejected"
+          ]
+        },
+        "name": {
+          "$ref": "#/$defs/nullableText"
+        },
+        "confirmedOn": {
+          "$ref": "#/$defs/date"
+        },
+        "confirmedBy": {
+          "$ref": "#/$defs/nullableText"
+        },
+        "note": {
+          "$ref": "#/$defs/nullableText"
+        }
+      }
+    },
+    "currentDraft": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "url",
+        "status",
+        "versionLabel",
+        "versionDate",
+        "confirmedOn",
+        "confirmedBy",
+        "note"
+      ],
+      "properties": {
+        "url": {
+          "$ref": "#/$defs/url"
+        },
+        "status": {
+          "enum": [
+            "unconfirmed",
+            "confirmed",
+            "unavailable"
+          ]
+        },
+        "versionLabel": {
+          "$ref": "#/$defs/nullableText"
+        },
+        "versionDate": {
+          "$ref": "#/$defs/date"
+        },
+        "confirmedOn": {
+          "$ref": "#/$defs/date"
+        },
+        "confirmedBy": {
+          "$ref": "#/$defs/nullableText"
+        },
+        "note": {
+          "$ref": "#/$defs/text"
+        }
+      }
+    },
+    "nextAction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "text",
+        "owner",
+        "dueDate",
+        "dueStatus",
+        "agreedOn",
+        "status"
+      ],
+      "properties": {
+        "text": {
+          "$ref": "#/$defs/nullableText"
+        },
+        "owner": {
+          "$ref": "#/$defs/nullableText"
+        },
+        "dueDate": {
+          "$ref": "#/$defs/date"
+        },
+        "dueStatus": {
+          "enum": [
+            "unconfirmed",
+            "proposed",
+            "agreed"
+          ]
+        },
+        "agreedOn": {
+          "$ref": "#/$defs/date"
+        },
+        "status": {
+          "enum": [
+            "unconfirmed",
+            "proposed",
+            "agreed"
+          ]
+        }
+      }
+    },
+    "blocker": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "text",
+        "status",
+        "recordedOn",
+        "resolvedOn"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^B-[a-z0-9-]+$"
+        },
+        "text": {
+          "$ref": "#/$defs/text"
+        },
+        "status": {
+          "enum": [
+            "open",
+            "resolved"
+          ]
+        },
+        "recordedOn": {
+          "$ref": "#/$defs/date"
+        },
+        "resolvedOn": {
+          "$ref": "#/$defs/date"
+        }
+      }
+    },
+    "link": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "label",
+        "url",
+        "kind",
+        "confirmedOn"
+      ],
+      "properties": {
+        "label": {
+          "$ref": "#/$defs/text"
+        },
+        "url": {
+          "type": "string",
+          "pattern": "^https://[^\\s]+$",
+          "maxLength": 2500
+        },
+        "kind": {
+          "enum": [
+            "project",
+            "analysis",
+            "supplement",
+            "reference",
+            "other"
+          ]
+        },
+        "confirmedOn": {
+          "$ref": "#/$defs/date"
+        }
+      }
+    },
+    "linkChange": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "eventId",
+        "recordedOn",
+        "url",
+        "versionLabel",
+        "reason"
+      ],
+      "properties": {
+        "eventId": {
+          "type": "string",
+          "pattern": "^L-[a-z0-9-]+$"
+        },
+        "recordedOn": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "url": {
+          "$ref": "#/$defs/url"
+        },
+        "versionLabel": {
+          "$ref": "#/$defs/nullableText"
+        },
+        "reason": {
+          "$ref": "#/$defs/text"
+        }
+      }
+    },
+    "submission": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "eventId",
+        "eventDate",
+        "journal",
+        "status",
+        "note",
+        "sourceLabel"
+      ],
+      "properties": {
+        "eventId": {
+          "type": "string",
+          "pattern": "^S-[a-z0-9-]+$"
+        },
+        "eventDate": {
+          "$ref": "#/$defs/date"
+        },
+        "journal": {
+          "$ref": "#/$defs/nullableText"
+        },
+        "status": {
+          "enum": [
+            "submitted",
+            "under_review",
+            "revision_requested",
+            "resubmitted",
+            "accepted",
+            "published",
+            "withdrawn",
+            "rejected"
+          ]
+        },
+        "note": {
+          "$ref": "#/$defs/text"
+        },
+        "sourceLabel": {
+          "$ref": "#/$defs/text"
+        }
+      }
+    },
+    "confirmation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sourceCheckedOn",
+        "sourceLabel",
+        "recordReviewedOn",
+        "note"
+      ],
+      "properties": {
+        "sourceCheckedOn": {
+          "$ref": "#/$defs/date"
+        },
+        "sourceLabel": {
+          "$ref": "#/$defs/text"
+        },
+        "recordReviewedOn": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "note": {
+          "$ref": "#/$defs/text"
+        }
+      }
+    },
+    "record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "title",
+        "shortTitle",
+        "tags",
+        "scope",
+        "inventoryState",
+        "writing",
+        "journal",
+        "lead",
+        "steward",
+        "currentDraft",
+        "nextAction",
+        "blockers",
+        "supportingLinks",
+        "confirmation",
+        "history"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^(MS|DEMO)-\\d{4}$"
+        },
+        "title": {
+          "$ref": "#/$defs/text"
+        },
+        "shortTitle": {
+          "$ref": "#/$defs/nullableText"
+        },
+        "tags": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/text"
+          }
+        },
+        "scope": {
+          "$ref": "#/$defs/scope"
+        },
+        "inventoryState": {
+          "enum": [
+            "active",
+            "archived"
+          ]
+        },
+        "writing": {
+          "$ref": "#/$defs/writing"
+        },
+        "journal": {
+          "$ref": "#/$defs/journal"
+        },
+        "lead": {
+          "$ref": "#/$defs/nullableText"
+        },
+        "steward": {
+          "$ref": "#/$defs/nullableText"
+        },
+        "currentDraft": {
+          "$ref": "#/$defs/currentDraft"
+        },
+        "nextAction": {
+          "$ref": "#/$defs/nextAction"
+        },
+        "blockers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/blocker"
+          }
+        },
+        "supportingLinks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/link"
+          }
+        },
+        "confirmation": {
+          "$ref": "#/$defs/confirmation"
+        },
+        "history": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "linkChanges",
+            "submissions"
+          ],
+          "properties": {
+            "linkChanges": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/linkChange"
+              }
+            },
+            "submissions": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/submission"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

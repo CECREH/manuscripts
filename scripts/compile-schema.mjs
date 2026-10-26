@@ -1,0 +1,10 @@
+import Ajv from 'ajv';
+import standaloneCode from 'ajv/dist/standalone/index.js';
+import {build} from 'esbuild';
+import {readFile, writeFile} from 'node:fs/promises';
+const schema = JSON.parse(await readFile(new URL('../schema/manuscripts.schema.json', import.meta.url), 'utf8'));
+const ajv = new Ajv({allErrors: true, code: {source: true, esm: true}, strict: true});
+const validate = ajv.compile(schema);
+const result = await build({stdin:{contents:standaloneCode(ajv, validate),resolveDir:process.cwd()},bundle:true,format:'esm',platform:'browser',write:false,minify:true});
+await writeFile(new URL('../lib/schema-validator.mjs', import.meta.url), '// Generated from schema/manuscripts.schema.json with Ajv (MIT). See THIRD_PARTY_NOTICES.txt. Run npm run schema.\n' + result.outputFiles[0].text);
+console.log('Compiled schema validator for the browser and CLI.');

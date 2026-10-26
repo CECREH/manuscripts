@@ -1,0 +1,451 @@
+{
+  "schemaVersion": 1,
+  "dataClass": "synthetic_demo",
+  "snapshotDate": "2026-10-26",
+  "staleAfterDays": 30,
+  "coverageNote": "Fictional examples for design review. This demonstration is not the CECREH manuscript inventory.",
+  "maintenance": {
+    "primary": "Example maintainer",
+    "backup": "Example backup"
+  },
+  "records": [
+    {
+      "id": "DEMO-0001",
+      "title": "Community infrastructure and everyday resilience",
+      "shortTitle": null,
+      "tags": [
+        "Infrastructure",
+        "Resilience"
+      ],
+      "scope": {
+        "status": "confirmed",
+        "confirmedOn": "2026-10-23",
+        "confirmedBy": "Example maintainer",
+        "note": "Fictional confirmation for interface demonstration."
+      },
+      "inventoryState": "active",
+      "writing": {
+        "stage": "internal_revision",
+        "confirmedOn": "2026-10-23",
+        "confirmedBy": "Example maintainer",
+        "note": "Illustrative methods revision before coauthor circulation."
+      },
+      "journal": {
+        "status": "not_submitted",
+        "name": null,
+        "confirmedOn": "2026-10-23",
+        "confirmedBy": "Example maintainer",
+        "note": "Illustrative journal status only."
+      },
+      "lead": "Example researcher A",
+      "steward": "Example maintainer",
+      "currentDraft": {
+        "url": "https://example.org/demo/draft-v3",
+        "status": "confirmed",
+        "versionLabel": "Working draft \u00b7 v3",
+        "versionDate": "2026-10-23",
+        "confirmedOn": "2026-10-23",
+        "confirmedBy": "Example maintainer",
+        "note": "Synthetic draft placeholder. No manuscript content is included."
+      },
+      "nextAction": {
+        "text": "Resolve the methods comments and circulate the revised draft.",
+        "status": "agreed",
+        "owner": "Example researcher A",
+        "dueDate": "2026-10-30",
+        "dueStatus": "agreed",
+        "agreedOn": "2026-10-23"
+      },
+      "blockers": [
+        {
+          "id": "B-methods",
+          "text": "One measurement definition needs coauthor agreement.",
+          "status": "open",
+          "recordedOn": "2026-10-23",
+          "resolvedOn": null
+        }
+      ],
+      "supportingLinks": [
+        {
+          "label": "Analysis notes",
+          "url": "https://example.org/demo/analysis",
+          "kind": "analysis",
+          "confirmedOn": "2026-10-23"
+        }
+      ],
+      "confirmation": {
+        "sourceCheckedOn": "2026-10-23",
+        "sourceLabel": "Synthetic demonstration record",
+        "recordReviewedOn": "2026-10-26",
+        "note": "Fictional people, dates, and status. No real manuscript or submission is represented."
+      },
+      "history": {
+        "linkChanges": [
+          {
+            "eventId": "L-previous",
+            "recordedOn": "2026-10-18",
+            "url": "https://example.org/demo/draft-v2",
+            "versionLabel": "Working draft \u00b7 v2",
+            "reason": "Illustrative initial draft link."
+          },
+          {
+            "eventId": "L-first",
+            "recordedOn": "2026-10-23",
+            "url": "https://example.org/demo/draft-v3",
+            "versionLabel": "Working draft \u00b7 v3",
+            "reason": "Illustrative initial draft link."
+          }
+        ],
+        "submissions": []
+      }
+    },
+    {
+      "id": "DEMO-0002",
+      "title": "Patterns of neighborhood change after disruption",
+      "shortTitle": null,
+      "tags": [
+        "Recovery",
+        "Neighborhoods"
+      ],
+      "scope": {
+        "status": "confirmed",
+        "confirmedOn": "2026-10-23",
+        "confirmedBy": "Example maintainer",
+        "note": "Fictional confirmation for interface demonstration."
+      },
+      "inventoryState": "active",
+      "writing": {
+        "stage": "coauthor_review",
+        "confirmedOn": "2026-10-21",
+        "confirmedBy": "Example maintainer",
+        "note": "Illustrative coauthor review underway."
+      },
+      "journal": {
+        "status": "unconfirmed",
+        "name": null,
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "note": "Illustrative journal status only."
+      },
+      "lead": "Example researcher B",
+      "steward": "Example maintainer",
+      "currentDraft": {
+        "url": "https://example.org/demo/neighborhood-v1",
+        "status": "confirmed",
+        "versionLabel": "Coauthor draft \u00b7 v1",
+        "versionDate": "2026-10-21",
+        "confirmedOn": "2026-10-21",
+        "confirmedBy": "Example maintainer",
+        "note": "Synthetic draft placeholder. No manuscript content is included."
+      },
+      "nextAction": {
+        "text": "Collect coauthor feedback on the interpretation.",
+        "status": "proposed",
+        "owner": null,
+        "dueDate": "2026-10-20",
+        "dueStatus": "proposed",
+        "agreedOn": null
+      },
+      "blockers": [],
+      "supportingLinks": [],
+      "confirmation": {
+        "sourceCheckedOn": "2026-10-23",
+        "sourceLabel": "Synthetic demonstration record",
+        "recordReviewedOn": "2026-10-26",
+        "note": "Fictional people, dates, and status. No real manuscript or submission is represented."
+      },
+      "history": {
+        "linkChanges": [
+          {
+            "eventId": "L-first",
+            "recordedOn": "2026-10-21",
+            "url": "https://example.org/demo/neighborhood-v1",
+            "versionLabel": "Coauthor draft \u00b7 v1",
+            "reason": "Illustrative initial draft link."
+          }
+        ],
+        "submissions": []
+      }
+    },
+    {
+      "id": "DEMO-0003",
+      "title": "Shared services and regional adaptation",
+      "shortTitle": null,
+      "tags": [
+        "Adaptation",
+        "Governance"
+      ],
+      "scope": {
+        "status": "confirmed",
+        "confirmedOn": "2026-10-23",
+        "confirmedBy": "Example maintainer",
+        "note": "Fictional confirmation for interface demonstration."
+      },
+      "inventoryState": "active",
+      "writing": {
+        "stage": "drafting",
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "note": "Last reported drafting; current stage needs confirmation."
+      },
+      "journal": {
+        "status": "unconfirmed",
+        "name": null,
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "note": "Illustrative journal status only."
+      },
+      "lead": "Example researcher C",
+      "steward": "Example maintainer",
+      "currentDraft": {
+        "url": null,
+        "status": "unconfirmed",
+        "versionLabel": null,
+        "versionDate": null,
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "note": "Current draft link and version are unconfirmed."
+      },
+      "nextAction": {
+        "text": "Confirm the current draft location and the responsible steward.",
+        "status": "proposed",
+        "owner": null,
+        "dueDate": null,
+        "dueStatus": "unconfirmed",
+        "agreedOn": null
+      },
+      "blockers": [],
+      "supportingLinks": [],
+      "confirmation": {
+        "sourceCheckedOn": "2026-09-10",
+        "sourceLabel": "Synthetic demonstration record",
+        "recordReviewedOn": "2026-10-26",
+        "note": "Fictional people, dates, and status. No real manuscript or submission is represented."
+      },
+      "history": {
+        "linkChanges": [],
+        "submissions": []
+      }
+    },
+    {
+      "id": "DEMO-0004",
+      "title": "Measuring the pace of local recovery",
+      "shortTitle": null,
+      "tags": [
+        "Recovery",
+        "Methods"
+      ],
+      "scope": {
+        "status": "confirmed",
+        "confirmedOn": "2026-10-23",
+        "confirmedBy": "Example maintainer",
+        "note": "Fictional confirmation for interface demonstration."
+      },
+      "inventoryState": "active",
+      "writing": {
+        "stage": "journal_revision",
+        "confirmedOn": "2026-10-22",
+        "confirmedBy": "Example maintainer",
+        "note": null
+      },
+      "journal": {
+        "status": "revision_requested",
+        "name": "Example Journal (fictional)",
+        "confirmedOn": "2026-10-22",
+        "confirmedBy": "Example maintainer",
+        "note": "Illustrative journal status only."
+      },
+      "lead": "Example researcher A",
+      "steward": "Example maintainer",
+      "currentDraft": {
+        "url": "https://example.org/demo/recovery-v4",
+        "status": "confirmed",
+        "versionLabel": "Revision draft \u00b7 v4",
+        "versionDate": "2026-09-20",
+        "confirmedOn": "2026-09-20",
+        "confirmedBy": "Example maintainer",
+        "note": "Synthetic draft placeholder. No manuscript content is included."
+      },
+      "nextAction": {
+        "text": "Agree on a revision plan and update the draft confirmation.",
+        "status": "agreed",
+        "owner": "Example researcher A",
+        "dueDate": "2026-10-25",
+        "dueStatus": "agreed",
+        "agreedOn": "2026-10-22"
+      },
+      "blockers": [],
+      "supportingLinks": [],
+      "confirmation": {
+        "sourceCheckedOn": "2026-10-23",
+        "sourceLabel": "Synthetic demonstration record",
+        "recordReviewedOn": "2026-10-26",
+        "note": "Fictional people, dates, and status. No real manuscript or submission is represented."
+      },
+      "history": {
+        "linkChanges": [
+          {
+            "eventId": "L-first",
+            "recordedOn": "2026-09-20",
+            "url": "https://example.org/demo/recovery-v4",
+            "versionLabel": "Revision draft \u00b7 v4",
+            "reason": "Illustrative initial draft link."
+          }
+        ],
+        "submissions": [
+          {
+            "eventId": "S-submit",
+            "eventDate": "2026-08-18",
+            "journal": "Example Journal (fictional)",
+            "status": "submitted",
+            "note": "Synthetic submission event.",
+            "sourceLabel": "Demonstration"
+          },
+          {
+            "eventId": "S-revise",
+            "eventDate": "2026-10-22",
+            "journal": "Example Journal (fictional)",
+            "status": "revision_requested",
+            "note": "Synthetic revision event; no review documents included.",
+            "sourceLabel": "Demonstration"
+          }
+        ]
+      }
+    },
+    {
+      "id": "DEMO-0005",
+      "title": "Research concept awaiting team confirmation",
+      "shortTitle": null,
+      "tags": [
+        "Scope review"
+      ],
+      "scope": {
+        "status": "candidate",
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "note": "Fictional candidate. Excluded from the active inventory until scope is confirmed."
+      },
+      "inventoryState": "active",
+      "writing": {
+        "stage": "unconfirmed",
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "note": null
+      },
+      "journal": {
+        "status": "unconfirmed",
+        "name": null,
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "note": "No journal or submission state confirmed."
+      },
+      "lead": null,
+      "steward": null,
+      "currentDraft": {
+        "url": null,
+        "status": "unconfirmed",
+        "versionLabel": null,
+        "versionDate": null,
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "note": "Current draft link and version are unconfirmed."
+      },
+      "nextAction": {
+        "text": "Confirm that this paper belongs in the register.",
+        "status": "proposed",
+        "owner": null,
+        "dueDate": null,
+        "dueStatus": "unconfirmed",
+        "agreedOn": null
+      },
+      "blockers": [],
+      "supportingLinks": [],
+      "confirmation": {
+        "sourceCheckedOn": null,
+        "sourceLabel": "Synthetic demonstration record",
+        "recordReviewedOn": "2026-10-26",
+        "note": "Illustrative unresolved candidate; no real manuscript represented."
+      },
+      "history": {
+        "linkChanges": [],
+        "submissions": []
+      }
+    },
+    {
+      "id": "DEMO-0006",
+      "title": "A completed study of public service access",
+      "shortTitle": null,
+      "tags": [
+        "Archive"
+      ],
+      "scope": {
+        "status": "confirmed",
+        "confirmedOn": "2026-10-23",
+        "confirmedBy": "Example maintainer",
+        "note": "Fictional confirmation for interface demonstration."
+      },
+      "inventoryState": "archived",
+      "writing": {
+        "stage": "complete",
+        "confirmedOn": "2026-10-20",
+        "confirmedBy": "Example maintainer",
+        "note": null
+      },
+      "journal": {
+        "status": "published",
+        "name": "Example Journal (fictional)",
+        "confirmedOn": "2026-10-20",
+        "confirmedBy": "Example maintainer",
+        "note": "Illustrative journal status only."
+      },
+      "lead": "Example researcher A",
+      "steward": "Example maintainer",
+      "currentDraft": {
+        "url": "https://example.org/demo/archive",
+        "status": "confirmed",
+        "versionLabel": "Accepted version",
+        "versionDate": "2026-10-20",
+        "confirmedOn": "2026-10-20",
+        "confirmedBy": "Example maintainer",
+        "note": "Synthetic draft placeholder. No manuscript content is included."
+      },
+      "nextAction": {
+        "text": null,
+        "status": "unconfirmed",
+        "owner": null,
+        "dueDate": null,
+        "dueStatus": "unconfirmed",
+        "agreedOn": null
+      },
+      "blockers": [],
+      "supportingLinks": [],
+      "confirmation": {
+        "sourceCheckedOn": "2026-10-23",
+        "sourceLabel": "Synthetic demonstration record",
+        "recordReviewedOn": "2026-10-26",
+        "note": "Fictional people, dates, and status. No real manuscript or submission is represented."
+      },
+      "history": {
+        "linkChanges": [
+          {
+            "eventId": "L-first",
+            "recordedOn": "2026-10-20",
+            "url": "https://example.org/demo/archive",
+            "versionLabel": "Accepted version",
+            "reason": "Illustrative initial draft link."
+          }
+        ],
+        "submissions": [
+          {
+            "eventId": "S-published",
+            "eventDate": "2026-10-20",
+            "journal": "Example Journal (fictional)",
+            "status": "published",
+            "note": "Fictional publication, retained to illustrate the archive.",
+            "sourceLabel": "Demonstration"
+          }
+        ]
+      }
+    }
+  ]
+}
