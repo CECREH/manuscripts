@@ -11,3 +11,5 @@ The owner authorized public tracker metadata on October 29, 2026, with a search-
 - Unknowns stay null or unconfirmed. Byline observations are not assigned leads, and historical source dates are not current confirmations. Keep proposed and agreed deadlines distinct.
 - Update schema, validator, field dictionary, tests and project documentation together. Run `npm run check` after functional changes. Record what is completed and what remains.
 - Do not add analytics, browser persistence, email ingestion, a database, credentials, access grants or external hosts. Any PR must be a draft.
+
+- The owner replaced scope tabs with one list of distinct papers. Compare source substance and documented lineage before adding a separate entry. Keep ambiguous identities privately, with exact prior records and all stable IDs/history preserved; never remove OneDrive files or merge by topic. See docs/IDENTITY-AUDIT.md.

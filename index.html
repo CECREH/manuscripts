@@ -21,23 +21,17 @@
   <main class="shell">
     <section class="intro" aria-labelledby="page-title">
       <div><p class="eyebrow">THE RESEARCH PIPELINE</p><h1 id="page-title">Manuscripts, in motion.</h1><p class="intro-copy">A shared view of our writing, the latest drafts,<br class="desktop-break"> and what moves each paper forward.</p></div>
-      <aside class="snapshot"><span class="snapshot-label">REGISTER SNAPSHOT</span><strong id="snapshot-date">Loading…</strong><p id="coverage-note">Loading the scope and confirmation notes.</p></aside>
+      <aside class="snapshot"><span class="snapshot-label">REGISTER SNAPSHOT</span><strong id="snapshot-date">Loading…</strong><p id="coverage-note">Loading the inventory notes.</p></aside>
     </section>
     <aside class="mode-banner" id="mode-banner" hidden><span class="banner-mark" aria-hidden="true">i</span><div><strong id="mode-title"></strong><p id="mode-copy"></p></div></aside>
     <section class="stats" aria-label="Register overview" id="stats">
-      <div class="stat"><span>Confirmed scope</span><strong id="count-active">—</strong><small>In the working inventory</small></div>
-      <div class="stat"><span>Pending scope</span><strong id="count-candidates">—</strong><small>Separate candidate queue</small></div>
-      <div class="stat"><span>Draft unconfirmed</span><strong id="count-drafts">—</strong><small>Across active & candidate records</small></div>
-      <div class="stat"><span>Needs attention</span><strong id="count-attention">—</strong><small>Across active & candidate records</small></div>
+      <div class="stat"><span>Manuscripts</span><strong id="count-manuscripts">—</strong><small>One entry per paper</small></div>
+      <div class="stat"><span>Files linked</span><strong id="count-linked">—</strong><small>Available manuscript copies</small></div>
+      <div class="stat"><span>Version unconfirmed</span><strong id="count-drafts">—</strong><small>Latest author version needs checking</small></div>
+      <div class="stat"><span>Needs attention</span><strong id="count-attention">—</strong><small>Across the register</small></div>
     </section>
     <section id="register" class="register" aria-labelledby="register-title" tabindex="-1">
       <div class="section-top"><div><p class="eyebrow">MANUSCRIPT REGISTER</p><h2 id="register-title">From first draft to publication</h2></div><p>Read only <span aria-hidden="true">·</span> One record per paper</p></div>
-      <div class="inventory-switch" role="group" aria-label="Inventory scope">
-        <button type="button" data-group="active" aria-pressed="true">Confirmed scope <span id="tab-active">—</span></button>
-        <button type="button" data-group="candidates" aria-pressed="false">Pending scope <span id="tab-candidates">—</span></button>
-        <button type="button" data-group="archived" aria-pressed="false">Archive <span id="tab-archived">—</span></button>
-      </div>
-      <p class="scope-note" id="scope-note">Only manuscripts with confirmed CECREH scope appear in the active inventory.</p>
       <form id="filters" class="filters" aria-label="Filter manuscripts">
         <div class="search-field"><label for="search">Search manuscripts</label><div class="search-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6.5"/><path d="m15 15 6 6"/></svg><input id="search" type="search" placeholder="Title, abstract, person, topic or ID" autocomplete="off"></div></div>
         <div><label for="stage">Writing stage</label><select id="stage"><option value="all">All writing stages</option></select></div>
@@ -51,7 +45,7 @@
         <button id="reset" class="text-button" type="button" hidden>Reset filters</button>
       </div>
       <div id="results" class="results" aria-busy="true"></div>
-      <div id="empty" class="empty" hidden><span aria-hidden="true" class="empty-icon">▤</span><h3 id="empty-title"></h3><p id="empty-copy"></p><button id="empty-reset" class="primary-button" type="button">Reset filters</button><button id="view-candidates" class="secondary-button" type="button" hidden>View pending candidates</button></div>
+      <div id="empty" class="empty" hidden><span aria-hidden="true" class="empty-icon">▤</span><h3 id="empty-title"></h3><p id="empty-copy"></p><button id="empty-reset" class="primary-button" type="button">Reset filters</button></div>
       <div id="error" class="error" role="alert" hidden><h3>The register could not load</h3><p id="error-copy">The data could not be read or did not pass validation. No partial records are shown.</p><button id="retry" class="primary-button" type="button">Try again</button></div>
     </section>
     <aside class="reading-guide"><h2>A little context for this register</h2><div><p><strong>Writing ≠ journal status.</strong> Internal revision does not imply a submission or a journal decision.</p><p><strong>Dates carry a basis.</strong> Proposed targets are suggestions. Only agreed due dates can become overdue.</p><p><strong>Confirmations age.</strong> A date of entry is not a source check. Confirmations older than <span id="stale-days">30</span> days are marked stale.</p></div></aside>

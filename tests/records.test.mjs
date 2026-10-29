@@ -49,9 +49,16 @@ test('candidate and archive isolation, combined filters, search, and due orderin
 });
 test('history and stable IDs cannot silently disappear or change',()=>{
   const data=clone();data.records[0].history.linkChanges.shift();assert.match(validateData(data,{today:'2026-10-26',previous:demo}).join(),/append-only/);
-  const removed=clone();removed.records.pop();assert.match(validateData(removed,{today:'2026-10-26',previous:demo}).join(),/archive it/);
+  const removed=clone();removed.records.pop();assert.match(validateData(removed,{today:'2026-10-26',previous:demo}).join(),/retain the record/);
   const changed=clone();changed.records[3].history.submissions[0].note='Rewritten';assert.match(validateData(changed,{today:'2026-10-26',previous:demo}).join(),/append-only/);
   const next=clone();next.records[0].currentDraft.url='https://example.org/demo/new';next.records[0].history.linkChanges.push({eventId:'L-new',recordedOn:'2026-10-26',url:'https://example.org/demo/new',versionLabel:'New demo draft',reason:'New canonical version.'});assert.deepEqual(validateData(next,{today:'2026-10-26',previous:demo}),[]);
+});
+test('withholding an ambiguous public entry requires its exact prior record to remain privately retained',()=>{
+  const data=clone();const held=data.records.pop();
+  assert.deepEqual(validateData(data,{today:'2026-10-26',previous:demo,retainedRecords:[held]}),[]);
+  const changed=structuredClone(held);changed.title='Different paper';
+  assert.match(validateData(data,{today:'2026-10-26',previous:demo,retainedRecords:[changed]}).join(),/retain the record/);
+  assert.equal(selectRecords(demo.records,{...filters,group:'all'},30,'2026-10-26').length,6);
 });
 test('link removal requires a dated history event and preserves old URLs',()=>{
   const data=clone();const r=data.records[0];r.currentDraft.url=null;r.currentDraft.status='unavailable';r.currentDraft.confirmedOn=null;r.currentDraft.confirmedBy=null;

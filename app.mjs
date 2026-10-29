@@ -1,7 +1,7 @@
-import {validateData, writingLabels, journalLabels, freshness, attentionReasons, inventoryGroup, selectRecords, todayUTC, safeUrl} from './lib/records.mjs';
+import {validateData, writingLabels, journalLabels, freshness, attentionReasons, selectRecords, todayUTC, safeUrl} from './lib/records.mjs';
 
 const $ = id => document.getElementById(id);
-const baseFilters = {query:'',group:'active',stage:'all',journal:'all',person:'all',attention:false,sort:'title'};
+const baseFilters = {query:'',group:'all',stage:'all',journal:'all',person:'all',attention:false,sort:'title'};
 let filters = {...baseFilters};
 let data = null;
 const expanded = new Set();
@@ -53,13 +53,11 @@ function renderDescription(r) {
 }
 function renderCard(r) {
   const today=todayUTC();
-  const article=node('article',`manuscript ${r.scope.status==='candidate'?'candidate':''}`);
+  const article=node('article','manuscript');
   article.dataset.id=r.id;
   article.setAttribute('aria-labelledby',`title-${r.id}`);
   const meta=add(node('div','record-meta'),node('span','record-id',r.id));
-  if (r.scope.status==='candidate') meta.append(badge('Scope unconfirmed','pending'));
-  else if(r.inventoryState==='archived') meta.append(badge('Archived'));
-  else meta.append(badge('Confirmed scope','confirmed'));
+  if(r.inventoryState==='archived') meta.append(badge('Archived'));
   if(r.tags.length) meta.append(node('span','topic',r.tags.slice(0,2).join(' / ')));
   const title=node('h3','',r.title);title.id=`title-${r.id}`;
   const people=add(node('p','people'),node('strong','','Lead '),document.createTextNode(r.lead||'Unconfirmed'),node('br'),node('strong','','Steward '),document.createTextNode(r.steward||'Unconfirmed'));
@@ -115,13 +113,12 @@ function renderCard(r) {
   const summary=add(node('summary'),node('span','','Details & history'),node('span','summary-meta',`Source: ${sourceFreshness==='unconfirmed'?'unconfirmed':formatDate(r.confirmation.sourceCheckedOn)+(sourceFreshness==='stale'?' · stale':'')}`),node('span','chevron','+'));
   summary.lastChild.setAttribute('aria-hidden','true');
   const body=node('div','detail-body');
-  if(r.scope.status==='candidate') body.append(paragraph(r.scope.note,'scope-caveat'));
   const confirmations=section('Version & source confirmation',termList([
     ['Version label',r.currentDraft.versionLabel],['Version dated',formatDate(r.currentDraft.versionDate)],['Version confirmed',r.currentDraft.confirmedOn?`${formatDate(r.currentDraft.confirmedOn)} · ${r.currentDraft.confirmedBy}`:'Unconfirmed'],['Source checked',formatDate(r.confirmation.sourceCheckedOn)],['Record entered / reviewed',formatDate(r.confirmation.recordReviewedOn)]
   ]),paragraph(r.currentDraft.note),paragraph(`Source: ${r.confirmation.sourceLabel}`),paragraph(r.confirmation.note));
   if(r.localVersion) confirmations.append(paragraph(`Local inspection: ${formatDate(r.localVersion.checkedOn)}. ${r.localVersion.note}`));
   const next=section('Ownership & progress',termList([
-    ['Lead',r.lead],['Record steward',r.steward],['Action owner',r.nextAction.owner],['Deadline basis',r.nextAction.dueStatus==='unconfirmed'?'Unconfirmed':r.nextAction.dueStatus==='agreed'?`Agreed on ${formatDate(r.nextAction.agreedOn)}`:'Proposed · not agreed'],['Scope confirmed',r.scope.confirmedOn?`${formatDate(r.scope.confirmedOn)} · ${r.scope.confirmedBy}`:'Unconfirmed']
+    ['Lead',r.lead],['Record steward',r.steward],['Action owner',r.nextAction.owner],['Deadline basis',r.nextAction.dueStatus==='unconfirmed'?'Unconfirmed':r.nextAction.dueStatus==='agreed'?`Agreed on ${formatDate(r.nextAction.agreedOn)}`:'Proposed · not agreed']
   ]));
   if(r.authors) next.append(paragraph(`Byline: ${r.authors.names.join('; ')||'Unconfirmed'}. ${r.authors.note}`));
   if(r.writing.note) next.append(paragraph(`Writing: ${r.writing.note}`));
@@ -161,13 +158,9 @@ function renderCard(r) {
   return article;
 }
 function updateOverview() {
-  const active=data.records.filter(r=>inventoryGroup(r)==='active');
-  const candidates=data.records.filter(r=>inventoryGroup(r)==='candidates');
-  const archived=data.records.filter(r=>inventoryGroup(r)==='archived');
-  const working=[...active,...candidates];
-  const counts={active:active.length,candidates:candidates.length,archived:archived.length,drafts:working.filter(r=>r.currentDraft.status!=='confirmed').length,attention:working.filter(r=>attentionReasons(r,data.staleAfterDays).length).length};
+  const working=data.records;
+  const counts={manuscripts:working.length,linked:working.filter(r=>r.currentDraft.url||r.supportingLinks.some(l=>l.kind==='manuscript')).length,drafts:working.filter(r=>r.currentDraft.status!=='confirmed').length,attention:working.filter(r=>attentionReasons(r,data.staleAfterDays).length).length};
   for(const [key,value] of Object.entries(counts)) if($('count-'+key)) $('count-'+key).textContent=value;
-  for(const key of ['active','candidates','archived']) $('tab-'+key).textContent=counts[key];
   $('snapshot-date').textContent=formatDate(data.snapshotDate);
   $('coverage-note').textContent=data.coverageNote;
   $('stale-days').textContent=data.staleAfterDays;
@@ -192,31 +185,25 @@ function populateFilters() {
 function render() {
   if(!data) return;
   const records=selectRecords(data.records,filters,data.staleAfterDays);
-  const groupRecords=data.records.filter(r=>inventoryGroup(r)===filters.group);
-  const groupLabel={active:'manuscripts with confirmed scope',candidates:'pending candidates',archived:'archived manuscripts'}[filters.group];
-  $('result-count').textContent=`${records.length} of ${groupRecords.length} ${groupLabel}`;
-  $('scope-note').textContent=filters.group==='candidates'?'Candidate queue · These papers are awaiting CECREH scope confirmation and are excluded from the confirmed scope count.':filters.group==='archived'?'Archived records retain their stable IDs, draft links, and submission history.':'Only manuscripts with confirmed CECREH scope appear in the active inventory.';
-  $('scope-note').classList.toggle('candidate',filters.group==='candidates');
-  document.querySelectorAll('[data-group]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.group===filters.group)));
+  $('result-count').textContent=`${records.length} of ${data.records.length} manuscripts`;
   $('results').replaceChildren(...records.map(renderCard));
   $('results').setAttribute('aria-busy','false');
   const hasFilter=Boolean(filters.query||filters.stage!=='all'||filters.journal!=='all'||filters.person!=='all'||filters.attention||filters.sort!=='title');
   $('reset').hidden=!hasFilter;
   $('empty').hidden=records.length>0;
   $('empty-reset').hidden=!hasFilter;
-  $('view-candidates').hidden=!(filters.group==='active'&&!groupRecords.length&&data.records.some(r=>inventoryGroup(r)==='candidates'));
   if(!records.length) {
-    $('empty-title').textContent=hasFilter?'No matching manuscripts':filters.group==='active'?'No manuscripts with confirmed scope yet':filters.group==='candidates'?'No pending candidates':'No archived manuscripts';
-    $('empty-copy').textContent=hasFilter?'Try a broader search or reset the filters. The overview counts always describe the full register.':filters.group==='active'?'The active inventory is empty. Candidate records remain separate until CECREH scope is confirmed.':filters.group==='candidates'?'Candidate records will appear here when the maintainer adds a paper for scope confirmation.':'Archived papers will remain available here with their history intact.';
+    $('empty-title').textContent=hasFilter?'No matching manuscripts':'No manuscripts listed yet';
+    $('empty-copy').textContent=hasFilter?'Try a broader search or reset the filters. The overview counts always describe the full register.':'Manuscripts will appear here once their source and identity have been checked.';
   }
 }
 function reset() {
-  filters={...baseFilters,group:filters.group};
+  filters={...baseFilters};
   $('filters').reset();$('attention').checked=false;$('sort').value='title';
   render();$('search').focus();
 }
 function setControls(disabled) {
-  document.querySelectorAll('#filters input,#filters select,[data-group],#attention,#sort').forEach(el=>el.disabled=disabled);
+  document.querySelectorAll('#filters input,#filters select,#attention,#sort').forEach(el=>el.disabled=disabled);
 }
 async function load() {
   data=null;setControls(true);$('error').hidden=true;$('empty').hidden=true;$('mode-banner').hidden=true;
@@ -232,15 +219,13 @@ async function load() {
   } catch {
     $('error').hidden=false;$('result-count').textContent='Register unavailable';$('snapshot-date').textContent='Unavailable';$('coverage-note').textContent='No validated data loaded.';
     $('results').setAttribute('aria-busy','false');$('reset').hidden=true;
-    document.querySelectorAll('.stat strong,.inventory-switch button span').forEach(el=>el.textContent='—');
+    document.querySelectorAll('.stat strong').forEach(el=>el.textContent='—');
   } finally {clearTimeout(timeout);}
 }
 $('filters').addEventListener('submit',e=>e.preventDefault());
 $('search').addEventListener('input',e=>{filters.query=e.target.value;render();});
 for(const id of ['stage','journal','person','sort']) $(id).addEventListener('change',e=>{filters[id]=e.target.value;render();});
 $('attention').addEventListener('change',e=>{filters.attention=e.target.checked;render();});
-document.querySelectorAll('[data-group]').forEach(b=>b.addEventListener('click',()=>{filters.group=b.dataset.group;render();}));
 $('reset').addEventListener('click',reset);$('empty-reset').addEventListener('click',reset);
-$('view-candidates').addEventListener('click',()=>{filters.group='candidates';render();document.querySelector('[data-group="candidates"]').focus();});
 $('retry').addEventListener('click',()=>load().then(()=>{if(data) $('search').focus();}));
 load();

@@ -1,5 +1,11 @@
 # Change log
 
+## 2026-10-29 — one audited manuscript list
+
+Removed the confirmed/pending scope tabs and badges. The public list has 18 entries; MS-0003 remains privately retained unchanged until its separate identity from MS-0007 is resolved. No duplicate relationship is asserted, IDs are not reassigned, and all 19 uploaded files remain intact. The selected MS-0007 Word version, red artwork, protected copy links and uncertainty labels are preserved.
+
+Added build-derived asset version parameters after live verification exposed a mixed cached-code/new-data load. Regression coverage includes cache consistency and exact private retention of excluded records. The identity audit documents substantive distinctions, the remaining author decision and the source evidence.
+
 ## 2026-10-29 — official branding and protected uploaded-copy links
 
 Replaced the synthetic green identity with the unchanged official red/black CECREH logo, a cache-safe PNG favicon and neutral/red palette. Added 19 reviewed OneDrive manuscript-copy links with file/version labels and explicit current-version uncertainty. Existing canonical confirmations, stable IDs, abstracts, scope/status evidence and link/submission histories remain unchanged. No full manuscripts or private evidence enter the site, and no OneDrive permissions or inbound navigation links change.

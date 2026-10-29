@@ -3,7 +3,7 @@
   "dataClass": "public_metadata",
   "snapshotDate": "2026-10-29",
   "staleAfterDays": 30,
-  "coverageNote": "Drive inventory: 19 records; 7 supported by the June CECREH list and 12 awaiting scope or identity confirmation. Coverage is provisional; this is not a claim to include every manuscript.",
+  "coverageNote": "18 manuscripts in one list, checked against available sources. Coverage is provisional; author-approved versions and current statuses still need confirmation.",
   "maintenance": {
     "primary": null,
     "backup": null
@@ -16,11 +16,6 @@
     },
     {
       "url": "https://texastechuniversity-my.sharepoint.com/:w:/r/personal/ali_nejat_ttu_edu/_layouts/15/Doc.aspx?sourcedoc=%7B084070EF-03BC-4EC2-8101-D9AB05578A4F%7D&file=MS-0002_Benchmarks_2026-08-23g.docx&action=default&mobileredirect=true",
-      "checkedOn": "2026-10-29",
-      "audienceNote": "Requires Microsoft/TTU sign-in and existing file/folder access. Anonymous request redirected to Microsoft login on 2026-10-29. No sharing link or permission grant was created. Inherited parent-folder membership is not fully enumerated."
-    },
-    {
-      "url": "https://texastechuniversity-my.sharepoint.com/:w:/r/personal/ali_nejat_ttu_edu/_layouts/15/Doc.aspx?sourcedoc=%7BD697392D-7C43-4309-A221-3D67B96EB720%7D&file=MS-0003_CDBG-DR_2026-09-07_local-copy.docx&action=default&mobileredirect=true",
       "checkedOn": "2026-10-29",
       "audienceNote": "Requires Microsoft/TTU sign-in and existing file/folder access. Anonymous request redirected to Microsoft login on 2026-10-29. No sharing link or permission grant was created. Inherited parent-folder membership is not fully enumerated."
     },
@@ -281,95 +276,6 @@
         "sourceVersionLabel": "Designated Word editorial master · Aug 23g",
         "sourceCheckedOn": "2026-10-29",
         "note": "Abstract from the designated local editorial master; the current shared version remains unconfirmed."
-      }
-    },
-    {
-      "id": "MS-0003",
-      "title": "Financial Implementation Timing and Administrative Capacity in U.S. CDBG-DR Recovery",
-      "shortTitle": null,
-      "tags": [
-        "CDBG-DR",
-        "Administrative capacity"
-      ],
-      "scope": {
-        "status": "candidate",
-        "confirmedOn": null,
-        "confirmedBy": null,
-        "note": "Located during the drive inventory; CECREH scope remains unconfirmed."
-      },
-      "inventoryState": "active",
-      "writing": {
-        "stage": "internal_revision",
-        "confirmedOn": null,
-        "confirmedBy": null,
-        "reportedOn": "2026-10-21",
-        "note": "October internal revision reported; latest version and relationship to the audit-protocol record require author confirmation."
-      },
-      "journal": {
-        "status": "unconfirmed",
-        "name": null,
-        "confirmedOn": null,
-        "confirmedBy": null,
-        "reportedOn": null,
-        "note": "No current submission or decision is confirmed. A local draft or prepared submission bundle does not establish submission."
-      },
-      "lead": null,
-      "steward": null,
-      "authors": {
-        "names": [],
-        "note": "No verified current byline is available. Contributor names and document metadata are not used to infer authorship."
-      },
-      "localVersion": {
-        "authority": "candidate",
-        "versionLabel": "September local draft · newer revision reported",
-        "versionDate": null,
-        "checkedOn": "2026-10-29",
-        "note": "The local September draft was located. An October revision was reported but its current file has not been identified."
-      },
-      "currentDraft": {
-        "url": null,
-        "status": "unconfirmed",
-        "versionLabel": null,
-        "versionDate": null,
-        "confirmedOn": null,
-        "confirmedBy": null,
-        "note": "The linked inspected copy was uploaded to OneDrive and its destination/access behavior checked on October 29, 2026. The newest author-approved version remains unconfirmed; the upload date is not a manuscript revision date."
-      },
-      "nextAction": {
-        "text": "Confirm manuscript identity, current version and CECREH scope; resolve the relationship to MS-0007 without merging by topic.",
-        "owner": null,
-        "dueDate": null,
-        "dueStatus": "unconfirmed",
-        "agreedOn": null,
-        "status": "proposed"
-      },
-      "blockers": [],
-      "supportingLinks": [
-        {
-          "label": "Word · Sep 7, 2026 local draft; newer revision reported",
-          "url": "https://texastechuniversity-my.sharepoint.com/:w:/r/personal/ali_nejat_ttu_edu/_layouts/15/Doc.aspx?sourcedoc=%7BD697392D-7C43-4309-A221-3D67B96EB720%7D&file=MS-0003_CDBG-DR_2026-09-07_local-copy.docx&action=default&mobileredirect=true",
-          "kind": "manuscript",
-          "confirmedOn": "2026-10-29"
-        }
-      ],
-      "confirmation": {
-        "sourceCheckedOn": "2026-10-29",
-        "sourceLabel": "Local financial-implementation draft and October team handoff",
-        "recordReviewedOn": "2026-10-29",
-        "note": "The inspection date confirms that local evidence was read. It does not confirm the current team status, latest cloud file or completeness of this inventory."
-      },
-      "history": {
-        "linkChanges": [],
-        "submissions": []
-      },
-      "abstractOrSummary": {
-        "kind": "abstract",
-        "text": "Community Development Block Grant-Disaster Recovery (CDBG-DR) grants are administered through multi-year portfolios that mature at different rates, yet national assessments often rely on final accounting ratios that conflate implementation pace with portfolio age. We analyze 130,605 Quarterly Performance Report records covering 18 disaster cohorts and 14,045 activity profiles from 2002 Q3 through 2025 Q2. Quarterly event-history and common-horizon models, a two-part backlog design, grouped out-of-sample validation, a secondary structural equation model, and spatial diagnostics track sustained financial milestones. The primary event is expenditure sustained at or above 85% of then-current cumulative obligations; 75% and 95% thresholds and a final-obligation definition test sensitivity. At the 85% real-time threshold, 77.9% of profiles reached both disbursement and expenditure milestones, and 82.8% crossed in the same quarter; among profiles with later expenditure, the median lag was two quarters. Directly observed housing-administration employment and payroll were available for only 119 of 590 jurisdiction profiles. Resource associations were strongest early but weakened over follow-up and were not stable across common-horizon, multiplicity-adjusted, or grouped prediction tests. Workload associations were likewise sensitive to portfolio maturity and model specification. The secondary SEM and spatial analyses support a cautious interpretation: timing patterns are more stable than capacity coefficients or county rankings. The study establishes national financial-implementation benchmarks and a transparent framework for distinguishing upstream delays from expenditure backlogs, supporting monitoring and technical assistance without ranking governmental competence.",
-        "abstractPresence": "present",
-        "sourceLabel": "Financial Implementation Timing and Administrative Capacity in U.S. CDBG-DR Recovery",
-        "sourceVersionLabel": "September local draft · newer revision reported",
-        "sourceCheckedOn": "2026-10-29",
-        "note": "Abstract from the inspected local version; the current shared version remains unconfirmed."
       }
     },
     {

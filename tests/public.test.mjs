@@ -6,7 +6,8 @@ import {validateData,selectRecords,attentionReasons} from '../lib/records.mjs';
 const data=JSON.parse(await readFile(new URL('../data/public-manuscripts.json',import.meta.url),'utf8'));
 test('public inventory preserves uncertainty, historical evidence and distinct manuscript identities',()=>{
   assert.deepEqual(validateData(data),[]);
-  assert.equal(data.records.length,19);
+  assert.equal(data.records.length,18);
+  assert.ok(!data.records.some(r=>r.id==='MS-0003'),'ambiguous additional identity stays out of the public dataset');
   assert.equal(data.records.filter(r=>r.scope.status==='confirmed').length,7);
   assert.ok(data.records.every(r=>r.currentDraft.url===null&&r.currentDraft.status==='unconfirmed'));
   assert.ok(data.records.every(r=>r.nextAction.dueDate===null&&r.lead===null&&r.steward===null));
@@ -28,7 +29,7 @@ test('public gate rejects private paths, email addresses and unreviewed draft li
 });
 test('all uploaded copies have reviewed protected destinations without invented current-version confirmations',()=>{
   const links=data.records.flatMap(r=>r.supportingLinks.filter(l=>l.kind==='manuscript'));
-  assert.equal(links.length,19);assert.equal(new Set(links.map(l=>l.url)).size,19);
+  assert.equal(links.length,18);assert.equal(new Set(links.map(l=>l.url)).size,18);
   for(const r of data.records) {
     const link=r.supportingLinks.find(l=>l.kind==='manuscript');const url=new URL(link.url);
     assert.equal(url.hostname,'texastechuniversity-my.sharepoint.com');assert.equal(link.confirmedOn,'2026-10-29');
@@ -48,7 +49,7 @@ test('all uploaded copies have reviewed protected destinations without invented 
 });
 test('abstracts, absent-abstract summaries and unresolved descriptions require distinct evidence',()=>{
   const count=kind=>data.records.filter(r=>r.abstractOrSummary.kind===kind).length;
-  assert.deepEqual([count('abstract'),count('summary'),count('unresolved')],[18,1,0]);
+  assert.deepEqual([count('abstract'),count('summary'),count('unresolved')],[17,1,0]);
   const audit=data.records.find(r=>r.id==='MS-0007');
   assert.match(audit.abstractOrSummary.text,/six-item measurement-sensitivity audit protocol/);
   assert.match(audit.abstractOrSummary.text,/not stably identified/);
@@ -80,4 +81,11 @@ test('public release requires explicit build intent and excludes manuscript/sour
   const html=await readFile('dist/public/index.html','utf8');
   assert.match(html,/<meta name="robots" content="noindex, nofollow">/);
   assert.ok(!/https?:\/\//.test(html),'HTML navigation stays inside the tracker');
+  const manifest=JSON.parse(await readFile('dist/public/.build.json','utf8'));
+  assert.match(manifest.releaseVersion,/^[0-9a-f]{16}$/);
+  for(const name of ['app.mjs','styles.css']) assert.ok(html.includes(`./${name}?v=${manifest.releaseVersion}`));
+  const app=await readFile('dist/public/app.mjs','utf8');
+  assert.ok(app.includes(`./lib/records.mjs?v=${manifest.releaseVersion}`));
+  assert.ok(app.includes(`./data/manuscripts.json?v=${manifest.releaseVersion}`));
+  assert.ok((await readFile('dist/public/lib/records.mjs','utf8')).includes(`./schema-validator.mjs?v=${manifest.releaseVersion}`));
 });

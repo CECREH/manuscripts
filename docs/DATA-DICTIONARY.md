@@ -14,8 +14,8 @@ The executable contract is [manuscripts.schema.json](../schema/manuscripts.schem
 | `records` | Array of independent manuscript records; may be empty. |
 | `id` | Stable unique `MS-0001` identifier. Demo records use `DEMO-0001`. Never recycle IDs or derive identity from topic. |
 | `title`, `shortTitle`, `tags` | Current descriptive title, optional alias, and unique search tags. No author order. |
-| `scope.status` | `candidate` or `confirmed`. Confirmed scope requires `confirmedOn` and `confirmedBy`; candidate confirmations stay null. `note` records scope limits. |
-| `inventoryState` | `active` or `archived`. Candidate scope always renders in the separate pending queue. Confirm scope before archiving. |
+| `scope.status` | `candidate` or `confirmed`. Confirmed scope requires `confirmedOn` and `confirmedBy`; candidate confirmations stay null. `note` records historical scope limits; scope is not a public list partition. |
+| `inventoryState` | `active` or `archived`. This state does not split the public list; an archived entry keeps its history and carries an archive label. |
 | `writing.stage` | `unconfirmed`, `planning`, `analysis`, `drafting`, `internal_revision`, `coauthor_review`, `ready_to_submit`, `journal_revision`, `complete`, `paused`. |
 | `writing.confirmedOn`, `.confirmedBy`, `.note` | Confirmation date/person as a pair, or both null; explanatory note may be null. A known stage without confirmation is shown as reported/currently unconfirmed. |
 | `journal.status` | `unconfirmed`, `not_submitted`, `submitted`, `under_review`, `revision_requested`, `accepted`, `published`, `withdrawn`, `rejected`. Independent of writing stage. |
@@ -40,7 +40,7 @@ The executable contract is [manuscripts.schema.json](../schema/manuscripts.schem
 | `history.linkChanges[]` | Append-only `eventId` (`L-…`), `recordedOn`, `url` (nullable for clearing), `versionLabel`, `reason`. Chronological recorded-date order; latest URL must match the canonical URL when present. |
 | `history.submissions[]` | Append-only `eventId` (`S-…`), `eventDate` (nullable), `journal` (nullable), `status`, `note`, `sourceLabel`. Status: submitted, under_review, revision_requested, resubmitted, accepted, published, withdrawn, rejected. |
 
-“Needs attention” includes an unconfirmed current draft, a stale draft confirmation, an unconfirmed/stale source, old scope confirmation or status report, an open blocker, or an overdue agreed action. Overview attention/draft counts include non-archived confirmed-scope records and pending candidates, and exclude the archive. Filtered result counts are separate. The archive never inflates the confirmed-scope inventory count.
+“Needs attention” includes an unconfirmed current draft, a stale draft confirmation, an unconfirmed/stale source, an old writing/journal status report, an open blocker, or an overdue agreed action. Overview counts describe all listed records: manuscripts, linked files, unconfirmed current versions and attention. Filtered result counts are separate. Ambiguous identities retained privately are excluded from the public JSON and counts.
 
 Sorting by agreed due date puts undated/proposed actions last. Sorting by source confirmation puts unconfirmed sources first, then oldest confirmed dates. The app never stores search terms in a URL or persistent browser storage.
 

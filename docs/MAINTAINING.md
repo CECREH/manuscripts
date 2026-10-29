@@ -4,7 +4,7 @@ Assign one primary maintainer and one backup in `maintenance`. Neither role is i
 
 ## Scope and identity
 
-Keep permanent `MS-0001` style IDs. A title change does not change identity. Related topics never justify merging papers. The first release preserves the original five IDs and records newly discovered drafts separately. Seven scope memberships are supported by a June 5 inventory; they require refresh. Twelve other records remain pending scope or identity confirmation. Do not claim that the register includes every manuscript.
+Keep permanent `MS-0001` style IDs. A title change does not change identity. Related topics never justify merging papers. The public list contains only entries with supported distinct-paper identity. Historical scope fields are provenance, not a separate inventory or UI tab. The full private inventory retains every stable ID, including ambiguous records withheld from publication. See IDENTITY-AUDIT.md. Different titles, filenames or timestamps do not establish a new paper. Compare the research question, sample, outcomes, methods and documented source lineage. Do not claim that the register includes every manuscript.
 
 Exclude grant proposals, journal referee assignments, literature corpora, templates, study protocols without drafted papers, published work and explicitly non-CECREH manuscripts. Keep an evidence-backed exclusion ledger privately.
 
@@ -31,7 +31,7 @@ The prior-public file must be the previous public release, not the confidential 
 
 ## Review and recovery
 
-Review pending scope, missing links, unassigned roles and stale confirmations on the team's chosen cadence. The 30-day threshold is a review aid, not an agreed deadline. Source, scope, writing and journal evidence can age independently.
+Review privately held identity questions, current-version uncertainty, missing links, unassigned roles and stale confirmations on the team's chosen cadence. The 30-day threshold is a review aid, not an agreed deadline. Source, scope, writing and journal evidence can age independently.
 
 Invalid data fails closed with no partial records displayed. Fix the validator's reported field and retry. Preserve unavailable or superseded public links in history and label uncertainty. Restore from an accepted commit if needed; compare IDs and histories before redeploying. If confidential information is accidentally published, stop further publication and follow the owner's incident procedure; deletion does not retract previous downloads.
 
@@ -44,3 +44,5 @@ Inspect the recorded authoritative local source and its project documentation. C
 If an inspected manuscript has no abstract, write a short summary grounded in its actual body, label it `summary`, and set `abstractPresence: absent_in_inspected_source`. Do not summarize from a title alone. If the source is unavailable or its identity/content cannot be verified, use `unresolved` with null text and source-check date. Do not replace an unresolved source with an invented summary.
 
 Set a safe source label, version label, inspection date and a note about version limits for published text. Publication authorization covers abstracts and these labeled summaries, not full manuscript files, other body sections, internal reviews or private paths. A locally inspected abstract does not confirm the latest OneDrive version. Retain current-version uncertainty and existing permissions; an inspected uploaded copy can be linked separately from a confirmed current draft.
+
+When withholding a previously public ambiguous entry, preserve its exact prior record in a private retention file and preserve the complete confidential inventory. Validate the public projection against its previous snapshot with `--previous` and `--retained` (the latter reads a private JSON object with a `records` array). The validator rejects missing IDs unless the exact prior record is retained. Never merge histories or delete manuscript files as a shortcut. The retention file is not a deployment input.

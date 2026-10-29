@@ -1,6 +1,7 @@
 import {readFile,writeFile,mkdir,copyFile,readdir,stat,chmod} from 'node:fs/promises';
 import {dirname,resolve,relative,isAbsolute} from 'node:path';
 import {fileURLToPath} from 'node:url';
+import {createHash} from 'node:crypto';
 import {validateData} from '../lib/records.mjs';
 import {siteAssets} from './assets.mjs';
 const root=resolve(dirname(fileURLToPath(import.meta.url)),'..');
@@ -10,6 +11,8 @@ try {
   const publicBuild=args.includes('--public');
   const input=resolve(args.includes('--data')?value('--data'):resolve(root,publicBuild?'data/public-manuscripts.json':'data/manuscripts.json'));
   const data=JSON.parse(await readFile(input,'utf8'));
+  const releaseSources=await Promise.all(['index.html','styles.css','app.mjs','lib/records.mjs','lib/schema-validator.mjs'].map(name=>readFile(resolve(root,name))));
+  const releaseVersion=createHash('sha256').update(Buffer.concat([...releaseSources,Buffer.from(JSON.stringify(data))])).digest('hex').slice(0,16);
   const errors=validateData(data);if(errors.length) throw new Error(`Validation failed: ${errors.join('; ')}`);
   const confidential=data.dataClass==='confidential';
   if(publicBuild&&data.dataClass!=='public_metadata') throw new Error('--public requires a reviewed public_metadata dataset.');
@@ -35,9 +38,14 @@ try {
   for(const asset of siteAssets) {
     const target=resolve(output,asset);await mkdir(dirname(target),{recursive:true,mode:confidential?0o700:0o755});
     if(asset==='data/manuscripts.json') await writeFile(target,JSON.stringify(data,null,2)+'\n',{mode:confidential?0o600:0o644});
-    else await copyFile(resolve(root,asset),target);
+    else if(['index.html','app.mjs','lib/records.mjs'].includes(asset)) {
+      let text=await readFile(resolve(root,asset),'utf8');
+      const references=asset==='index.html'?['./styles.css','./app.mjs']:asset==='app.mjs'?['./lib/records.mjs','./data/manuscripts.json']:['./schema-validator.mjs'];
+      for(const reference of references) text=text.replaceAll(reference,reference+'?v='+releaseVersion);
+      await writeFile(target,text);
+    } else await copyFile(resolve(root,asset),target);
     if(confidential) await chmod(target,0o600);
   }
-  await writeFile(resolve(output,'.build.json'),JSON.stringify({dataClass:data.dataClass,localOnly:confidential,files:siteAssets},null,2)+'\n',{mode:confidential?0o600:0o644});
+  await writeFile(resolve(output,'.build.json'),JSON.stringify({dataClass:data.dataClass,localOnly:confidential,releaseVersion,files:siteAssets},null,2)+'\n',{mode:confidential?0o600:0o644});
   console.log(`Built ${data.dataClass}: ${output}\n${confidential?'LOCAL ONLY: not a publication artifact.':publicBuild?'Reviewed public metadata only. No manuscript files included.':'Synthetic demonstration only. No deployment performed.'}`);
 } catch(error) {console.error(error.message);process.exitCode=1;}

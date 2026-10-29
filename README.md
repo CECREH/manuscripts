@@ -1,10 +1,10 @@
 # CECREH manuscript register
 
-A responsive, read-only register of manuscript metadata: scope, writing stage, journal state, observed byline, local-version evidence, current draft links and next actions. Writing and journal status are separate. Pending-scope records stay outside the confirmed-scope count.
+A responsive, read-only register of manuscript metadata: writing stage, journal state, observed byline, local-version evidence, current draft links and next actions. Writing and journal status are separate. Every listed paper appears in one searchable list.
 
-The owner approved a **public metadata tracker** with `noindex, nofollow` and no inbound navigation links added elsewhere. Manuscript files remain separate on OneDrive. The initial release has **19 records: 7 supported by a dated CECREH inventory and 12 awaiting scope or identity confirmation**. Each record now links to an inspected manuscript copy in OneDrive. The newest author-approved version remains visibly unconfirmed. This is a provisional inventory, not a claim that every manuscript or present status has been confirmed.
+The owner approved a **public metadata tracker** with `noindex, nofollow` and no inbound navigation links added elsewhere. Manuscript files remain separate on OneDrive. The audited release has **18 manuscript entries in one list**. One additional record is privately retained while its relationship to another paper is resolved. No source or OneDrive files were deleted. Each listed record links to an inspected manuscript copy in OneDrive. The newest author-approved version remains visibly unconfirmed. This is a provisional inventory, not a claim that every manuscript or present status has been confirmed.
 
-The owner authorized publication of inspected abstracts and labeled summaries: 18 abstracts and one summary for an empty Abstract section. MS-0007 uses the owner-selected Word render dated April 16, 2026; its current OneDrive version and relationship to MS-0003 remain unconfirmed. Expand “Read abstract” or “Read source-grounded summary” on a card; keyword search includes this text.
+The owner authorized publication of inspected abstracts and labeled summaries: 17 abstracts and one summary for an empty Abstract section. MS-0007 uses the owner-selected Word render dated April 16, 2026; its current OneDrive version and relationship to MS-0003 remain unconfirmed. Expand “Read abstract” or “Read source-grounded summary” on a card; keyword search includes this text.
 
 No full manuscript text/files, reviewer letters, local source paths, raw research data, access-granting sharing URLs, analytics, cookies or browser storage are included. Search-engine directives do not make the page private.
 
@@ -19,7 +19,7 @@ npm run build:public
 npm run preview:public
 ```
 
-The loopback-only preview is at port 4173. `npm run build` and `npm run preview` instead use six synthetic fixtures. Relative asset paths support the GitHub Pages project subpath. The preview server serves only allowlisted site files.
+The loopback-only preview is at port 4173. `npm run build` and `npm run preview` instead use six synthetic fixtures. Relative asset paths support the GitHub Pages project subpath. Build-derived version parameters keep HTML, CSS, module imports, schema validation and JSON requests consistent across browser caches. The preview server serves only allowlisted site files.
 
 ## Data and maintenance
 
@@ -43,6 +43,6 @@ The interface uses the official red/black CECREH artwork, a neutral paper backgr
 
 ## Uploaded manuscript copies
 
-All 19 records have a prominent “Open uploaded copy” link: 16 Word, two PDF and one Markdown draft. These are resource links to the inspected copies uploaded to the selected TTU OneDrive folder. Each opened as the signed-in owner/editor, and anonymous requests redirected to Microsoft sign-in. Existing file/folder permissions apply; no sharing links or access grants were created. Parent-folder inheritance means the observed direct-member list is not a complete audience census.
+All 18 listed records have a prominent “Open uploaded copy” link: 15 Word, two PDF and one Markdown draft. All 19 uploaded files remain on OneDrive, including the privately retained ambiguous record. These are resource links to the inspected copies uploaded to the selected TTU OneDrive folder. Each opened as the signed-in owner/editor, and initial anonymous requests redirected to Microsoft sign-in. A subsequent unsigned check was denied with HTTP 403 before the sign-in page; no file content was returned. Existing file/folder permissions apply; no sharing links or access grants were created. Parent-folder inheritance means the observed direct-member list is not a complete audience census.
 
 Link destination checks do not establish the newest author-approved version. `supportingLinks.kind: manuscript` distinguishes an available inspected copy from `currentDraft`, whose canonical/current-version confirmation remains unresolved. MS-0007 retains the selected April 16, 2026 Word render; all scope, status and submission-history uncertainties remain.
