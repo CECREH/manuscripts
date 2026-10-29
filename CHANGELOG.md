@@ -8,7 +8,7 @@ Local browser tests now use the Chromium build pinned to Playwright, matching CI
 
 Removed the confirmed/pending scope tabs and badges. The public list has 18 entries; MS-0003 remains privately retained unchanged until its separate identity from MS-0007 is resolved. No duplicate relationship is asserted, IDs are not reassigned, and all 19 uploaded files remain intact. The selected MS-0007 Word version, red artwork, protected copy links and uncertainty labels are preserved.
 
-Added build-derived asset version parameters after live verification exposed a mixed cached-code/new-data load. Regression coverage includes cache consistency and exact private retention of excluded records. The identity audit documents substantive distinctions, the remaining author decision and the source evidence.
+Added build-derived asset version parameters after live verification exposed a mixed cached-code/new-data load. Regression coverage includes cache consistency and exact private retention of excluded records. The identity audit documents substantive distinctions, the remaining author decision and the source evidence. The owner explicitly approved the single-list release; local checks, CI deployment and live verification succeeded with 18 data/build and 28 browser tests.
 
 ## 2026-10-29 — official branding and protected uploaded-copy links
 
