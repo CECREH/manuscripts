@@ -80,6 +80,15 @@
       "history": {
         "linkChanges": [],
         "submissions": []
+      },
+      "abstractOrSummary": {
+        "kind": "abstract",
+        "text": "Urban flood planning increasingly requires consideration of both historical flood impacts and changing future risk. However, whether existing flood-planning systems spatially correspond to these complementary forms of risk evidence remains insufficiently understood. This study develops an integrated spatial framework to evaluate the alignment between historical and projected flood risk and flood-planning activities in Harris County, Texas. Historical flood losses derived from National Flood Insurance Program claims and future climate–housing exposure were integrated with FEMA flood hazard information, mitigation investments, property buyouts, and localized planning priorities across 1,115 census tracts. The results reveal distinct spatial patterns between historical and projected flood risk and varying levels of correspondence across planning dimensions. Limited Special Flood Hazard Area (SFHA) representation was particularly prevalent among tracts with elevated modeled future risk, while mitigation activities showed stronger correspondence with historical flood experience than with future risk. Localized planning priorities showed broader correspondence with elevated-risk areas. Integrating these dimensions identified 321 tracts where at least two independent indicators of elevated flood risk converged. In the primary tract-area analysis, 167 of these had gaps in at least two planning dimensions, including 40 with simultaneous gaps in flood-risk recognition, mitigation intervention, and localized planning priority. The proposed framework provides a spatially explicit approach for integrating multiple sources of flood-risk evidence to support climate-informed planning, targeted flood-risk management, and more resilient and sustainable urban development.",
+        "abstractPresence": "present",
+        "sourceLabel": "Aligning Urban Flood Planning with Historical and Future Risk: An Evidence-Based Framework for Climate-Informed Planning",
+        "sourceVersionLabel": "Planning v2-2 · local download",
+        "sourceCheckedOn": "2026-10-29",
+        "note": "Abstract from the inspected local version; the current shared version remains unconfirmed."
       }
     },
     {
@@ -153,6 +162,15 @@
       "history": {
         "linkChanges": [],
         "submissions": []
+      },
+      "abstractOrSummary": {
+        "kind": "abstract",
+        "text": "This evidence map examines how academic publications use reference points to interpret post-disaster housing recovery indicators. The analytical sample is conditional by design: each of the 179 English-language publications, published from 2006 through 2025, reported at least one housing-relevant indicator and at least one empirical pattern, assessment threshold, planning target, or prescriptive benchmark. We classified indicators by recovery dimension, role, or composite form, recorded the coded benchmark contexts, and grouped measures only when they represented the same quantity. Within this benchmark-positive sample, 91.5% of 1,388 indicators had at least one benchmark, including 31 indicators with both benchmarked and unbenchmarked coded contexts. Empirical patterns comprised 63.6% of the publication-normalized distribution and 60.5% in an indicator-presence sensitivity analysis; prescriptive benchmarks comprised 3.9% and 4.1%, respectively. Population groups were named in 14.1% of benchmarks, a reporting frequency rather than an equity-performance measure. Equivalent measures also rarely recurred across publications. The map covers academic publications rather than policy guidance and cannot estimate benchmark prevalence in the wider housing-recovery literature. Researchers and practitioners should identify a benchmark’s type, source, purpose, context, uncertainty, and population scope before using it to interpret recovery.",
+        "abstractPresence": "present",
+        "sourceLabel": "How Academic Publications Use Benchmarks to Interpret Post-Disaster Housing Recovery Indicators, 2006-2025",
+        "sourceVersionLabel": "Designated Word editorial master · Aug 23g",
+        "sourceCheckedOn": "2026-10-29",
+        "note": "Abstract from the designated local editorial master; the current shared version remains unconfirmed."
       }
     },
     {
@@ -226,6 +244,15 @@
       "history": {
         "linkChanges": [],
         "submissions": []
+      },
+      "abstractOrSummary": {
+        "kind": "abstract",
+        "text": "Community Development Block Grant-Disaster Recovery (CDBG-DR) grants are administered through multi-year portfolios that mature at different rates, yet national assessments often rely on final accounting ratios that conflate implementation pace with portfolio age. We analyze 130,605 Quarterly Performance Report records covering 18 disaster cohorts and 14,045 activity profiles from 2002 Q3 through 2025 Q2. Quarterly event-history and common-horizon models, a two-part backlog design, grouped out-of-sample validation, a secondary structural equation model, and spatial diagnostics track sustained financial milestones. The primary event is expenditure sustained at or above 85% of then-current cumulative obligations; 75% and 95% thresholds and a final-obligation definition test sensitivity. At the 85% real-time threshold, 77.9% of profiles reached both disbursement and expenditure milestones, and 82.8% crossed in the same quarter; among profiles with later expenditure, the median lag was two quarters. Directly observed housing-administration employment and payroll were available for only 119 of 590 jurisdiction profiles. Resource associations were strongest early but weakened over follow-up and were not stable across common-horizon, multiplicity-adjusted, or grouped prediction tests. Workload associations were likewise sensitive to portfolio maturity and model specification. The secondary SEM and spatial analyses support a cautious interpretation: timing patterns are more stable than capacity coefficients or county rankings. The study establishes national financial-implementation benchmarks and a transparent framework for distinguishing upstream delays from expenditure backlogs, supporting monitoring and technical assistance without ranking governmental competence.",
+        "abstractPresence": "present",
+        "sourceLabel": "Financial Implementation Timing and Administrative Capacity in U.S. CDBG-DR Recovery",
+        "sourceVersionLabel": "September local draft · newer revision reported",
+        "sourceCheckedOn": "2026-10-29",
+        "note": "Abstract from the inspected local version; the current shared version remains unconfirmed."
       }
     },
     {
@@ -302,6 +329,15 @@
       "history": {
         "linkChanges": [],
         "submissions": []
+      },
+      "abstractOrSummary": {
+        "kind": "abstract",
+        "text": "Flood maps designate Special Flood Hazard Areas (SFHAs) for insurance and risk communication, but damage frequently extends beyond their boundaries. Across 83,360 tracts, we compare 2010–2024 disaster-assistance registrations, National Flood Insurance Program (NFIP) claims, and 2024 uptake. Mapped zones account for 50% of variation explained for uptake but 6% for the declaration-adjusted registration rate in states left out of training (95% interval for the difference 0.10 to 0.64). Hydrology accounts for 87% of variation in the rate, but its difference from uptake is uncertain (-0.31 to 0.59). Of claims with rating zones, 26.8% fell outside SFHAs and represented 23.2% of paid losses. Screening identifies 1,348 tracts with high hydrologic susceptibility, little SFHA exposure, and low uptake. Across eight screen definitions, selected tracts have higher renter, poverty, Black, Hispanic, and multifamily shares than other tracts in their states, while NFIP uptake averages below one active policy term per 1,000 housing units.",
+        "abstractPresence": "present",
+        "sourceLabel": "Mapped flood zones track U.S. flood insurance uptake more closely than recorded flood burden",
+        "sourceVersionLabel": "Hydrologic blind-spot manuscript · Aug 27 review record",
+        "sourceCheckedOn": "2026-10-29",
+        "note": "Abstract from the inspected local version; the current shared version remains unconfirmed."
       }
     },
     {
@@ -377,6 +413,15 @@
       "history": {
         "linkChanges": [],
         "submissions": []
+      },
+      "abstractOrSummary": {
+        "kind": "abstract",
+        "text": "Neighborhood flood adaptation needs estimates of insured claims after selected severe-rainfall events alongside maps of high risk. We estimate residential National Flood Insurance Program (NFIP) claim counts per selected extreme-rainfall event for Harris County, Texas, using a census tract negative binomial model calibrated on NOAA nClimGrid-Daily rainfall and NFIP claims for 15 post-2009 floods. Holding out each storm in turn, the model's count-implied incidence score reaches an area under the receiver operating characteristic curve of 0.722, and its negative-binomial count mean predicts counts to within 18.4 claims per tract on average. We apply the historically calibrated model to Seasonal Trends and Analysis of Residuals Empirical Statistical Downscaling Model (STAR-ESDM) daily rainfall from CMIP6 model runs grouped by global warming level. Track A changes only rainfall while holding baseline population and insurance exposure fixed; Track B adds Houston-Galveston Area Council population projections and corresponding policies in force. Across full 20-year warming windows from 1.5°C to 4.0°C, per-event expected claim growth is concentrated in the upper tail. Median selected events range from about 4,900 to 11,300 county-total claims, while 90th-percentile events reach about 31,000 to 48,000 claims. At 4.0°C, high-growth Track B raises the median and 90th-percentile event counts by about 1.47 and 1.52 times relative to hazard-only Track A. The 4.0°C upper tail is a saturation/stress reference because the policies-in-force cap binds in the most extreme tract-event cells. These estimates are not annual expected claim totals.",
+        "abstractPresence": "present",
+        "sourceLabel": "Climate Extremes and Insurance Exposure: Projecting Future NFIP Claim Counts in Harris County, Texas",
+        "sourceVersionLabel": "Count-framework manuscript · local canonical source",
+        "sourceCheckedOn": "2026-10-29",
+        "note": "Abstract from the inspected local version; the current shared version remains unconfirmed."
       }
     },
     {
@@ -452,6 +497,15 @@
       "history": {
         "linkChanges": [],
         "submissions": []
+      },
+      "abstractOrSummary": {
+        "kind": "abstract",
+        "text": "Many flood insurance studies compare policy uptake with mapped or modeled flood risk. However, rental tenure complicates the meaning of coverage because tenants, landlords, housing units, buildings, and contents do not map cleanly onto a single insurance decision unit. This paper develops a national 2024 census-tract screen for low National Flood Insurance Program uptake relative to expected uptake predicted from observed public exposure features and tests whether renter-heavy places are overrepresented. The analysis links NFIP active-policy counts, American Community Survey tenure and housing measures, physical flood-risk features, and cumulative 2010-2024 FEMA Individuals and Households Program burden. Renter-heavy tracts show lower observed uptake relative to this exposure baseline, higher rates of high physical-risk/low-NFIP mismatch, and higher IHP valid-registration rates in descriptive profiles. The highest renter quintile has 41.9 observed NFIP policies per 1,000 housing units compared with 79.0 in the lowest renter quintile, while baseline-predicted uptake is 24.2 and 31.4 policies per 1,000 housing units in those groups. In full state fixed-effect models, each 10 percentage-point increase in renter share is associated with a 0.074-unit lower NFIP log residual, a 0.760 percentage-point higher probability of the high physical-risk/low-NFIP screen, and a 0.302 percentage-point higher probability of the priority overlap screen. Denominator sensitivity shows that the interpretation of uptake changes when policies are measured per housing unit, owner-occupied unit, or structure. The findings indicate that rental tenure is central to public flood-insurance screening, outreach, and interpretation.",
+        "abstractPresence": "present",
+        "sourceLabel": "Rental Tenure and the Geography of Flood Insurance Mismatch in the United States",
+        "sourceVersionLabel": "Rental-tenure manuscript · local canonical source",
+        "sourceCheckedOn": "2026-10-29",
+        "note": "Abstract from the inspected local version; the current shared version remains unconfirmed."
       }
     },
     {
@@ -529,6 +583,15 @@
       "history": {
         "linkChanges": [],
         "submissions": []
+      },
+      "abstractOrSummary": {
+        "kind": "unresolved",
+        "text": null,
+        "abstractPresence": "unverified",
+        "sourceLabel": "Conflicting local manuscript versions",
+        "sourceVersionLabel": null,
+        "sourceCheckedOn": null,
+        "note": "The local versions have conflicting titles and framing. Confirm the authoritative manuscript before adding its abstract or summary."
       }
     },
     {
@@ -605,6 +668,15 @@
       "history": {
         "linkChanges": [],
         "submissions": []
+      },
+      "abstractOrSummary": {
+        "kind": "abstract",
+        "text": "Housing plays a central role in post-disaster recovery, yet the pace and equity of reconstruction remain difficult to assess. We examine housing recovery after Hurricane Sandy on Staten Island using assessment data for 42,639 one- to three-family homes. Recovery is measured as the first year a parcel's improvement value returns to or exceeds its pre-storm level. To distinguish rebuilding from borough-wide price growth, we construct a donor-based, trend-adjusted benchmark that compares each damaged parcel with the median trajectory of nearby, minimally damaged homes. We use discrete-time survival models with a competing risk for removal from the tax roll and event-study trajectories to relate recovery to damage severity, storm surge exposure, and socioeconomic and structural characteristics.\n\nNominal assessments suggest rapid recovery, with median times of about two years. Trend-adjusted metrics indicate slower recovery, with medians closer to five years, and some subgroups do not reach the median within six years. Unconditionally, higher-income neighborhoods take longer to close the donor gap. Conditionally, after controlling for damage, structure, and surge, parcels in higher-income blocks recover faster, whereas parcels in blocks with larger non-White population shares, older buildings, and higher pre-storm values recover more slowly. These results show that nominal value thresholds can substantially overstate post-disaster housing recovery and highlight the need for trend-adjusted benchmarks in recovery planning.",
+        "abstractPresence": "present",
+        "sourceLabel": "Longitudinal Housing Recovery Following Hurricane Sandy: A Survival Analysis",
+        "sourceVersionLabel": "Sandy recovery manuscript · local canonical source",
+        "sourceCheckedOn": "2026-10-29",
+        "note": "Abstract from the inspected local version; the current shared version remains unconfirmed."
       }
     },
     {
@@ -690,6 +762,15 @@
             "sourceLabel": "Local project review history"
           }
         ]
+      },
+      "abstractOrSummary": {
+        "kind": "abstract",
+        "text": "Decisions made in the first 72 hours after a disaster hinge on how professionals perceive and prioritize immediate needs. To better understand these perceptions, participants in this study listed and rated short-term needs, and their verbatim responses were transformed through a scripted coding pipeline. Using ordinal-sensitive exploratory factor analysis, the responses were summarized into three correlated dimensions based on empirical loadings: Services & Information (communication, lifelines, health), Sustenance (water, food), and Financial (job). A multi-response elastic-net model, which summarized uncertainty using 95% bootstrap intervals, related these dimensions to respondent attributes. Within-person shifts were assessed via paired tests and fixed-effects robustness checks. Descriptively, water, food, and shelter anchored the perceived priorities. Most subgroup associations were small and unstable once uncertainty was made explicit, though one consistent pattern showed that respondents identifying as Asian placed slightly less emphasis on the Services & Information dimension. Researcher-practitioner contrasts were not statistically reliable after multiplicity control. Within-person comparisons showed a modest increase in the Sustenance dimension and a decrease in the Financial dimension after the performance, with no change in Services & Information. The study contributes a transparent pipeline for converting open-ended inputs into quantitative, decision-relevant summaries suited to replication and extension.",
+        "abstractPresence": "present",
+        "sourceLabel": "Prioritizing Post-Disaster Emergency Needs: Academicians’ and Practitioners’ Perspectives on Short-Term Recovery",
+        "sourceVersionLabel": "Local rendered manuscript · Jan 8, 2026",
+        "sourceCheckedOn": "2026-10-29",
+        "note": "Abstract from the inspected local version; the current shared version remains unconfirmed."
       }
     },
     {
@@ -765,6 +846,15 @@
       "history": {
         "linkChanges": [],
         "submissions": []
+      },
+      "abstractOrSummary": {
+        "kind": "abstract",
+        "text": "I estimate the long-run economic effects of the October 1998 Guadalupe River flood (FEMA DR-1257-TX) on Comal County, Texas, using a synthetic control method (SCM) and complementary difference-in-differences (DiD) designs at the ZIP code level. The SCM constructs a weighted combination of Texas counties that closely mirrors Comal County's per-capita income trajectory over 1978–1998 (pre-treatment RMSPE: $660, or 1.7 percent of the pre-period mean). Following a transitory contraction of −$2,795 in 1999, Comal County converged to its synthetic counterpart by 2001 and subsequently outperformed it by an average of $3,513 per year through 2022. A permutation-based placebo test yields p = 0.625, indicating the post-flood trajectory is unremarkable relative to the donor pool. ZIP-level DiD on business activity, housing values, and sector employment (construction, retail, food service) uniformly finds no statistically significant effect. Three robustness checks—ridge augmented SCM, wild cluster bootstrap, and HonestDiD sensitivity analysis—confirm the null. The results are consistent with the disaster economics literature: spatially concentrated floods in rapidly growing economies produce short-lived disruptions that are absorbed within two to three years.",
+        "abstractPresence": "present",
+        "sourceLabel": "Transitory Disruption or Lasting Scar? Long-Run Economic Effects of the 1998 Guadalupe River Flood",
+        "sourceVersionLabel": "Guadalupe River manuscript · local source",
+        "sourceCheckedOn": "2026-10-29",
+        "note": "Abstract from the inspected local version; the current shared version remains unconfirmed."
       }
     },
     {
@@ -838,6 +928,15 @@
       "history": {
         "linkChanges": [],
         "submissions": []
+      },
+      "abstractOrSummary": {
+        "kind": "abstract",
+        "text": "We surveyed 521 residents in a partner-recruited, non-probability SurveyMonkey sample exposed to 2020–2021 hazards across the Gulf corridor, balancing renters and homeowners (258 renters, 263 owners). We examine four core outcomes—insurance coverage, disaster assistance, displacement, and financial loss—and relate them to tenure, socioeconomic factors, self-rated damage severity, and post-event neighborhood attachment. Renters report markedly lower mixed-peril coverage than homeowners (57.3% vs 81.9%) and higher odds of displacement (OR = 2.35, 95% CI 1.82–3.03), while aid receipt tracks damage severity (OR = 2.01 per level). Attachment is positively associated with coverage, but measures are post-event and findings are associational. Results highlight tenure-linked recovery disparities in a partner-recruited Gulf sample.",
+        "abstractPresence": "present",
+        "sourceLabel": "Tenure and Attachment in Post-Disaster Recovery: Evidence from Households across the Gulf Corridor",
+        "sourceVersionLabel": "Local rendered Gulf Corridor manuscript",
+        "sourceCheckedOn": "2026-10-29",
+        "note": "Abstract from the inspected local version; the current shared version remains unconfirmed."
       }
     },
     {
@@ -928,6 +1027,15 @@
             "sourceLabel": "Dated project submission record"
           }
         ]
+      },
+      "abstractOrSummary": {
+        "kind": "abstract",
+        "text": "Comparisons of imagery and administrative data for broadband prediction depend on the outcome, feature construction and validation design. We examine whether two existing, engineered image representations add predictive information beyond rural–urban typology and other public-data baselines for an October 2020 Microsoft household-scaled usage proxy in eastern Nebraska. The original sample contains 264 ZIP identifiers linked to ZCTAs, including 261 with primary image-derived features. Matched comparisons use 255 complete cases, inherited holdout membership, ten repeats of five-fold cross-validation, and five reproducible geographic partitions. We distinguish pooled out-of-fold R², mean fold R² and skill relative to training-fold means. An audit finds that the historical 75-input benchmark includes 11 RUCA-derived columns and inconsistent within-area PCA summaries; its performance cannot be attributed solely to visual information. On the matched holdout, R² is 0.404 for RUCA, 0.470 for RUCA plus subscription share and 0.549 for coordinate kNN. Across repeated validation, their mean pooled scores are 0.300, 0.352 and 0.298, respectively. Fixed 24-feature ridge and corrected 34-summary ridge score 0.071 and 0.126 across those repeats. On the 261-area spatial partition, RUCA's mean fold R² is −0.038 while pooled R² is 0.263, illustrating the importance of scoring definitions. RUCA also retains positive predictive skill on 317 other labeled Nebraska ZIPs. These results concern the evaluated numeric representations and a retrospective usage proxy. They do not establish the information content of Street View imagery generally, service availability, household access, or an operational coverage-audit system.",
+        "abstractPresence": "present",
+        "sourceLabel": "Predicting broadband usage: A comparison of computer vision and rural-urban typology machine learning models",
+        "sourceVersionLabel": "ASAPP R1 author working revision · Oct 20",
+        "sourceCheckedOn": "2026-10-29",
+        "note": "Abstract from the inspected local version; the current shared version remains unconfirmed."
       }
     },
     {
@@ -1001,6 +1109,15 @@
       "history": {
         "linkChanges": [],
         "submissions": []
+      },
+      "abstractOrSummary": {
+        "kind": "abstract",
+        "text": "Reliable flood loss models can support rapid mitigation and recovery decisions, but their value depends on whether relationships learned from one disaster are useful in another. We evaluate tract-level National Flood Insurance Program (NFIP)-insured housing losses across 6,065 census tracts affected by the 2016 Tax Day Flood, Hurricane Harvey, and Hurricane Irma. Mean normalized loss ratio (Mean_NLR) and the probability of observed NFIP-insured loss are modeled with a parsimonious hazard-exposure-vulnerability (HEV) specification driven by precipitation, Special Flood Hazard Area (SFHA) share, insurance penetration, population density, social vulnerability, building age, and Community Rating System discounts. We used nested grouped spatial cross-validation to tune Random Forest, XGBoost, and logistic classification models while retaining OLS and spatial lag models as benchmarks. Tuned regression performance is modest, with out-of-fold R² peaking at 0.34 for Harvey and lower values for Tax Day and Irma. Binary classification is stronger, with within-event AUC of 0.81-0.90 and Harvey PR-AUC up to 0.71. Transfer is high between the two Texas events, with XGBoost AUC of 0.92-0.95. Although population density and precipitation are consistently influential, AUC declines when Texas-trained models are applied to Irma because hazard mechanisms, exposure patterns, and predictor distributions differ across regions. Because the NFIP claims used to train these models capture insured and claimed building losses with capped payments, the models are appropriate for screening observed NFIP-insured losses. These models should not be used to estimate total physical damage or as universal flood loss transfer functions.",
+        "abstractPresence": "present",
+        "sourceLabel": "Modeling NFIP-Insured Housing Losses from Texas and Florida Flood Disasters: A Comparative Analysis of Hurricane Harvey, Tax Day Flood, and Hurricane Irma",
+        "sourceVersionLabel": "Housing-loss manuscript · canonical editable source",
+        "sourceCheckedOn": "2026-10-29",
+        "note": "Abstract from the inspected local version; the current shared version remains unconfirmed."
       }
     },
     {
@@ -1074,6 +1191,15 @@
       "history": {
         "linkChanges": [],
         "submissions": []
+      },
+      "abstractOrSummary": {
+        "kind": "abstract",
+        "text": "Managing a disaster includes an organized process of preparing for, responding to, and recovering from events that cause serious harm to people, property, or the environment. It combines planning, coordination, and resource allocation so that communities can reduce risks before a crisis, act quickly while it unfolds, and rebuild once it passes. Disaster simulation is a controlled tool that replicates the conditions of a real emergency so people can practice how they would respond. It lets responders, organizations, and communities test their plans, decisions, and coordination in a safe setting before an actual disaster happens. Several attempts have been made to simulate the actual choices of the population during as well as after the disaster event. It is considered extremely difficult to synthesize large heterogeneous information and large population decisions in an uncertain situation. ABM has been used as a tool to simulate these interactions as a computer-simulated method to describe the crowd or city using simple rules for “agents” and observing the interactions between them to see the system that emerges from the thousands of small decisions. Similarly, agentic AI and AI systems have been recently developed that can act on their own, taking multiple decisions by its own instead of robotic completion of a single command with automatic adjustments until job is completed. Additionally, RAG allows a language model to pull information and retrieve relevant documents to produce grounded information. All these domain have been fully researched and applied in various sectors such as computer science , medical emergencies, robotics as well as in the disaster response. But these three methodological references is either applied separately or has been combined with either of them but throughout the literature review no system combines all three inside one architecture. This review utilizes PRISMA 2020 guidelines to map how these three domains have been applied to different scientific research paradigms between 2018 to 2026.The main focus of this review is to determine whether Retrieval-Augmented Generation (RAG), agentic AI, and Agent-Based Modeling (ABM) can be combined, to identify the methods for combining them, and later help to propose a robust integrated framework for future work that makes the responses of agents in ABM more realistic and the resulting conclusions more accurate.",
+        "abstractPresence": "present",
+        "sourceLabel": "Retrieval-Augmented Generation, Agentic AI, and Agent-Based Modeling in Disaster Management: Systematic Review",
+        "sourceVersionLabel": "Systematic review · second draft local PDF",
+        "sourceCheckedOn": "2026-10-29",
+        "note": "Abstract from the inspected local version; the current shared version remains unconfirmed."
       }
     },
     {
@@ -1147,6 +1273,15 @@
       "history": {
         "linkChanges": [],
         "submissions": []
+      },
+      "abstractOrSummary": {
+        "kind": "summary",
+        "text": "This draft assesses precipitation-driven housing exposure in Harris County, Texas, under global warming scenarios of 1.5°C to 3°C. It combines downscaled climate projections, parcel-level housing and land-use data, demographic and housing forecasts through 2050, and social vulnerability measures to compare future exposure and compound risk hotspots. The reported results highlight places where projected precipitation hazards, development and social vulnerability overlap. The draft discusses implications for land-use planning, infrastructure investment and equitable housing adaptation, while noting uncertainty at higher warming levels.",
+        "abstractPresence": "absent_in_inspected_source",
+        "sourceLabel": "Projecting Future Precipitation Risk for Housing in Socially Vulnerable Communities: A High-Resolution Climate Model Analysis of Harris County, Texas",
+        "sourceVersionLabel": "Climate–housing–population manuscript · local copy",
+        "sourceCheckedOn": "2026-10-29",
+        "note": "Source-grounded summary written for this register. The inspected draft has an empty Abstract section; this is not an author-supplied abstract."
       }
     },
     {
@@ -1222,6 +1357,15 @@
       "history": {
         "linkChanges": [],
         "submissions": []
+      },
+      "abstractOrSummary": {
+        "kind": "abstract",
+        "text": "Local governments are the front line of flood-risk regulation in the United States, yet no national, granular, reproducible dataset describes the floodplain-management content of their ordinances. The Federal Emergency Management Agency's Community Rating System (CRS) characterizes only ~1,500 of the ~22,000+ communities participating in the National Flood Insurance Program (NFIP), and only as a coarse points-based class. We use LOCUS-v1, a corpus of 2,211,516 municipal and county ordinance \"chunks\" spanning all 50 states, to build the first text-derived national inventory of local floodplain regulation. We embed the full corpus with a sentence-transformer, train a classifier on hand-labeled gold standards, and — critically — validate it with a stratified, reweighted population test rather than the enriched samples that pervade the legal-NLP literature. The flood classifier reaches population precision 0.98 and recall 0.89 and generalizes to coastal/Gulf states absent from its training labels; it identifies ~37,000 floodplain-management provisions nationally (1.7% of all ordinance text). A central empirical finding: floodplain provisions are measurably more opaque (+0.82 SD) and frame their regulatory problem as more salient (+1.05 SD) than other municipal code, a result with direct implications for theories of administrative friction in disaster recovery. We extend the inventory to a multi-label taxonomy (manufactured housing, stormwater, subdivision, building code) and report honest, population-calibrated precision for each, including a cautionary negative result: a manufactured-housing classifier that beat its keyword baseline on enriched data failed at population scale (precision 0.32) before hard-negative retraining recovered it (0.88). The inventory, models, and per-jurisdiction index are released as a public good.",
+        "abstractPresence": "present",
+        "sourceLabel": "A Validated National Inventory of Municipal Floodplain Regulation: Text Classification over 2.2 Million Local Ordinance Chunks",
+        "sourceVersionLabel": "Municipal floodplain-regulation manuscript · local source",
+        "sourceCheckedOn": "2026-10-29",
+        "note": "Abstract from the inspected local version; the current shared version remains unconfirmed."
       }
     },
     {
@@ -1299,6 +1443,15 @@
       "history": {
         "linkChanges": [],
         "submissions": []
+      },
+      "abstractOrSummary": {
+        "kind": "abstract",
+        "text": "Administrative reports combine descriptions of projects with financial accounts, but a recurring description need not measure a change in implementation. We examine this distinction using 318 quarterly Texas disaster-recovery reports covering 11 grant portfolios from 2009 Q3 to 2025 Q3. A descriptive topic model groups 44,144 text chunks into 40 topics, which are linked to reconciled cumulative financial ratios. Sections labeled as activity or location descriptions account for 96.8% of the assigned chunks; 66.5% of chunk occurrences repeat text found elsewhere in the collection. Pooled and within-portfolio associations differ substantially: their numerical signs differ in 114 of 360 comparisons on identical eligible observations, with a median absolute coefficient difference of 0.150. Some sign differences involve coefficients near zero, and the number of contributing portfolios varies by topic. Contemporaneous and lead associations therefore describe relationships within the observed reporting record rather than demonstrated forecasting performance. These findings support using text analysis to organize administrative evidence while keeping report composition, financial progress, and prospective monitoring accuracy conceptually separate.",
+        "abstractPresence": "present",
+        "sourceLabel": "Narrative Composition and Financial Reporting in Texas Disaster Recovery",
+        "sourceVersionLabel": "Narrative composition · Sep 7 revised distribution version",
+        "sourceCheckedOn": "2026-10-29",
+        "note": "Abstract from the inspected local version; the current shared version remains unconfirmed."
       }
     },
     {
@@ -1376,6 +1529,15 @@
       "history": {
         "linkChanges": [],
         "submissions": []
+      },
+      "abstractOrSummary": {
+        "kind": "abstract",
+        "text": "Disaster recovery programs generate routine narrative reports that may contain monitoring information before it is visible in lagging performance summaries. Using a within-jurisdiction study of two distinct Hurricane Harvey programs, housing and public-infrastructure recovery, carried out by Texas counties, cities, and towns, we ask whether the language administering organizations use in routine reporting is associated with the subsequent physical pace of recovery. From 5,527 quarterly activity progress narratives we extract embedding-based topic signals and link them to physical completion outcomes (housing units and households; linear feet of public improvement). Disbursement-stage language is associated with higher completions one quarter ahead, at within-jurisdiction ρ=0.25 in housing (sixteen jurisdictions) and ρ=0.33 in the larger infrastructure panel (thirty-eight jurisdictions), where it survives a wild cluster bootstrap but is concentrated in municipal reporters; in both programs the lead carries information beyond the outcome’s own autoregressive dynamics and is absent at backward and longer horizons. The grain of analysis determines what the narrative appears to predict: the association that is stable within jurisdictions is invisible in the pooled cross-jurisdiction comparison, and the one pooled association that clears the multiplicity threshold reflects cross-place composition rather than within-place dynamics. The remaining signals are program-specific: a delivery-cost vocabulary that coincides with suppressed housing completions, and an infrastructure design-to-completion gradient with no housing analogue. The evidence is exploratory rather than causal and rests on a modest number of sustained-reporting jurisdictions, but it identifies a concrete, interpretable candidate monitoring signal that appears across two programs.",
+        "abstractPresence": "present",
+        "sourceLabel": "Recovery Narratives as Signals of Rebuilding Pace",
+        "sourceVersionLabel": "Harvey recovery narratives · Jun 9 local version",
+        "sourceCheckedOn": "2026-10-29",
+        "note": "Abstract from the inspected local version; the current shared version remains unconfirmed."
       }
     },
     {
@@ -1451,6 +1613,15 @@
       "history": {
         "linkChanges": [],
         "submissions": []
+      },
+      "abstractOrSummary": {
+        "kind": "abstract",
+        "text": "Reliable broadband connectivity is increasingly critical to disaster response, yet existing vulnerability frameworks rarely account for the intersection of natural hazard exposure, communication infrastructure fragility, and community coping capacity. This paper introduces the Hazard-Adjusted Broadband Reliability Index (HABRI), a composite index that quantifies broadband outage risk at the census tract level across North Carolina. HABRI integrates three sub-indices: Hazard Exposure (H_E) derived from FEMA National Risk Index scores for inland flooding, hurricanes, and landslides; Infrastructure Fragility (I_F) measured by cellular tower density, broadband latency, and road network centrality; and Community Coping Capacity (C_C) drawn from American Community Survey socioeconomic indicators. Applied to all 2,660 census tracts across 100 NC counties, HABRI scores range from 0.20 to 0.82 (mean = 0.495, SD = 0.106). Validation against three independent Hurricane Helene (September 2024) datasets — Ookla fixed-network latency degradation (Spearman ρ = −0.113, p < 0.001, n = 2,650), FCC Disaster Information Reporting System county-level cell outages (ρ = 0.236, p = 0.018, n = 100), and IODA autonomous system outage telemetry — confirms that HABRI identifies communities that experienced real connectivity failures. K-means clustering reveals three vulnerability profiles: Power-Dependent communities (51%, mean HABRI = 0.44), Dual-Risk communities (40%, mean HABRI = 0.57), and Transport-Fragile communities (9%, mean HABRI = 0.47), each requiring distinct resilience interventions. Weight sensitivity analysis demonstrates rank stability across five alternative weighting schemes (Spearman ρ > 0.85). HABRI provides emergency managers, broadband planners, and policymakers with an actionable, reproducible, and updatable tool for prioritizing resilience investments.",
+        "abstractPresence": "present",
+        "sourceLabel": "Mapping Broadband Vulnerability to Natural Hazards: The Hazard-Adjusted Broadband Reliability Index for North Carolina",
+        "sourceVersionLabel": "HABRI North Carolina manuscript · local draft",
+        "sourceCheckedOn": "2026-10-29",
+        "note": "Abstract from the inspected local version; the current shared version remains unconfirmed."
       }
     }
   ]

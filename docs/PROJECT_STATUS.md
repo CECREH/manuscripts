@@ -7,9 +7,11 @@ Updated October 29, 2026.
 - Separate static tracker implemented with search, stage/journal/person filters, sorting, overview counts, expandable details and separate scope-confirmation queue.
 - Local drive and synced OneDrive inventory performed. Nineteen records were reconciled; seven are supported by a dated CECREH inventory, twelve await scope or identity confirmation. The original five IDs are preserved.
 - Observed bylines and local authority/version evidence are distinct from lead assignments and current OneDrive confirmations. Historical writing and journal evidence is dated and flagged when stale.
-- Public metadata dataset separated from synthetic fixtures and confidential source receipts/history. No manuscript text, files, protected URLs, internal review notes or local paths are in the release.
+- Public metadata dataset separated from synthetic fixtures and confidential source receipts/history. No full manuscripts, protected URLs, internal review notes or local paths are in the release. The owner subsequently authorized abstracts and labeled summaries.
 - Public build includes noindex/nofollow. The deployment uploads only allowlisted public assets. No inbound navigation additions are made to other CECREH repositories.
 - Schema validation, history checks, accessibility/mobile tests and documented maintainer/backup workflow are implemented.
+
+- Abstract enhancement prepared: 17 source abstracts, one grounded summary for an empty Abstract section, and one unresolved source-title conflict. Source labels, version labels and inspection dates accompany the text. Search includes descriptions.
 
 ## Release state
 
@@ -22,9 +24,9 @@ The owner explicitly deferred completing manuscript links: “We can get all the
 - Deferred by owner: verify the current OneDrive destination and intended access boundary for each of the 19 records; no public manuscript links are released yet.
 - Assign one maintainer and one backup, plus manuscript leads/stewards and next-action owners.
 - Refresh the seven dated CECREH scope memberships; resolve the other twelve candidates.
-- Reconcile the audit-protocol/financial-implementation identity and source-title conflict without merging by topic.
+- Reconcile the audit-protocol/financial-implementation identity and source-title conflict without merging by topic; MS-0007 abstract/summary remains unresolved.
 - Confirm current author lists and journal states with the manuscript teams. Local submission records are historical evidence, not a live portal check.
 - Confirm any agreed action dates. No team deadlines are inferred. The ASAPP record separately notes its source-reported journal recommendation.
 - Continue discovery as new manuscripts are identified; this inventory is provisional.
 
-Manuscript source projects were read only. No analyses were rerun and no manuscript content was edited or copied into the site.
+Manuscript source projects were read only. No analyses were rerun and no manuscript source content was edited. Only the explicitly authorized abstracts and labeled summary were copied/written into the tracker.

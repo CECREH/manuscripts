@@ -1,6 +1,6 @@
 # Record dictionary
 
-The executable contract is [manuscripts.schema.json](../schema/manuscripts.schema.json), schema version 1. Core object properties are required; optional facts use JSON `null`. The additive `authors`, `localVersion`, status `reportedOn` and `publicLinkReviews` fields are optional for older/local fixtures. Unknown properties are rejected. Dates are real ISO `YYYY-MM-DD` calendar dates. Evidence dates cannot be later than the snapshot; due dates may be future dates. Links require HTTPS without embedded credentials.
+The executable contract is [manuscripts.schema.json](../schema/manuscripts.schema.json), schema version 1. Core object properties are required; optional facts use JSON `null`. The additive `authors`, `localVersion`, status `reportedOn`, `publicLinkReviews` and `abstractOrSummary` fields are optional for older/local fixtures. Unknown properties are rejected. Dates are real ISO `YYYY-MM-DD` calendar dates. Evidence dates cannot be later than the snapshot; due dates may be future dates. Links require HTTPS without embedded credentials.
 
 | Field | Meaning and allowed values |
 | --- | --- |
@@ -20,6 +20,9 @@ The executable contract is [manuscripts.schema.json](../schema/manuscripts.schem
 | `writing.confirmedOn`, `.confirmedBy`, `.note` | Confirmation date/person as a pair, or both null; explanatory note may be null. A known stage without confirmation is shown as reported/currently unconfirmed. |
 | `journal.status` | `unconfirmed`, `not_submitted`, `submitted`, `under_review`, `revision_requested`, `accepted`, `published`, `withdrawn`, `rejected`. Independent of writing stage. |
 | `journal.name`, `.confirmedOn`, `.confirmedBy`, `.note` | Journal name and evidence; null where unknown. No inferred journal selection. |
+| `abstractOrSummary` | Required by the public release validator; optional for older private/demo fixtures. `kind` is `abstract`, `summary`, or `unresolved`; `text` is the inspected abstract, a grounded summary, or null. |
+| `abstractOrSummary.abstractPresence` | `present` for an abstract; `absent_in_inspected_source` only after checking an available source with no abstract; `unverified` for unresolved content. An unavailable source is never evidence of absence. |
+| `abstractOrSummary.sourceLabel`, `.sourceVersionLabel`, `.sourceCheckedOn`, `.note` | Human-readable source and version, inspection date, and content/version limits. Resolved text requires a version label and inspection date. Unresolved content has null text/date. No private paths. |
 | `lead`, `steward` | Manuscript lead and metadata steward, individually nullable. They do not specify authorship order. |
 | `authors` | Optional observed `names` in source order and `note` describing the evidence. Not a current author-order confirmation or lead assignment. Names are searchable/filterable. |
 | `localVersion` | Optional `authority` (`canonical`, `candidate`, `conflict`), safe `versionLabel`, nullable `versionDate`, inspection `checkedOn`, and `note`. No local path. Does not establish the latest cloud version. |
@@ -40,3 +43,5 @@ The executable contract is [manuscripts.schema.json](../schema/manuscripts.schem
 “Needs attention” includes an unconfirmed current draft, a stale draft confirmation, an unconfirmed/stale source, old scope confirmation or status report, an open blocker, or an overdue agreed action. Overview attention/draft counts include non-archived confirmed-scope records and pending candidates, and exclude the archive. Filtered result counts are separate. The archive never inflates the confirmed-scope inventory count.
 
 Sorting by agreed due date puts undated/proposed actions last. Sorting by source confirmation puts unconfirmed sources first, then oldest confirmed dates. The app never stores search terms in a URL or persistent browser storage.
+
+Abstract and summary text is included in keyword search. The interface labels source-provided abstracts separately from summaries written for the register and never treats the description inspection date as confirmation of the current shared draft.

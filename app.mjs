@@ -5,6 +5,7 @@ const baseFilters = {query:'',group:'active',stage:'all',journal:'all',person:'a
 let filters = {...baseFilters};
 let data = null;
 const expanded = new Set();
+const descriptionsExpanded = new Set();
 const dateFormat = new Intl.DateTimeFormat('en-US',{month:'short',day:'numeric',year:'numeric',timeZone:'UTC'});
 const formatDate = date => date ? dateFormat.format(new Date(date+'T00:00:00Z')) : 'Unconfirmed';
 const node = (tag, className='', text='') => {
@@ -35,6 +36,21 @@ function termList(pairs) {
   return dl;
 }
 function section(title,...children) {return add(node('section'),node('h4','',title),...children);}
+function renderDescription(r) {
+  const description=r.abstractOrSummary;
+  if(!description||description.kind==='unresolved') {
+    return add(node('aside','synopsis-unresolved'),node('strong','','Abstract / summary unresolved'),paragraph(description?.note||'The manuscript description has not been checked against an available source.'));
+  }
+  const isAbstract=description.kind==='abstract';
+  const details=node('details','synopsis');details.open=descriptionsExpanded.has(r.id);
+  details.addEventListener('toggle',()=>{if(details.open) descriptionsExpanded.add(r.id);else descriptionsExpanded.delete(r.id);});
+  const summary=add(node('summary'),node('span','',isAbstract?'Read abstract':'Read source-grounded summary'),node('span','synopsis-kind',isAbstract?'Inspected local version':'No abstract in inspected draft'),node('span','chevron','+'));
+  summary.lastChild.setAttribute('aria-hidden','true');
+  const body=add(node('div','synopsis-body'),node('h4','',isAbstract?'Abstract':'Summary — written for this register'));
+  for(const text of description.text.split(/\n\s*\n/)) body.append(paragraph(text,'synopsis-text'));
+  body.append(add(node('div','synopsis-source'),paragraph(`Source: ${description.sourceLabel}`),paragraph(`${description.sourceVersionLabel} · Checked ${formatDate(description.sourceCheckedOn)}`),paragraph(description.note)));
+  return add(details,summary,body);
+}
 function renderCard(r) {
   const today=todayUTC();
   const article=node('article',`manuscript ${r.scope.status==='candidate'?'candidate':''}`);
@@ -83,7 +99,7 @@ function renderCard(r) {
   const overdue=due.dueStatus==='agreed'&&due.dueDate<today;
   const dueText=due.dueStatus==='unconfirmed'?'Agreed due date: Unconfirmed':`${due.dueStatus==='proposed'?'Proposed target':'Agreed due'}: ${formatDate(due.dueDate)}${overdue?' · Overdue':''}`;
   actionMeta.append(node('div',overdue?'overdue':due.dueStatus==='proposed'?'proposed':'',dueText));
-  add(article,main,add(node('div','action-row'),actionCopy,actionMeta));
+  add(article,main,renderDescription(r),add(node('div','action-row'),actionCopy,actionMeta));
   const reasons=attentionReasons(r,data.staleAfterDays,today);
   if(reasons.length) article.append(add(node('div','attention-strip'),...reasons.map(reason=>node('span','attention-chip',reason))));
   const details=node('details','record-details');

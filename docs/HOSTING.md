@@ -2,7 +2,7 @@
 
 ## Approved release
 
-On October 29, 2026 the owner explicitly approved public manuscript tracker metadata on the CECREH GitHub site, requested a search-engine noindex flag, and directed that the tracker not be linked elsewhere in repository navigation. Manuscript files remain on OneDrive. This supersedes the October 26 private-hosting hold.
+On October 29, 2026 the owner explicitly approved public manuscript tracker metadata on the CECREH GitHub site, requested a search-engine noindex flag, and directed that the tracker not be linked elsewhere in repository navigation. The owner subsequently authorized abstracts, or labeled source-grounded summaries when an inspected manuscript lacks an abstract. Manuscript files remain on OneDrive. This supersedes the October 26 private-hosting hold.
 
 The destination is a separate public `CECREH/manuscripts` repository and its GitHub Pages project site. Do not change other repository permissions, invite collaborators, add credentials, install authentication services or use another host. No grants-site, organization-profile, or atlas navigation changes are part of this release.
 
@@ -10,7 +10,7 @@ The destination is a separate public `CECREH/manuscripts` repository and its Git
 
 ## Contents
 
-Publish only reviewed titles and status metadata, observed bylines, source/version dates, scope caveats and suggested next actions. Do not publish manuscript bodies, internal research/reviewer notes, participant data, file-system paths or credentials.
+Publish reviewed titles and status metadata, observed bylines, source/version dates, scope caveats, suggested next actions, and the explicitly authorized abstracts/summaries. Keep their inspected version and source-check date visible; unresolved content stays null. Do not publish full manuscripts or other body sections, internal research/reviewer notes, participant data, file-system paths or credentials.
 
 The initial release publishes no manuscript URLs. Each link is unresolved until the owner or steward verifies the current OneDrive version and its existing intended audience. Never assume that a sharing link requires sign-in or is view-only. Do not broaden OneDrive sharing. Add a `publicLinkReviews` entry only after reading the destination and access settings. Current-draft URLs must additionally have current-version confirmation and append-only history.
 

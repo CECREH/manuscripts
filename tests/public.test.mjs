@@ -26,6 +26,22 @@ test('public gate rejects private paths, email addresses and unreviewed draft li
   assert.ok(validateData(changed).some(e=>/every public link requires/.test(e)));
   assert.ok(validateData(changed).some(e=>/version-confirmed/.test(e)));
 });
+test('abstracts, absent-abstract summaries and unresolved descriptions require distinct evidence',()=>{
+  const count=kind=>data.records.filter(r=>r.abstractOrSummary.kind===kind).length;
+  assert.deepEqual([count('abstract'),count('summary'),count('unresolved')],[17,1,1]);
+  assert.equal(data.records.find(r=>r.id==='MS-0007').abstractOrSummary.text,null);
+  assert.equal(data.records.find(r=>r.id==='MS-0015').abstractOrSummary.abstractPresence,'absent_in_inspected_source');
+  const benchmark=data.records.find(r=>r.id==='MS-0002').abstractOrSummary;
+  assert.match(benchmark.sourceVersionLabel,/editorial master/);assert.match(benchmark.text,/benchmark-positive sample/);
+  for(const mutate of [
+    d=>{delete d.records[0].abstractOrSummary;},
+    d=>{d.records[0].abstractOrSummary.sourceCheckedOn=null;},
+    d=>{d.records[0].abstractOrSummary.kind='summary';d.records[0].abstractOrSummary.abstractPresence='unverified';},
+    d=>{d.records[0].abstractOrSummary.kind='unresolved';},
+  ]) {const changed=structuredClone(data);mutate(changed);assert.ok(validateData(changed).length);}
+  const results=selectRecords(data.records,{query:'saturation/stress reference',group:'active',stage:'all',journal:'all',person:'all',attention:false,sort:'title'},30);
+  assert.deepEqual(results.map(r=>r.id),['MS-0005']);
+});
 test('public release requires explicit build intent and excludes manuscript/source evidence files',async()=>{
   const refused=spawnSync(process.execPath,['scripts/build.mjs','--data','data/public-manuscripts.json'],{encoding:'utf8'});
   assert.equal(refused.status,1);assert.match(refused.stderr,/explicit --public/);

@@ -36,3 +36,11 @@ Review pending scope, missing links, unassigned roles and stale confirmations on
 Invalid data fails closed with no partial records displayed. Fix the validator's reported field and retry. Preserve unavailable or superseded public links in history and label uncertainty. Restore from an accepted commit if needed; compare IDs and histories before redeploying. If confidential information is accidentally published, stop further publication and follow the owner's incident procedure; deletion does not retract previous downloads.
 
 After every completed task, update `docs/PROJECT_STATUS.md`, `docs/VERIFICATION.md` and the change log with what changed, what was checked, and what remains.
+
+## Abstracts and summaries
+
+Inspect the recorded authoritative local source and its project documentation. Check metadata, companion files and the designated editorial master before declaring an abstract absent. Preserve the source abstract's language, with presentation-only normalization of line wrapping or simple markup. Keep exact source paths and hashes in the private evidence ledger.
+
+If an inspected manuscript has no abstract, write a short summary grounded in its actual body, label it `summary`, and set `abstractPresence: absent_in_inspected_source`. Do not summarize from a title alone. If the source is unavailable or its identity/content cannot be verified, use `unresolved` with null text and source-check date. Do not replace an unresolved source with an invented summary.
+
+Set a safe source label, version label, inspection date and a note about version limits for published text. Publication authorization covers abstracts and these labeled summaries, not full manuscript files, other body sections, internal reviews or private paths. A locally inspected abstract does not confirm the latest OneDrive version. Retain the existing deferred draft-link workflow and permissions.

@@ -1,5 +1,15 @@
 # Verification record
 
+## Abstract enhancement — October 29, 2026
+
+Local `npm run check` passes **15 data/build tests and 21 browser tests**. The release adds 17 source abstracts, one explicitly labeled source-grounded summary, and one unresolved description. All prior record fields, IDs, histories, links and status confirmations are unchanged.
+
+The new checks enforce the distinction between an inspected abstract, a summary supported by a checked source with no abstract, and unverified content that must remain null. They cover description keyword search, source/version/date labels, safe text rendering, keyboard disclosure, 320px/390px expanded abstracts and automated accessibility scans. No tested WCAG violations or horizontal overflow were found. Desktop and mobile abstract screenshots were inspected.
+
+Private extraction receipts record source hashes and the exact published-text hashes. The benchmark abstract comes from the explicitly designated Word editorial master; the empty Abstract section in MS-0015 supports the body-grounded summary. MS-0007 remains unresolved because its manuscript title/framing differs across local versions. No internal author-review notes or other manuscript sections are copied into the site.
+
+Screenshots: `artifacts/abstract-desktop.png`, `artifacts/summary-desktop.png`, and `artifacts/public-mobile-390-details.png` (also 320px). These remain local and Git-ignored. Remote release evidence will be recorded after deployment.
+
 ## Local release checks — October 29, 2026
 
 `npm run check` passed with Node 22.20.0 and the pinned dependencies:
