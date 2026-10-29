@@ -1,6 +1,14 @@
 # Verification record
 
-## Abstract enhancement — October 29, 2026
+## MS-0007 selected Word abstract — October 29, 2026
+
+The owner selected the audit-protocol Word render and explicitly authorized publication of its actual abstract. Only MS-0007's description and local-version label/date/note change; all other records, IDs, histories, scope/status confirmations and draft links are preserved. The Word source matches its previously inspected hash, and the excerpt is the exact paragraph immediately following Abstract. April 16, 2026 comes from embedded creation/modification metadata; June 6 is a later distribution-copy date. Current OneDrive authority and the relationship to MS-0003 remain unconfirmed.
+
+The public dataset now contains 18 abstracts and one labeled summary. Schema validation, both builds, **15 data/build tests and 22 browser tests passed**. The expanded MS-0007 abstract was checked at 320px and 390px with no horizontal overflow or tested accessibility violations; desktop and mobile screenshots were inspected. Unresolved-description behavior remains covered using a deliberately unverified test fixture. The first browser-test launch could not bind its loopback server inside the sandbox; the permitted rerun passed. Deployment evidence will be recorded after live verification.
+
+Local screenshots: `artifacts/ms0007-word-desktop.png`, `artifacts/ms0007-word-mobile-320.png` and `artifacts/ms0007-word-mobile-390.png`. The private extraction receipt includes the source/document timestamps and exact published-text hash. No schema or application code change was necessary.
+
+## Initial abstract enhancement — October 29, 2026
 
 Local `npm run check` passes **15 data/build tests and 21 browser tests**. The release adds 17 source abstracts, one explicitly labeled source-grounded summary, and one unresolved description. All prior record fields, IDs, histories, links and status confirmations are unchanged.
 

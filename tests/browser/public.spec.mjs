@@ -29,22 +29,35 @@ test('public candidates retain distinct identities and historical submission evi
 for(const width of [320,390])test(`public metadata ${width}px mobile has no overflow and accessible disclosures`,async({page})=>{
   await page.setViewportSize({width,height:844});await load(page);await page.screenshot({path:`artifacts/public-mobile-${width}-top.png`,fullPage:false});
   await page.locator('summary').first().click();await a11y(page);expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
-  await page.getByRole('button',{name:'Pending scope 12',exact:true}).click();await page.getByLabel('Search manuscripts').fill('MS-0013');
+  await page.getByRole('button',{name:'Pending scope 12',exact:true}).click();await page.getByLabel('Search manuscripts').fill('MS-0007');
   await page.locator('.synopsis>summary').first().focus();await page.keyboard.press('Enter');await expect(page.locator('.synopsis').first()).toHaveAttribute('open','');
   await a11y(page);expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
-  await page.screenshot({path:`artifacts/public-mobile-${width}-details.png`,fullPage:true});
+  await page.screenshot({path:`artifacts/ms0007-word-mobile-${width}.png`,fullPage:true});
 });
-test('abstracts and summary are readable, searchable and distinct from unresolved content',async({page})=>{
+test('abstracts and summary are readable and searchable with selected-version provenance',async({page})=>{
   await load(page);await page.getByLabel('Search manuscripts').fill('saturation/stress reference');
   await expect(page.locator('article')).toHaveCount(1);const harris=page.locator('[data-id="MS-0005"]');
   await harris.getByText('Read abstract',{exact:true}).click();await expect(harris.locator('.synopsis-text')).toContainText('These estimates are not annual expected claim totals.');
   await expect(harris.locator('.synopsis-source')).toContainText('Checked Oct 29, 2026');await a11y(page);
   await page.screenshot({path:'artifacts/abstract-desktop.png',fullPage:true});
   await page.locator('#reset').click();await page.getByRole('button',{name:'Pending scope 12',exact:true}).click();
-  const missing=page.locator('[data-id="MS-0007"]');await expect(missing.locator('.synopsis-unresolved')).toContainText('conflicting titles');await expect(missing.locator('.synopsis-text')).toHaveCount(0);
+  await page.getByLabel('Search manuscripts').fill('MS-0007');const audit=page.locator('[data-id="MS-0007"]');
+  await audit.getByText('Read abstract',{exact:true}).click();await expect(audit.locator('.synopsis-text')).toContainText('capacity-timeliness coefficient is not stably identified');
+  await expect(audit.locator('.synopsis-source')).toContainText('Selected Word render · Apr 16, 2026');
+  await expect(audit.locator('.synopsis-source')).toContainText('current OneDrive version and relationship to MS-0003 remain unconfirmed');
+  await expect(audit.locator('.synopsis-unresolved')).toHaveCount(0);await expect(audit).toContainText('Current draft link unconfirmed');
+  await a11y(page);await page.screenshot({path:'artifacts/ms0007-word-desktop.png',fullPage:true});
   await page.getByLabel('Search manuscripts').fill('MS-0015');const summary=page.locator('[data-id="MS-0015"]');
   await summary.getByText('Read source-grounded summary',{exact:true}).click();await expect(summary).toContainText('empty Abstract section');await expect(summary.locator('.synopsis-body h4')).toHaveText('Summary — written for this register');
   await a11y(page);await page.screenshot({path:'artifacts/summary-desktop.png',fullPage:true});
+});
+test('unverified source descriptions stay visibly unresolved without invented text',async({page})=>{
+  const data=await (await page.request.get('data/manuscripts.json')).json();
+  data.records.find(r=>r.id==='MS-0007').abstractOrSummary={kind:'unresolved',text:null,abstractPresence:'unverified',sourceLabel:'Source not yet verified',sourceVersionLabel:null,sourceCheckedOn:null,note:'Confirm the source before adding text.'};
+  await page.route('**/data/manuscripts.json',r=>r.fulfill({json:data}));await load(page);
+  await page.getByRole('button',{name:'Pending scope 12',exact:true}).click();await page.getByLabel('Search manuscripts').fill('MS-0007');
+  const unresolved=page.locator('[data-id="MS-0007"]');await expect(unresolved.locator('.synopsis-unresolved')).toContainText('Confirm the source before adding text.');
+  await expect(unresolved.locator('.synopsis-text')).toHaveCount(0);
 });
 test('abstract text is never interpreted as HTML',async({page})=>{
   const data=await (await page.request.get('data/manuscripts.json')).json();data.records.find(r=>r.id==='MS-0005').abstractOrSummary.text='<img src=x onerror=alert(1)> source text';

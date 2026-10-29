@@ -28,8 +28,13 @@ test('public gate rejects private paths, email addresses and unreviewed draft li
 });
 test('abstracts, absent-abstract summaries and unresolved descriptions require distinct evidence',()=>{
   const count=kind=>data.records.filter(r=>r.abstractOrSummary.kind===kind).length;
-  assert.deepEqual([count('abstract'),count('summary'),count('unresolved')],[17,1,1]);
-  assert.equal(data.records.find(r=>r.id==='MS-0007').abstractOrSummary.text,null);
+  assert.deepEqual([count('abstract'),count('summary'),count('unresolved')],[18,1,0]);
+  const audit=data.records.find(r=>r.id==='MS-0007');
+  assert.match(audit.abstractOrSummary.text,/six-item measurement-sensitivity audit protocol/);
+  assert.match(audit.abstractOrSummary.text,/not stably identified/);
+  assert.equal(audit.localVersion.versionDate,'2026-04-16');
+  assert.match(audit.abstractOrSummary.sourceVersionLabel,/Apr 16, 2026/);
+  assert.match(audit.abstractOrSummary.note,/current OneDrive version and relationship to MS-0003 remain unconfirmed/);
   assert.equal(data.records.find(r=>r.id==='MS-0015').abstractOrSummary.abstractPresence,'absent_in_inspected_source');
   const benchmark=data.records.find(r=>r.id==='MS-0002').abstractOrSummary;
   assert.match(benchmark.sourceVersionLabel,/editorial master/);assert.match(benchmark.text,/benchmark-positive sample/);
@@ -39,6 +44,8 @@ test('abstracts, absent-abstract summaries and unresolved descriptions require d
     d=>{d.records[0].abstractOrSummary.kind='summary';d.records[0].abstractOrSummary.abstractPresence='unverified';},
     d=>{d.records[0].abstractOrSummary.kind='unresolved';},
   ]) {const changed=structuredClone(data);mutate(changed);assert.ok(validateData(changed).length);}
+  const unresolved=structuredClone(data);unresolved.records[0].abstractOrSummary={kind:'unresolved',text:null,abstractPresence:'unverified',sourceLabel:'Source not yet verified',sourceVersionLabel:null,sourceCheckedOn:null,note:'Confirm the source before adding text.'};
+  assert.deepEqual(validateData(unresolved),[]);
   const results=selectRecords(data.records,{query:'saturation/stress reference',group:'active',stage:'all',journal:'all',person:'all',attention:false,sort:'title'},30);
   assert.deepEqual(results.map(r=>r.id),['MS-0005']);
 });

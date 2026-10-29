@@ -11,13 +11,15 @@ Updated October 29, 2026.
 - Public build includes noindex/nofollow. The deployment uploads only allowlisted public assets. No inbound navigation additions are made to other CECREH repositories.
 - Schema validation, history checks, accessibility/mobile tests and documented maintainer/backup workflow are implemented.
 
-- Abstract enhancement published and verified: 17 source abstracts, one grounded summary for an empty Abstract section, and one unresolved source-title conflict. Source labels, version labels and inspection dates accompany the text. Search includes descriptions.
+- Abstracts and summary: 18 source abstracts and one grounded summary for an empty Abstract section. MS-0007 now uses the owner-selected Word render dated April 16, 2026; source synchronization and manuscript identity remain separate unresolved questions. Source labels, version labels and inspection dates accompany the text. Search includes descriptions.
 
 ## Release state
 
 **Live and verified.** The public Pages site is `https://cecreh.github.io/manuscripts/`, hosted from the separate `CECREH/manuscripts` repository. Initial release commit: `87450e31aab119addd32a5b4df84f57b6705fa91`; validation and deployment run `40797452308` succeeded. Anonymous HTTP checks and a live browser check confirmed the released data, working interface and noindex/nofollow directive. Existing grants, organization-profile and atlas heads/homepages are unchanged.
 
-The abstract enhancement is live from commit `eae10c8b61ccb952e7c3e2ef3a75ebf48db03e11`; [validation and deployment run 40799927372](https://github.com/CECREH/manuscripts/actions/runs/40799927372) succeeded with 15 data/build tests and 21 browser tests. Anonymous asset hashes match the tested build. Live search, abstract and summary disclosures, source labels and the unresolved-content warning were checked. All 19 draft URLs remain unresolved; the source inspection does not confirm the current shared version.
+The initial abstract enhancement was published in commit `eae10c8b61ccb952e7c3e2ef3a75ebf48db03e11`; [validation and deployment run 40799927372](https://github.com/CECREH/manuscripts/actions/runs/40799927372) succeeded with 15 data/build tests and 21 browser tests. All 19 draft URLs remain unresolved; source inspection does not confirm the current shared version.
+
+The owner subsequently selected the MS-0007 Word abstract and explicitly authorized publishing it. Its version date comes from the April 16, 2026 embedded document metadata, not the June 6 distribution copy. The selected abstract and its provenance passed 15 data/build tests and 22 browser tests and are ready for deployment; the release result will be recorded after live verification.
 
 The owner explicitly deferred completing manuscript links: “We can get all the links working later. Get the website working for now.” Link work is therefore remaining maintenance, not a release blocker. No OneDrive permissions were changed.
 
@@ -26,7 +28,7 @@ The owner explicitly deferred completing manuscript links: “We can get all the
 - Deferred by owner: verify the current OneDrive destination and intended access boundary for each of the 19 records; no public manuscript links are released yet.
 - Assign one maintainer and one backup, plus manuscript leads/stewards and next-action owners.
 - Refresh the seven dated CECREH scope memberships; resolve the other twelve candidates.
-- Reconcile the audit-protocol/financial-implementation identity and source-title conflict without merging by topic; MS-0007 abstract/summary remains unresolved.
+- Reconcile the audit-protocol/financial-implementation identity and source synchronization without merging by topic. Selecting the MS-0007 Word abstract does not resolve its relationship to MS-0003 or establish the current OneDrive version.
 - Confirm current author lists and journal states with the manuscript teams. Local submission records are historical evidence, not a live portal check.
 - Confirm any agreed action dates. No team deadlines are inferred. The ASAPP record separately notes its source-reported journal recommendation.
 - Continue discovery as new manuscripts are identified; this inventory is provisional.

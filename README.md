@@ -4,7 +4,7 @@ A responsive, read-only register of manuscript metadata: scope, writing stage, j
 
 The owner approved a **public metadata tracker** with `noindex, nofollow` and no inbound navigation links added elsewhere. Manuscript files remain separate on OneDrive. The initial release has **19 records: 7 supported by a dated CECREH inventory and 12 awaiting scope or identity confirmation**. Every current OneDrive link is visibly unresolved. This is a provisional inventory, not a claim that every manuscript or present status has been confirmed.
 
-The owner authorized publication of inspected abstracts and labeled summaries: 17 abstracts, one summary for an empty Abstract section, and one source-conflict entry left unresolved. Expand “Read abstract” or “Read source-grounded summary” on a card; keyword search includes this text.
+The owner authorized publication of inspected abstracts and labeled summaries: 18 abstracts and one summary for an empty Abstract section. MS-0007 uses the owner-selected Word render dated April 16, 2026; its current OneDrive version and relationship to MS-0003 remain unconfirmed. Expand “Read abstract” or “Read source-grounded summary” on a card; keyword search includes this text.
 
 No full manuscript text/files, reviewer letters, local source paths, raw research data, protected sharing URLs, analytics, cookies or browser storage are included. Search-engine directives do not make the page private.
 
