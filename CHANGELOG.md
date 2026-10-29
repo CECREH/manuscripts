@@ -1,5 +1,9 @@
 # Change log
 
+## 2026-10-29 — reproducible browser checks
+
+Local browser tests now use the Chromium build pinned to Playwright, matching CI. The complete validation command exits successfully with 18 data/build tests and 28 browser tests; the earlier cleanup hang is resolved.
+
 ## 2026-10-29 — one audited manuscript list
 
 Removed the confirmed/pending scope tabs and badges. The public list has 18 entries; MS-0003 remains privately retained unchanged until its separate identity from MS-0007 is resolved. No duplicate relationship is asserted, IDs are not reassigned, and all 19 uploaded files remain intact. The selected MS-0007 Word version, red artwork, protected copy links and uncertainty labels are preserved.

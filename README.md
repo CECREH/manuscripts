@@ -2,7 +2,7 @@
 
 A responsive, read-only register of manuscript metadata: writing stage, journal state, observed byline, local-version evidence, current draft links and next actions. Writing and journal status are separate. Every listed paper appears in one searchable list.
 
-The owner approved a **public metadata tracker** with `noindex, nofollow` and no inbound navigation links added elsewhere. Manuscript files remain separate on OneDrive. The prepared, unpublished single-list update has **18 manuscript entries**. The live site currently remains on the earlier 19-entry/tabbed release pending explicit publication approval. One additional record is privately retained while its relationship to another paper is resolved. No source or OneDrive files were deleted. Each listed record links to an inspected manuscript copy in OneDrive. The newest author-approved version remains visibly unconfirmed. This is a provisional inventory, not a claim that every manuscript or present status has been confirmed.
+The owner approved a **public metadata tracker** with `noindex, nofollow` and no inbound navigation links added elsewhere. Manuscript files remain separate on OneDrive. The approved single-list update has **18 manuscript entries** and has passed the full local checks. Deployment verification is recorded in the project status and verification documents. One additional record is privately retained while its relationship to another paper is resolved. No source or OneDrive files were deleted. Each listed record links to an inspected manuscript copy in OneDrive. The newest author-approved version remains visibly unconfirmed. This is a provisional inventory, not a claim that every manuscript or present status has been confirmed.
 
 The owner authorized publication of inspected abstracts and labeled summaries: 17 abstracts and one summary for an empty Abstract section. MS-0007 uses the owner-selected Word render dated April 16, 2026; its current OneDrive version and relationship to MS-0003 remain unconfirmed. Expand “Read abstract” or “Read source-grounded summary” on a card; keyword search includes this text.
 
@@ -14,12 +14,13 @@ Use Node 22 or later and the pinned development dependencies. The website has no
 
 ```sh
 npm ci --ignore-scripts
+npx playwright install chromium
 npm run check
 npm run build:public
 npm run preview:public
 ```
 
-The loopback-only preview is at port 4173. `npm run build` and `npm run preview` instead use six synthetic fixtures. Relative asset paths support the GitHub Pages project subpath. Build-derived version parameters keep HTML, CSS, module imports, schema validation and JSON requests consistent across browser caches. The preview server serves only allowlisted site files.
+Local and CI tests use the Chromium version pinned to Playwright, rather than a separately updated system Chrome. `PLAYWRIGHT_BROWSERS_PATH` may point to a task-local browser cache. The loopback-only preview is at port 4173. `npm run build` and `npm run preview` instead use six synthetic fixtures. Relative asset paths support the GitHub Pages project subpath. Build-derived version parameters keep HTML, CSS, module imports, schema validation and JSON requests consistent across browser caches. The preview server serves only allowlisted site files.
 
 ## Data and maintenance
 
