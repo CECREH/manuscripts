@@ -19,7 +19,7 @@ Updated October 29, 2026.
 
 The initial abstract enhancement was published in commit `eae10c8b61ccb952e7c3e2ef3a75ebf48db03e11`; [validation and deployment run 40799927372](https://github.com/CECREH/manuscripts/actions/runs/40799927372) succeeded with 15 data/build tests and 21 browser tests. All 19 draft URLs remain unresolved; source inspection does not confirm the current shared version.
 
-The owner subsequently selected the MS-0007 Word abstract and explicitly authorized publishing it. Its version date comes from the April 16, 2026 embedded document metadata, not the June 6 distribution copy. The selected abstract and its provenance passed 15 data/build tests and 22 browser tests and are ready for deployment; the release result will be recorded after live verification.
+The owner subsequently selected the MS-0007 Word abstract and explicitly authorized publishing it. Its version date comes from the April 16, 2026 embedded document metadata, not the June 6 distribution copy. It is published in commit `2847facc91e42f251ec0d53d64f3f680dff373db`; [validation and deployment run 40803422001](https://github.com/CECREH/manuscripts/actions/runs/40803422001) succeeded with 15 data/build tests and 22 browser tests. Anonymous live asset hashes match the tested build. Live browser inspection confirmed the exact abstract, selected-version/date labels and remaining uncertainty caveats.
 
 The owner explicitly deferred completing manuscript links: “We can get all the links working later. Get the website working for now.” Link work is therefore remaining maintenance, not a release blocker. No OneDrive permissions were changed.
 

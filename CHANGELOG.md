@@ -4,6 +4,8 @@
 
 Added the actual abstract from the owner-selected audit-protocol Word render with explicit publication authorization. Labels identify its April 16, 2026 rendered-version metadata rather than the June distribution copy. Current OneDrive authority, source synchronization and the relationship to MS-0003 remain unconfirmed. The inventory now has 18 abstracts and one labeled summary; all other records, deferred draft links and site protections remain unchanged.
 
+Published and verified live after 15 data/build tests and 22 browser tests passed locally and remotely. The live abstract exactly matches the selected source paragraph; rendered-version labels, uncertainty caveats, noindex/nofollow and unchanged surrounding records were verified.
+
 ## 2026-10-29 — abstracts and summary
 
 Added inspected manuscript abstracts or a clearly labeled grounded summary, with source/version/date provenance and searchable, keyboard-accessible disclosures. Seventeen abstracts are present; one inspected empty Abstract section receives a summary; one source-title conflict remains unresolved. Full manuscript files and internal notes stay private. Draft-link completion remains deferred.
