@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "CECREH manuscript register. Static client; synthetic demonstration data only in source control.",
+  "description": "CECREH manuscript register with reviewed public metadata and separate synthetic test fixtures.",
   "scripts": {
     "schema": "node scripts/compile-schema.mjs",
     "validate": "node scripts/validate.mjs data/manuscripts.json",
@@ -11,7 +11,10 @@
     "test:ui": "playwright test",
     "build": "node scripts/build.mjs",
     "preview": "node scripts/serve.mjs --root dist/demo --port 4173",
-    "check": "npm run schema && npm run validate && npm test && npm run build && npm run test:ui"
+    "check": "npm run schema && npm run validate && npm run validate:public && npm test && npm run build && npm run build:public && npm run test:ui",
+    "validate:public": "node scripts/validate.mjs data/public-manuscripts.json",
+    "build:public": "node scripts/build.mjs --public",
+    "preview:public": "node scripts/serve.mjs --root dist/public --port 4173"
   },
   "devDependencies": {
     "@axe-core/playwright": "4.10.2",

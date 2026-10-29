@@ -20,7 +20,8 @@
     "dataClass": {
       "enum": [
         "synthetic_demo",
-        "confidential"
+        "confidential",
+        "public_metadata"
       ]
     },
     "snapshotDate": {
@@ -55,6 +56,32 @@
       "type": "array",
       "items": {
         "$ref": "#/$defs/record"
+      }
+    },
+    "publicLinkReviews": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "url",
+          "checkedOn",
+          "audienceNote"
+        ],
+        "properties": {
+          "url": {
+            "type": "string",
+            "pattern": "^https://[^\\s]+$",
+            "maxLength": 2500
+          },
+          "checkedOn": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+          },
+          "audienceNote": {
+            "$ref": "#/$defs/text"
+          }
+        }
       }
     }
   },
@@ -146,6 +173,9 @@
         },
         "note": {
           "$ref": "#/$defs/nullableText"
+        },
+        "reportedOn": {
+          "$ref": "#/$defs/date"
         }
       }
     },
@@ -184,6 +214,9 @@
         },
         "note": {
           "$ref": "#/$defs/nullableText"
+        },
+        "reportedOn": {
+          "$ref": "#/$defs/date"
         }
       }
     },
@@ -530,6 +563,65 @@
               }
             }
           }
+        },
+        "authors": {
+          "$ref": "#/$defs/authors"
+        },
+        "localVersion": {
+          "$ref": "#/$defs/localVersion"
+        }
+      }
+    },
+    "authors": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "names",
+        "note"
+      ],
+      "properties": {
+        "names": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/text"
+          }
+        },
+        "note": {
+          "$ref": "#/$defs/text"
+        }
+      }
+    },
+    "localVersion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "authority",
+        "versionLabel",
+        "versionDate",
+        "checkedOn",
+        "note"
+      ],
+      "properties": {
+        "authority": {
+          "enum": [
+            "canonical",
+            "candidate",
+            "conflict"
+          ]
+        },
+        "versionLabel": {
+          "$ref": "#/$defs/text"
+        },
+        "versionDate": {
+          "$ref": "#/$defs/date"
+        },
+        "checkedOn": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "note": {
+          "$ref": "#/$defs/text"
         }
       }
     }

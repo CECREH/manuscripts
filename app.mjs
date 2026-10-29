@@ -48,11 +48,14 @@ function renderCard(r) {
   const title=node('h3','',r.title);title.id=`title-${r.id}`;
   const people=add(node('p','people'),node('strong','','Lead '),document.createTextNode(r.lead||'Unconfirmed'),node('br'),node('strong','','Steward '),document.createTextNode(r.steward||'Unconfirmed'));
   const titleCell=add(node('div','title-cell'),meta,title,people);
+  if(r.authors?.names.length) titleCell.append(paragraph(`Byline in inspected version: ${r.authors.names.join('; ')}`,'field-note'));
   const stageCell=add(node('div','stage-cell'),paragraph('Writing stage','field-label'),paragraph(writingLabels[r.writing.stage],'stage-value'));
   stageCell.append(paragraph(r.writing.confirmedOn ? `Confirmed ${formatDate(r.writing.confirmedOn)}` : r.writing.stage==='unconfirmed' ? 'Awaiting confirmation' : 'Reported · current stage unconfirmed','field-note'));
+  if(r.writing.reportedOn) stageCell.append(paragraph(`Status source dated ${formatDate(r.writing.reportedOn)}`,'field-note'));
   add(stageCell,paragraph('Journal status','field-label journal-label'),paragraph(journalLabels[r.journal.status],'journal-value'));
   if(r.journal.name) stageCell.append(paragraph(r.journal.name,'field-note'));
   if(r.journal.status!=='unconfirmed'&&!r.journal.confirmedOn) stageCell.append(paragraph('Reported · not confirmed','field-note'));
+  if(r.journal.reportedOn) stageCell.append(paragraph(`Status source dated ${formatDate(r.journal.reportedOn)}`,'field-note'));
   const draft=node('div','draft-cell');
   draft.append(paragraph('Current draft','field-label'));
   const draftFreshness=freshness(r.currentDraft.confirmedOn,data.staleAfterDays,today);
@@ -67,6 +70,10 @@ function renderCard(r) {
   } else {
     draft.append(paragraph('Current draft link unconfirmed','draft-unresolved'));
     draft.append(paragraph(r.currentDraft.status==='unavailable'?'No link available.':'A current version has not been verified.','field-note'));
+  }
+  if(r.localVersion) {
+    draft.append(badge(r.localVersion.authority==='conflict'?'Local versions need reconciliation':'Local draft located',r.localVersion.authority==='conflict'?'warning':'confirmed'));
+    draft.append(paragraph(r.localVersion.versionLabel,'field-note'));
   }
   const main=add(node('div','card-main'),titleCell,stageCell,draft);
   const actionCopy=add(node('div','action-copy'),node('span','action-label',r.nextAction.status==='proposed'?'Suggested next action':'Next action'),paragraph(r.nextAction.text||'Awaiting an agreed next action.'));
@@ -90,9 +97,11 @@ function renderCard(r) {
   const confirmations=section('Version & source confirmation',termList([
     ['Version label',r.currentDraft.versionLabel],['Version dated',formatDate(r.currentDraft.versionDate)],['Version confirmed',r.currentDraft.confirmedOn?`${formatDate(r.currentDraft.confirmedOn)} · ${r.currentDraft.confirmedBy}`:'Unconfirmed'],['Source checked',formatDate(r.confirmation.sourceCheckedOn)],['Record entered / reviewed',formatDate(r.confirmation.recordReviewedOn)]
   ]),paragraph(r.currentDraft.note),paragraph(`Source: ${r.confirmation.sourceLabel}`),paragraph(r.confirmation.note));
+  if(r.localVersion) confirmations.append(paragraph(`Local inspection: ${formatDate(r.localVersion.checkedOn)}. ${r.localVersion.note}`));
   const next=section('Ownership & progress',termList([
     ['Lead',r.lead],['Record steward',r.steward],['Action owner',r.nextAction.owner],['Deadline basis',r.nextAction.dueStatus==='unconfirmed'?'Unconfirmed':r.nextAction.dueStatus==='agreed'?`Agreed on ${formatDate(r.nextAction.agreedOn)}`:'Proposed · not agreed'],['Scope confirmed',r.scope.confirmedOn?`${formatDate(r.scope.confirmedOn)} · ${r.scope.confirmedBy}`:'Unconfirmed']
   ]));
+  if(r.authors) next.append(paragraph(`Byline: ${r.authors.names.join('; ')||'Unconfirmed'}. ${r.authors.note}`));
   if(r.writing.note) next.append(paragraph(`Writing: ${r.writing.note}`));
   if(r.journal.note) next.append(paragraph(`Journal: ${r.journal.note}`));
   const blockers=section('Blockers');
@@ -142,10 +151,11 @@ function updateOverview() {
   $('stale-days').textContent=data.staleAfterDays;
   $('maintenance-note').textContent=`Maintainer: ${data.maintenance.primary||'awaiting assignment'} · Backup: ${data.maintenance.backup||'awaiting assignment'}`;
   const demo=data.dataClass==='synthetic_demo';
-  $('access-label').textContent=demo?'Demonstration · Read only':'Confidential · Read only';
-  $('mode-title').textContent=demo?'Demonstration — fictional records only':'Confidential working register';
-  $('mode-copy').textContent=demo?'These examples show how the register works. Counts, people, dates, and draft buttons are illustrative; they do not describe CECREH manuscripts.':'Unpublished metadata and protected draft links. Scope and current-version confirmation are still required for candidate records. This label does not establish hosting access control.';
-  $('mode-banner').classList.toggle('confidential',!demo);
+  const released=data.dataClass==='public_metadata';
+  $('access-label').textContent=demo?'Demonstration · Read only':released?'Public metadata · Read only':'Confidential · Read only';
+  $('mode-title').textContent=demo?'Demonstration — fictional records only':released?'Manuscript files are separate':'Confidential working register';
+  $('mode-copy').textContent=demo?'These examples show how the register works. Counts, people, dates, and draft buttons are illustrative; they do not describe CECREH manuscripts.':released?'This page contains manuscript metadata. Manuscript files are not hosted here. A located local draft is not a confirmed current OneDrive version; unresolved links and older status reports are labeled below.':'Unpublished metadata and protected draft links. Scope and current-version confirmation are still required for candidate records. This label does not establish hosting access control.';
+  $('mode-banner').classList.toggle('confidential',!demo&&!released);
   $('mode-banner').hidden=false;
 }
 function populateFilters() {
@@ -154,16 +164,16 @@ function populateFilters() {
     for(const [value,label] of Object.entries(labels)) {const option=node('option','',label);option.value=value;$(id).append(option);}
   }
   $('person').length=1;
-  const people=[...new Set(data.records.flatMap(r=>[r.lead,r.steward,r.nextAction.owner]).filter(Boolean))].sort((a,b)=>a.localeCompare(b));
+  const people=[...new Set(data.records.flatMap(r=>[r.lead,r.steward,r.nextAction.owner,...(r.authors?.names||[])]).filter(Boolean))].sort((a,b)=>a.localeCompare(b));
   for(const person of people) {const option=node('option','',person);option.value=person;$('person').append(option);}
 }
 function render() {
   if(!data) return;
   const records=selectRecords(data.records,filters,data.staleAfterDays);
   const groupRecords=data.records.filter(r=>inventoryGroup(r)===filters.group);
-  const groupLabel={active:'confirmed active manuscripts',candidates:'pending candidates',archived:'archived manuscripts'}[filters.group];
+  const groupLabel={active:'manuscripts with confirmed scope',candidates:'pending candidates',archived:'archived manuscripts'}[filters.group];
   $('result-count').textContent=`${records.length} of ${groupRecords.length} ${groupLabel}`;
-  $('scope-note').textContent=filters.group==='candidates'?'Candidate queue · These papers are awaiting CECREH scope confirmation and are excluded from the confirmed active count.':filters.group==='archived'?'Archived records retain their stable IDs, draft links, and submission history.':'Only manuscripts with confirmed CECREH scope appear in the active inventory.';
+  $('scope-note').textContent=filters.group==='candidates'?'Candidate queue · These papers are awaiting CECREH scope confirmation and are excluded from the confirmed scope count.':filters.group==='archived'?'Archived records retain their stable IDs, draft links, and submission history.':'Only manuscripts with confirmed CECREH scope appear in the active inventory.';
   $('scope-note').classList.toggle('candidate',filters.group==='candidates');
   document.querySelectorAll('[data-group]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.group===filters.group)));
   $('results').replaceChildren(...records.map(renderCard));
@@ -174,7 +184,7 @@ function render() {
   $('empty-reset').hidden=!hasFilter;
   $('view-candidates').hidden=!(filters.group==='active'&&!groupRecords.length&&data.records.some(r=>inventoryGroup(r)==='candidates'));
   if(!records.length) {
-    $('empty-title').textContent=hasFilter?'No matching manuscripts':filters.group==='active'?'No confirmed active manuscripts yet':filters.group==='candidates'?'No pending candidates':'No archived manuscripts';
+    $('empty-title').textContent=hasFilter?'No matching manuscripts':filters.group==='active'?'No manuscripts with confirmed scope yet':filters.group==='candidates'?'No pending candidates':'No archived manuscripts';
     $('empty-copy').textContent=hasFilter?'Try a broader search or reset the filters. The overview counts always describe the full register.':filters.group==='active'?'The active inventory is empty. Candidate records remain separate until CECREH scope is confirmed.':filters.group==='candidates'?'Candidate records will appear here when the maintainer adds a paper for scope confirmation.':'Archived papers will remain available here with their history intact.';
   }
 }

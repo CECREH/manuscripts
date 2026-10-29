@@ -1,4 +1,4 @@
-name: Validate synthetic tracker
+name: Validate and publish manuscript metadata
 on:
   push:
     branches: [main]
@@ -6,13 +6,16 @@ on:
   workflow_dispatch:
 permissions:
   contents: read
+concurrency:
+  group: manuscript-pages-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   check:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
         with:
           node-version: '22'
           cache: npm
@@ -20,3 +23,21 @@ jobs:
       - run: npx playwright install --with-deps chromium
       - run: npm run check
       - run: git diff --exit-code -- lib/schema-validator.mjs
+      - uses: actions/upload-pages-artifact@v4
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        with:
+          path: dist/public
+  deploy:
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: check
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/deploy-pages@v4
+        id: deployment

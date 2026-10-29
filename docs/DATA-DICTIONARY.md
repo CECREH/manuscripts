@@ -1,11 +1,12 @@
 # Record dictionary
 
-The executable contract is [manuscripts.schema.json](../schema/manuscripts.schema.json), schema version 1. All listed object properties are required; optional facts use JSON `null`. Unknown properties are rejected. Dates are real ISO `YYYY-MM-DD` calendar dates. Evidence dates cannot be later than the snapshot; due dates may be future dates. Links require HTTPS without embedded credentials.
+The executable contract is [manuscripts.schema.json](../schema/manuscripts.schema.json), schema version 1. Core object properties are required; optional facts use JSON `null`. The additive `authors`, `localVersion`, status `reportedOn` and `publicLinkReviews` fields are optional for older/local fixtures. Unknown properties are rejected. Dates are real ISO `YYYY-MM-DD` calendar dates. Evidence dates cannot be later than the snapshot; due dates may be future dates. Links require HTTPS without embedded credentials.
 
 | Field | Meaning and allowed values |
 | --- | --- |
 | `schemaVersion` | Exactly `1`. Change deliberately with a migration if the shape changes. |
-| `dataClass` | `synthetic_demo` or `confidential`; controls the build gate and UI notice. It is a label, not an access control. |
+| `dataClass` | `synthetic_demo`, `confidential`, or `public_metadata`; controls the separate build paths and UI notice. It is a label, not access control. |
+| `publicLinkReviews[]` | For every published URL, its exact `url`, real `checkedOn` date and safe `audienceNote` documenting destination/access review. This evidence does not change access permissions. |
 | `snapshotDate` | Date of this data snapshot, no later than today. Does not re-confirm old evidence. |
 | `staleAfterDays` | Integer 1–365; currently 30. Confirmation becomes stale after more than this many UTC days. |
 | `coverageNote` | A plain statement of the inventory's limits. Never imply complete coverage without evidence. |
@@ -20,7 +21,10 @@ The executable contract is [manuscripts.schema.json](../schema/manuscripts.schem
 | `journal.status` | `unconfirmed`, `not_submitted`, `submitted`, `under_review`, `revision_requested`, `accepted`, `published`, `withdrawn`, `rejected`. Independent of writing stage. |
 | `journal.name`, `.confirmedOn`, `.confirmedBy`, `.note` | Journal name and evidence; null where unknown. No inferred journal selection. |
 | `lead`, `steward` | Manuscript lead and metadata steward, individually nullable. They do not specify authorship order. |
-| `currentDraft.url` | Canonical or last-known protected URL, or null. Confidential even if the document separately requires sign-in. |
+| `authors` | Optional observed `names` in source order and `note` describing the evidence. Not a current author-order confirmation or lead assignment. Names are searchable/filterable. |
+| `localVersion` | Optional `authority` (`canonical`, `candidate`, `conflict`), safe `versionLabel`, nullable `versionDate`, inspection `checkedOn`, and `note`. No local path. Does not establish the latest cloud version. |
+| `writing.reportedOn`, `journal.reportedOn` | Optional date of a historical status report, not the date a file was modified or the register was entered. Older reports trigger a refresh flag independently of source inspection. |
+| `currentDraft.url` | Canonical or last-known URL, or null. Public releases require current-version confirmation plus a destination/access review. Unreviewed protected URLs belong only in the separate confidential ledger. |
 | `currentDraft.status` | `confirmed`, `unconfirmed`, or `unavailable`. Confirmation requires a URL, person, and date. Unavailable means no current URL. |
 | `currentDraft.versionLabel`, `.versionDate` | Human-readable label and document version date, distinct from its confirmation date. |
 | `currentDraft.confirmedOn`, `.confirmedBy`, `.note` | Confirmation of the current version; note explains gaps. A stale confirmation renders “last-confirmed draft.” An unconfirmed URL renders “last-known draft.” |
@@ -33,6 +37,6 @@ The executable contract is [manuscripts.schema.json](../schema/manuscripts.schem
 | `history.linkChanges[]` | Append-only `eventId` (`L-…`), `recordedOn`, `url` (nullable for clearing), `versionLabel`, `reason`. Chronological recorded-date order; latest URL must match the canonical URL when present. |
 | `history.submissions[]` | Append-only `eventId` (`S-…`), `eventDate` (nullable), `journal` (nullable), `status`, `note`, `sourceLabel`. Status: submitted, under_review, revision_requested, resubmitted, accepted, published, withdrawn, rejected. |
 
-“Needs attention” includes an unconfirmed current draft, a stale draft confirmation, an unconfirmed/stale source, an open blocker, or an overdue agreed action. Overview attention/draft counts include confirmed active records and pending candidates, and exclude the archive. Filtered result counts are separate. The archive never inflates the active count.
+“Needs attention” includes an unconfirmed current draft, a stale draft confirmation, an unconfirmed/stale source, old scope confirmation or status report, an open blocker, or an overdue agreed action. Overview attention/draft counts include non-archived confirmed-scope records and pending candidates, and exclude the archive. Filtered result counts are separate. The archive never inflates the confirmed-scope inventory count.
 
 Sorting by agreed due date puts undated/proposed actions last. Sorting by source confirmation puts unconfirmed sources first, then oldest confirmed dates. The app never stores search terms in a URL or persistent browser storage.

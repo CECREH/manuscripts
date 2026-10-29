@@ -3,7 +3,7 @@ import AxeBuilder from '@axe-core/playwright';
 import {readFile,mkdir} from 'node:fs/promises';
 const demo=JSON.parse(await readFile(new URL('../../data/manuscripts.json',import.meta.url),'utf8'));
 test.beforeEach(async({page})=>{await page.clock.install({time:new Date('2026-10-26T20:00:00Z')});});
-async function load(page) {await page.goto('./');await expect(page.locator('#result-count')).toHaveText('4 of 4 confirmed active manuscripts');}
+async function load(page) {await page.goto('./');await expect(page.locator('#result-count')).toHaveText('4 of 4 manuscripts with confirmed scope');}
 async function a11y(page) {const results=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa','wcag22aa']).analyze();expect(results.violations).toEqual([]);}
 async function screenshot(page,path,fullPage=true) {
   await page.evaluate(()=>{document.activeElement?.blur();window.scrollTo(0,0);});
@@ -54,7 +54,7 @@ test('keyboard skip link, disclosure, reset, and focus work without a mouse',asy
 });
 test('empty inventory is explicit and accessible',async({page})=>{
   await page.route('**/data/manuscripts.json',r=>r.fulfill({json:{...demo,records:[]}}));await page.goto('./');
-  await expect(page.getByRole('heading',{name:'No confirmed active manuscripts yet'})).toBeVisible();await expect(page.locator('#count-active')).toHaveText('0');await a11y(page);
+  await expect(page.getByRole('heading',{name:'No manuscripts with confirmed scope yet'})).toBeVisible();await expect(page.locator('#count-active')).toHaveText('0');await a11y(page);
 });
 test('a stalled data request times out into the retry state',async({page})=>{
   await page.route('**/data/manuscripts.json',()=>{});

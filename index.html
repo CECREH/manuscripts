@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="CECREH manuscript register: writing progress, current drafts, and next actions.">
   <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="noindex, nofollow">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
   <title>CECREH · Manuscript register</title>
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
@@ -24,7 +25,7 @@
     </section>
     <aside class="mode-banner" id="mode-banner" hidden><span class="banner-mark" aria-hidden="true">i</span><div><strong id="mode-title"></strong><p id="mode-copy"></p></div></aside>
     <section class="stats" aria-label="Register overview" id="stats">
-      <div class="stat"><span>Confirmed active</span><strong id="count-active">—</strong><small>In the working inventory</small></div>
+      <div class="stat"><span>Confirmed scope</span><strong id="count-active">—</strong><small>In the working inventory</small></div>
       <div class="stat"><span>Pending scope</span><strong id="count-candidates">—</strong><small>Separate candidate queue</small></div>
       <div class="stat"><span>Draft unconfirmed</span><strong id="count-drafts">—</strong><small>Across active & candidate records</small></div>
       <div class="stat"><span>Needs attention</span><strong id="count-attention">—</strong><small>Across active & candidate records</small></div>
@@ -32,7 +33,7 @@
     <section id="register" class="register" aria-labelledby="register-title" tabindex="-1">
       <div class="section-top"><div><p class="eyebrow">MANUSCRIPT REGISTER</p><h2 id="register-title">From first draft to publication</h2></div><p>Read only <span aria-hidden="true">·</span> One record per paper</p></div>
       <div class="inventory-switch" role="group" aria-label="Inventory scope">
-        <button type="button" data-group="active" aria-pressed="true">Confirmed active <span id="tab-active">—</span></button>
+        <button type="button" data-group="active" aria-pressed="true">Confirmed scope <span id="tab-active">—</span></button>
         <button type="button" data-group="candidates" aria-pressed="false">Pending scope <span id="tab-candidates">—</span></button>
         <button type="button" data-group="archived" aria-pressed="false">Archive <span id="tab-archived">—</span></button>
       </div>

@@ -9,7 +9,7 @@ const port=Number(arg('--port','4173'));
 const base=arg('--base','').replace(/\/$/,'');
 if(base&&(!/^\/[A-Za-z0-9_-]+$/.test(base))) throw new Error('Base must be a single path segment.');
 const manifest=JSON.parse(await readFile(resolve(root,'.build.json'),'utf8'));
-if(!['synthetic_demo','confidential'].includes(manifest.dataClass)) throw new Error('Serve a validated build directory.');
+if(!['synthetic_demo','confidential','public_metadata'].includes(manifest.dataClass)) throw new Error('Serve a validated build directory.');
 const allowed=new Set(siteAssets.filter(f=>f!=='.nojekyll'));
 const types={'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.mjs':'text/javascript; charset=utf-8','.json':'application/json; charset=utf-8','.svg':'image/svg+xml','.txt':'text/plain; charset=utf-8'};
 const headers={'Cache-Control':'no-store','Referrer-Policy':'no-referrer','X-Content-Type-Options':'nosniff','Content-Security-Policy':"default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'"};

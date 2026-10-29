@@ -1,0 +1,1457 @@
+{
+  "schemaVersion": 1,
+  "dataClass": "public_metadata",
+  "snapshotDate": "2026-10-29",
+  "staleAfterDays": 30,
+  "coverageNote": "Drive inventory: 19 records; 7 supported by the June CECREH list and 12 awaiting scope or identity confirmation. Coverage is provisional; this is not a claim to include every manuscript.",
+  "maintenance": {
+    "primary": null,
+    "backup": null
+  },
+  "publicLinkReviews": [],
+  "records": [
+    {
+      "id": "MS-0001",
+      "title": "Aligning Urban Flood Planning with Historical and Future Risk: An Evidence-Based Framework for Climate-Informed Planning",
+      "shortTitle": null,
+      "tags": [
+        "Flood planning"
+      ],
+      "scope": {
+        "status": "candidate",
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "note": "Located during the drive inventory; CECREH scope remains unconfirmed."
+      },
+      "inventoryState": "active",
+      "writing": {
+        "stage": "internal_revision",
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "reportedOn": "2026-10-25",
+        "note": "Internal revision was last reported in October. The outcome of the subsequent team meeting has not been confirmed."
+      },
+      "journal": {
+        "status": "unconfirmed",
+        "name": null,
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "reportedOn": null,
+        "note": "No current submission or decision is confirmed. A local draft or prepared submission bundle does not establish submission."
+      },
+      "lead": null,
+      "steward": null,
+      "authors": {
+        "names": [],
+        "note": "No verified current byline is available. Contributor names and document metadata are not used to infer authorship."
+      },
+      "localVersion": {
+        "authority": "candidate",
+        "versionLabel": "Planning v2-2 · local download",
+        "versionDate": null,
+        "checkedOn": "2026-10-29",
+        "note": "A v2-2 local copy was inspected. Its filename and modification date do not establish the latest author-approved or OneDrive version."
+      },
+      "currentDraft": {
+        "url": null,
+        "status": "unconfirmed",
+        "versionLabel": null,
+        "versionDate": null,
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "note": "A local manuscript was inspected. The current OneDrive destination and its sharing boundary have not been verified; no draft link is published."
+      },
+      "nextAction": {
+        "text": "Confirm CECREH scope, current OneDrive version, reported status and record steward.",
+        "owner": null,
+        "dueDate": null,
+        "dueStatus": "unconfirmed",
+        "agreedOn": null,
+        "status": "proposed"
+      },
+      "blockers": [],
+      "supportingLinks": [],
+      "confirmation": {
+        "sourceCheckedOn": "2026-10-29",
+        "sourceLabel": "Local planning draft and dated team handoff",
+        "recordReviewedOn": "2026-10-29",
+        "note": "The inspection date confirms that local evidence was read. It does not confirm the current team status, latest cloud file or completeness of this inventory."
+      },
+      "history": {
+        "linkChanges": [],
+        "submissions": []
+      }
+    },
+    {
+      "id": "MS-0002",
+      "title": "How Academic Publications Use Benchmarks to Interpret Post-Disaster Housing Recovery Indicators, 2006-2025",
+      "shortTitle": null,
+      "tags": [
+        "Housing recovery",
+        "Benchmarks"
+      ],
+      "scope": {
+        "status": "confirmed",
+        "confirmedOn": "2026-06-05",
+        "confirmedBy": "Jesse R. Andrews — dated CECREH inventory",
+        "note": "Listed in the dated June 5 CECREH inventory; continuing inclusion should be refreshed."
+      },
+      "inventoryState": "active",
+      "writing": {
+        "stage": "coauthor_review",
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "reportedOn": "2026-08-23",
+        "note": "A local source supports the reported stage or draft existence; the current stage has not been confirmed with an author."
+      },
+      "journal": {
+        "status": "unconfirmed",
+        "name": null,
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "reportedOn": null,
+        "note": "No current submission or decision is confirmed. A local draft or prepared submission bundle does not establish submission."
+      },
+      "lead": null,
+      "steward": null,
+      "authors": {
+        "names": [],
+        "note": "No verified current byline is available. Contributor names and document metadata are not used to infer authorship."
+      },
+      "localVersion": {
+        "authority": "canonical",
+        "versionLabel": "Weighted manuscript · Aug 23 editorial version",
+        "versionDate": "2026-08-23",
+        "checkedOn": "2026-10-29",
+        "note": "The project identifies the weighted Quarto source and Aug 23g Word editorial master as current local authorities. A later reported circulation has not been matched to a current cloud file."
+      },
+      "currentDraft": {
+        "url": null,
+        "status": "unconfirmed",
+        "versionLabel": null,
+        "versionDate": null,
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "note": "A local manuscript was inspected. The current OneDrive destination and its sharing boundary have not been verified; no draft link is published."
+      },
+      "nextAction": {
+        "text": "Confirm the current OneDrive version, reported status, lead and record steward.",
+        "owner": null,
+        "dueDate": null,
+        "dueStatus": "unconfirmed",
+        "agreedOn": null,
+        "status": "proposed"
+      },
+      "blockers": [],
+      "supportingLinks": [],
+      "confirmation": {
+        "sourceCheckedOn": "2026-10-29",
+        "sourceLabel": "CECREH inventory (Jun 5); project status and canonical weighted manuscript",
+        "recordReviewedOn": "2026-10-29",
+        "note": "The inspection date confirms that local evidence was read. It does not confirm the current team status, latest cloud file or completeness of this inventory."
+      },
+      "history": {
+        "linkChanges": [],
+        "submissions": []
+      }
+    },
+    {
+      "id": "MS-0003",
+      "title": "Financial Implementation Timing and Administrative Capacity in U.S. CDBG-DR Recovery",
+      "shortTitle": null,
+      "tags": [
+        "CDBG-DR",
+        "Administrative capacity"
+      ],
+      "scope": {
+        "status": "candidate",
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "note": "Located during the drive inventory; CECREH scope remains unconfirmed."
+      },
+      "inventoryState": "active",
+      "writing": {
+        "stage": "internal_revision",
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "reportedOn": "2026-10-21",
+        "note": "October internal revision reported; latest version and relationship to the audit-protocol record require author confirmation."
+      },
+      "journal": {
+        "status": "unconfirmed",
+        "name": null,
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "reportedOn": null,
+        "note": "No current submission or decision is confirmed. A local draft or prepared submission bundle does not establish submission."
+      },
+      "lead": null,
+      "steward": null,
+      "authors": {
+        "names": [],
+        "note": "No verified current byline is available. Contributor names and document metadata are not used to infer authorship."
+      },
+      "localVersion": {
+        "authority": "candidate",
+        "versionLabel": "September local draft · newer revision reported",
+        "versionDate": null,
+        "checkedOn": "2026-10-29",
+        "note": "The local September draft was located. An October revision was reported but its current file has not been identified."
+      },
+      "currentDraft": {
+        "url": null,
+        "status": "unconfirmed",
+        "versionLabel": null,
+        "versionDate": null,
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "note": "A local manuscript was inspected. The current OneDrive destination and its sharing boundary have not been verified; no draft link is published."
+      },
+      "nextAction": {
+        "text": "Confirm manuscript identity, current version and CECREH scope; resolve the relationship to MS-0007 without merging by topic.",
+        "owner": null,
+        "dueDate": null,
+        "dueStatus": "unconfirmed",
+        "agreedOn": null,
+        "status": "proposed"
+      },
+      "blockers": [],
+      "supportingLinks": [],
+      "confirmation": {
+        "sourceCheckedOn": "2026-10-29",
+        "sourceLabel": "Local financial-implementation draft and October team handoff",
+        "recordReviewedOn": "2026-10-29",
+        "note": "The inspection date confirms that local evidence was read. It does not confirm the current team status, latest cloud file or completeness of this inventory."
+      },
+      "history": {
+        "linkChanges": [],
+        "submissions": []
+      }
+    },
+    {
+      "id": "MS-0004",
+      "title": "Mapped flood zones track U.S. flood insurance uptake more closely than recorded flood burden",
+      "shortTitle": null,
+      "tags": [
+        "Flood insurance",
+        "NFIP–IHP"
+      ],
+      "scope": {
+        "status": "candidate",
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "note": "Located during the drive inventory; CECREH scope remains unconfirmed."
+      },
+      "inventoryState": "active",
+      "writing": {
+        "stage": "coauthor_review",
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "reportedOn": "2026-08-27",
+        "note": "A local source supports the reported stage or draft existence; the current stage has not been confirmed with an author."
+      },
+      "journal": {
+        "status": "unconfirmed",
+        "name": null,
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "reportedOn": null,
+        "note": "No current submission or decision is confirmed. A local draft or prepared submission bundle does not establish submission."
+      },
+      "lead": null,
+      "steward": null,
+      "authors": {
+        "names": [
+          "Jesse R. Andrews",
+          "Ali Nejat"
+        ],
+        "note": "Names are transcribed in the inspected source order; current author order and assigned lead are unconfirmed."
+      },
+      "localVersion": {
+        "authority": "canonical",
+        "versionLabel": "Hydrologic blind-spot manuscript · Aug 27 review record",
+        "versionDate": null,
+        "checkedOn": "2026-10-29",
+        "note": "The project identifies this manuscript separately from the rental-tenure paper. The current OneDrive copy has not been verified."
+      },
+      "currentDraft": {
+        "url": null,
+        "status": "unconfirmed",
+        "versionLabel": null,
+        "versionDate": null,
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "note": "A local manuscript was inspected. The current OneDrive destination and its sharing boundary have not been verified; no draft link is published."
+      },
+      "nextAction": {
+        "text": "Confirm CECREH scope, current OneDrive version, reported status and record steward.",
+        "owner": null,
+        "dueDate": null,
+        "dueStatus": "unconfirmed",
+        "agreedOn": null,
+        "status": "proposed"
+      },
+      "blockers": [],
+      "supportingLinks": [],
+      "confirmation": {
+        "sourceCheckedOn": "2026-10-29",
+        "sourceLabel": "Canonical manuscript and project status dated Aug 27",
+        "recordReviewedOn": "2026-10-29",
+        "note": "The inspection date confirms that local evidence was read. It does not confirm the current team status, latest cloud file or completeness of this inventory."
+      },
+      "history": {
+        "linkChanges": [],
+        "submissions": []
+      }
+    },
+    {
+      "id": "MS-0005",
+      "title": "Climate Extremes and Insurance Exposure: Projecting Future NFIP Claim Counts in Harris County, Texas",
+      "shortTitle": null,
+      "tags": [
+        "NFIP claims",
+        "Harris County"
+      ],
+      "scope": {
+        "status": "confirmed",
+        "confirmedOn": "2026-06-05",
+        "confirmedBy": "Jesse R. Andrews — dated CECREH inventory",
+        "note": "Listed in the dated June 5 CECREH inventory; continuing inclusion should be refreshed."
+      },
+      "inventoryState": "active",
+      "writing": {
+        "stage": "ready_to_submit",
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "reportedOn": "2026-06-05",
+        "note": "The June inventory described the paper as near ready. Current readiness remains unconfirmed."
+      },
+      "journal": {
+        "status": "unconfirmed",
+        "name": null,
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "reportedOn": null,
+        "note": "No current submission or decision is confirmed. A local draft or prepared submission bundle does not establish submission."
+      },
+      "lead": null,
+      "steward": null,
+      "authors": {
+        "names": [
+          "Jesse Andrews"
+        ],
+        "note": "Names are transcribed in the inspected source order; current author order and assigned lead are unconfirmed."
+      },
+      "localVersion": {
+        "authority": "canonical",
+        "versionLabel": "Count-framework manuscript · local canonical source",
+        "versionDate": null,
+        "checkedOn": "2026-10-29",
+        "note": "The dated CECREH inventory identifies this as the study formerly framed as Widening the Tail. The stable record ID is retained."
+      },
+      "currentDraft": {
+        "url": null,
+        "status": "unconfirmed",
+        "versionLabel": null,
+        "versionDate": null,
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "note": "A local manuscript was inspected. The current OneDrive destination and its sharing boundary have not been verified; no draft link is published."
+      },
+      "nextAction": {
+        "text": "Confirm the current OneDrive version, reported status, lead and record steward.",
+        "owner": null,
+        "dueDate": null,
+        "dueStatus": "unconfirmed",
+        "agreedOn": null,
+        "status": "proposed"
+      },
+      "blockers": [],
+      "supportingLinks": [],
+      "confirmation": {
+        "sourceCheckedOn": "2026-10-29",
+        "sourceLabel": "CECREH inventory (Jun 5) and count-framework manuscript",
+        "recordReviewedOn": "2026-10-29",
+        "note": "The inspection date confirms that local evidence was read. It does not confirm the current team status, latest cloud file or completeness of this inventory."
+      },
+      "history": {
+        "linkChanges": [],
+        "submissions": []
+      }
+    },
+    {
+      "id": "MS-0006",
+      "title": "Rental Tenure and the Geography of Flood Insurance Mismatch in the United States",
+      "shortTitle": null,
+      "tags": [
+        "Rental tenure",
+        "Flood insurance"
+      ],
+      "scope": {
+        "status": "confirmed",
+        "confirmedOn": "2026-06-05",
+        "confirmedBy": "Jesse R. Andrews — dated CECREH inventory",
+        "note": "Listed in the dated June 5 CECREH inventory; continuing inclusion should be refreshed."
+      },
+      "inventoryState": "active",
+      "writing": {
+        "stage": "coauthor_review",
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "reportedOn": "2026-06-05",
+        "note": "A local source supports the reported stage or draft existence; the current stage has not been confirmed with an author."
+      },
+      "journal": {
+        "status": "unconfirmed",
+        "name": null,
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "reportedOn": null,
+        "note": "No current submission or decision is confirmed. A local draft or prepared submission bundle does not establish submission."
+      },
+      "lead": null,
+      "steward": null,
+      "authors": {
+        "names": [
+          "Jesse R. Andrews"
+        ],
+        "note": "Names are transcribed in the inspected source order; current author order and assigned lead are unconfirmed."
+      },
+      "localVersion": {
+        "authority": "canonical",
+        "versionLabel": "Rental-tenure manuscript · local canonical source",
+        "versionDate": null,
+        "checkedOn": "2026-10-29",
+        "note": "A local submission-format bundle exists. A bundle is not evidence that a journal submission occurred."
+      },
+      "currentDraft": {
+        "url": null,
+        "status": "unconfirmed",
+        "versionLabel": null,
+        "versionDate": null,
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "note": "A local manuscript was inspected. The current OneDrive destination and its sharing boundary have not been verified; no draft link is published."
+      },
+      "nextAction": {
+        "text": "Confirm the current OneDrive version, reported status, lead and record steward.",
+        "owner": null,
+        "dueDate": null,
+        "dueStatus": "unconfirmed",
+        "agreedOn": null,
+        "status": "proposed"
+      },
+      "blockers": [],
+      "supportingLinks": [],
+      "confirmation": {
+        "sourceCheckedOn": "2026-10-29",
+        "sourceLabel": "CECREH inventory (Jun 5) and rental-tenure manuscript",
+        "recordReviewedOn": "2026-10-29",
+        "note": "The inspection date confirms that local evidence was read. It does not confirm the current team status, latest cloud file or completeness of this inventory."
+      },
+      "history": {
+        "linkChanges": [],
+        "submissions": []
+      }
+    },
+    {
+      "id": "MS-0007",
+      "title": "A Measurement-Sensitivity Audit Protocol for Administrative-Capacity Studies in CDBG-DR Disaster Recovery",
+      "shortTitle": null,
+      "tags": [
+        "CDBG-DR",
+        "Measurement audit"
+      ],
+      "scope": {
+        "status": "candidate",
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "note": "Listed in the June CECREH inventory, but held out of the confirmed count until the source-title conflict and relationship to MS-0003 are resolved."
+      },
+      "inventoryState": "active",
+      "writing": {
+        "stage": "unconfirmed",
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "reportedOn": null,
+        "note": "A local source supports the reported stage or draft existence; the current stage has not been confirmed with an author."
+      },
+      "journal": {
+        "status": "unconfirmed",
+        "name": null,
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "reportedOn": null,
+        "note": "No current submission or decision is confirmed. A local draft or prepared submission bundle does not establish submission."
+      },
+      "lead": null,
+      "steward": null,
+      "authors": {
+        "names": [
+          "Kai-Fa Lu",
+          "Jesse Andrews",
+          "Ali Nejat"
+        ],
+        "note": "Names are transcribed in the inspected source order; current author order and assigned lead are unconfirmed."
+      },
+      "localVersion": {
+        "authority": "conflict",
+        "versionLabel": "Audit-protocol Word version · source-title conflict",
+        "versionDate": null,
+        "checkedOn": "2026-10-29",
+        "note": "The Word version and dated scope inventory use this title; the editable source retains a different title. Current identity and its relationship to MS-0003 require reconciliation."
+      },
+      "currentDraft": {
+        "url": null,
+        "status": "unconfirmed",
+        "versionLabel": null,
+        "versionDate": null,
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "note": "A local manuscript was inspected. The current OneDrive destination and its sharing boundary have not been verified; no draft link is published."
+      },
+      "nextAction": {
+        "text": "Resolve manuscript identity and the canonical version before confirming inventory membership.",
+        "owner": null,
+        "dueDate": null,
+        "dueStatus": "unconfirmed",
+        "agreedOn": null,
+        "status": "proposed"
+      },
+      "blockers": [],
+      "supportingLinks": [],
+      "confirmation": {
+        "sourceCheckedOn": "2026-10-29",
+        "sourceLabel": "CECREH inventory (Jun 5), local Word version and source/render map (Sep 10)",
+        "recordReviewedOn": "2026-10-29",
+        "note": "The inspection date confirms that local evidence was read. It does not confirm the current team status, latest cloud file or completeness of this inventory."
+      },
+      "history": {
+        "linkChanges": [],
+        "submissions": []
+      }
+    },
+    {
+      "id": "MS-0008",
+      "title": "Longitudinal Housing Recovery Following Hurricane Sandy: A Survival Analysis",
+      "shortTitle": null,
+      "tags": [
+        "Hurricane Sandy",
+        "Housing recovery"
+      ],
+      "scope": {
+        "status": "confirmed",
+        "confirmedOn": "2026-06-05",
+        "confirmedBy": "Jesse R. Andrews — dated CECREH inventory",
+        "note": "Listed in the dated June 5 CECREH inventory; continuing inclusion should be refreshed."
+      },
+      "inventoryState": "active",
+      "writing": {
+        "stage": "ready_to_submit",
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "reportedOn": "2026-06-05",
+        "note": "The June inventory reported content complete with submission preparation remaining. Current readiness is unconfirmed."
+      },
+      "journal": {
+        "status": "unconfirmed",
+        "name": null,
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "reportedOn": null,
+        "note": "No current submission or decision is confirmed. A local draft or prepared submission bundle does not establish submission."
+      },
+      "lead": null,
+      "steward": null,
+      "authors": {
+        "names": [
+          "Jesse Andrews",
+          "Ali Nejat"
+        ],
+        "note": "Names are transcribed in the inspected source order; current author order and assigned lead are unconfirmed."
+      },
+      "localVersion": {
+        "authority": "canonical",
+        "versionLabel": "Sandy recovery manuscript · local canonical source",
+        "versionDate": null,
+        "checkedOn": "2026-10-29",
+        "note": "The source and root distribution files were located. Their presence does not establish a current OneDrive version or submission."
+      },
+      "currentDraft": {
+        "url": null,
+        "status": "unconfirmed",
+        "versionLabel": null,
+        "versionDate": null,
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "note": "A local manuscript was inspected. The current OneDrive destination and its sharing boundary have not been verified; no draft link is published."
+      },
+      "nextAction": {
+        "text": "Confirm the current OneDrive version, reported status, lead and record steward.",
+        "owner": null,
+        "dueDate": null,
+        "dueStatus": "unconfirmed",
+        "agreedOn": null,
+        "status": "proposed"
+      },
+      "blockers": [],
+      "supportingLinks": [],
+      "confirmation": {
+        "sourceCheckedOn": "2026-10-29",
+        "sourceLabel": "CECREH inventory (Jun 5) and local project manuscript",
+        "recordReviewedOn": "2026-10-29",
+        "note": "The inspection date confirms that local evidence was read. It does not confirm the current team status, latest cloud file or completeness of this inventory."
+      },
+      "history": {
+        "linkChanges": [],
+        "submissions": []
+      }
+    },
+    {
+      "id": "MS-0009",
+      "title": "Prioritizing Post-Disaster Emergency Needs: Academicians’ and Practitioners’ Perspectives on Short-Term Recovery",
+      "shortTitle": null,
+      "tags": [
+        "Emergency needs",
+        "Recovery priorities"
+      ],
+      "scope": {
+        "status": "confirmed",
+        "confirmedOn": "2026-06-05",
+        "confirmedBy": "Jesse R. Andrews — dated CECREH inventory",
+        "note": "Listed in the dated June 5 CECREH inventory; continuing inclusion should be refreshed."
+      },
+      "inventoryState": "active",
+      "writing": {
+        "stage": "internal_revision",
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "reportedOn": "2026-06-05",
+        "note": "A local source supports the reported stage or draft existence; the current stage has not been confirmed with an author."
+      },
+      "journal": {
+        "status": "unconfirmed",
+        "name": null,
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "reportedOn": null,
+        "note": "No current submission or decision is confirmed. A local draft or prepared submission bundle does not establish submission."
+      },
+      "lead": null,
+      "steward": null,
+      "authors": {
+        "names": [
+          "Ali Nejat",
+          "Jesse Andrews"
+        ],
+        "note": "Names are transcribed in the inspected source order; current author order and assigned lead are unconfirmed."
+      },
+      "localVersion": {
+        "authority": "canonical",
+        "versionLabel": "Emergency-needs manuscript · local canonical source",
+        "versionDate": null,
+        "checkedOn": "2026-10-29",
+        "note": "The local project manuscript and review history were inspected; current journal state remains unconfirmed."
+      },
+      "currentDraft": {
+        "url": null,
+        "status": "unconfirmed",
+        "versionLabel": null,
+        "versionDate": null,
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "note": "A local manuscript was inspected. The current OneDrive destination and its sharing boundary have not been verified; no draft link is published."
+      },
+      "nextAction": {
+        "text": "Confirm the current OneDrive version, reported status, lead and record steward.",
+        "owner": null,
+        "dueDate": null,
+        "dueStatus": "unconfirmed",
+        "agreedOn": null,
+        "status": "proposed"
+      },
+      "blockers": [],
+      "supportingLinks": [],
+      "confirmation": {
+        "sourceCheckedOn": "2026-10-29",
+        "sourceLabel": "CECREH inventory (Jun 5) and emergency-needs project record",
+        "recordReviewedOn": "2026-10-29",
+        "note": "The inspection date confirms that local evidence was read. It does not confirm the current team status, latest cloud file or completeness of this inventory."
+      },
+      "history": {
+        "linkChanges": [],
+        "submissions": [
+          {
+            "eventId": "S-natural-hazards-historical-revision",
+            "eventDate": null,
+            "journal": "Natural Hazards",
+            "status": "revision_requested",
+            "note": "A prior revision request is recorded locally. Event date and subsequent disposition are unconfirmed.",
+            "sourceLabel": "Local project review history"
+          }
+        ]
+      }
+    },
+    {
+      "id": "MS-0010",
+      "title": "Transitory Disruption or Lasting Scar? Long-Run Economic Effects of the 1998 Guadalupe River Flood",
+      "shortTitle": null,
+      "tags": [
+        "Guadalupe River",
+        "Economic recovery"
+      ],
+      "scope": {
+        "status": "confirmed",
+        "confirmedOn": "2026-06-05",
+        "confirmedBy": "Jesse R. Andrews — dated CECREH inventory",
+        "note": "Listed in the dated June 5 CECREH inventory; continuing inclusion should be refreshed."
+      },
+      "inventoryState": "active",
+      "writing": {
+        "stage": "drafting",
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "reportedOn": "2026-06-05",
+        "note": "A local source supports the reported stage or draft existence; the current stage has not been confirmed with an author."
+      },
+      "journal": {
+        "status": "unconfirmed",
+        "name": null,
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "reportedOn": null,
+        "note": "No current submission or decision is confirmed. A local draft or prepared submission bundle does not establish submission."
+      },
+      "lead": null,
+      "steward": null,
+      "authors": {
+        "names": [
+          "Jesse Andrews"
+        ],
+        "note": "Names are transcribed in the inspected source order; current author order and assigned lead are unconfirmed."
+      },
+      "localVersion": {
+        "authority": "canonical",
+        "versionLabel": "Guadalupe River manuscript · local source",
+        "versionDate": null,
+        "checkedOn": "2026-10-29",
+        "note": "A complete local draft is documented in the June scope inventory. Current review stage, venue and cloud version remain unconfirmed."
+      },
+      "currentDraft": {
+        "url": null,
+        "status": "unconfirmed",
+        "versionLabel": null,
+        "versionDate": null,
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "note": "A local manuscript was inspected. The current OneDrive destination and its sharing boundary have not been verified; no draft link is published."
+      },
+      "nextAction": {
+        "text": "Confirm the current OneDrive version, reported status, lead and record steward.",
+        "owner": null,
+        "dueDate": null,
+        "dueStatus": "unconfirmed",
+        "agreedOn": null,
+        "status": "proposed"
+      },
+      "blockers": [],
+      "supportingLinks": [],
+      "confirmation": {
+        "sourceCheckedOn": "2026-10-29",
+        "sourceLabel": "CECREH inventory (Jun 5) and local manuscript",
+        "recordReviewedOn": "2026-10-29",
+        "note": "The inspection date confirms that local evidence was read. It does not confirm the current team status, latest cloud file or completeness of this inventory."
+      },
+      "history": {
+        "linkChanges": [],
+        "submissions": []
+      }
+    },
+    {
+      "id": "MS-0011",
+      "title": "Tenure and Attachment in Post-Disaster Recovery: Evidence from Households across the Gulf Corridor",
+      "shortTitle": null,
+      "tags": [
+        "Housing tenure",
+        "Gulf Corridor"
+      ],
+      "scope": {
+        "status": "confirmed",
+        "confirmedOn": "2026-06-05",
+        "confirmedBy": "Jesse R. Andrews — dated CECREH inventory",
+        "note": "Listed in the dated June 5 CECREH inventory; continuing inclusion should be refreshed."
+      },
+      "inventoryState": "active",
+      "writing": {
+        "stage": "internal_revision",
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "reportedOn": "2026-06-05",
+        "note": "A local source supports the reported stage or draft existence; the current stage has not been confirmed with an author."
+      },
+      "journal": {
+        "status": "unconfirmed",
+        "name": null,
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "reportedOn": null,
+        "note": "No current submission or decision is confirmed. A local draft or prepared submission bundle does not establish submission."
+      },
+      "lead": null,
+      "steward": null,
+      "authors": {
+        "names": [],
+        "note": "No verified current byline is available. Contributor names and document metadata are not used to infer authorship."
+      },
+      "localVersion": {
+        "authority": "canonical",
+        "versionLabel": "Gulf Corridor manuscript · local source",
+        "versionDate": null,
+        "checkedOn": "2026-10-29",
+        "note": "The local source was identified. An earlier local copy is retained as a separate version, not another manuscript."
+      },
+      "currentDraft": {
+        "url": null,
+        "status": "unconfirmed",
+        "versionLabel": null,
+        "versionDate": null,
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "note": "A local manuscript was inspected. The current OneDrive destination and its sharing boundary have not been verified; no draft link is published."
+      },
+      "nextAction": {
+        "text": "Confirm the current OneDrive version, reported status, lead and record steward.",
+        "owner": null,
+        "dueDate": null,
+        "dueStatus": "unconfirmed",
+        "agreedOn": null,
+        "status": "proposed"
+      },
+      "blockers": [],
+      "supportingLinks": [],
+      "confirmation": {
+        "sourceCheckedOn": "2026-10-29",
+        "sourceLabel": "CECREH inventory (Jun 5) and Gulf Corridor project manuscript",
+        "recordReviewedOn": "2026-10-29",
+        "note": "The inspection date confirms that local evidence was read. It does not confirm the current team status, latest cloud file or completeness of this inventory."
+      },
+      "history": {
+        "linkChanges": [],
+        "submissions": []
+      }
+    },
+    {
+      "id": "MS-0012",
+      "title": "Predicting broadband usage: A comparison of computer vision and rural-urban typology machine learning models",
+      "shortTitle": null,
+      "tags": [
+        "Broadband",
+        "Computer vision"
+      ],
+      "scope": {
+        "status": "candidate",
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "note": "Located during the drive inventory; CECREH scope remains unconfirmed."
+      },
+      "inventoryState": "active",
+      "writing": {
+        "stage": "journal_revision",
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "reportedOn": "2026-10-20",
+        "note": "A local source supports the reported stage or draft existence; the current stage has not been confirmed with an author."
+      },
+      "journal": {
+        "status": "revision_requested",
+        "name": "Applied Spatial Analysis and Policy",
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "reportedOn": "2026-10-20",
+        "note": "The local record reports a major-revision request on Oct 20 and a journal-recommended Dec 4, 2026 return date. This is not an agreed team deadline; the portal was not rechecked for this register."
+      },
+      "lead": null,
+      "steward": null,
+      "authors": {
+        "names": [],
+        "note": "No verified current byline is available. Contributor names and document metadata are not used to infer authorship."
+      },
+      "localVersion": {
+        "authority": "canonical",
+        "versionLabel": "ASAPP R1 author working revision · Oct 20",
+        "versionDate": "2026-10-20",
+        "checkedOn": "2026-10-29",
+        "note": "The author working revision is separate from the submitted baseline. The inspected manuscript is blinded; no author list is inferred."
+      },
+      "currentDraft": {
+        "url": null,
+        "status": "unconfirmed",
+        "versionLabel": null,
+        "versionDate": null,
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "note": "A local manuscript was inspected. The current OneDrive destination and its sharing boundary have not been verified; no draft link is published."
+      },
+      "nextAction": {
+        "text": "Confirm the revision schedule, assigned owner, CECREH scope and current OneDrive version.",
+        "owner": null,
+        "dueDate": null,
+        "dueStatus": "unconfirmed",
+        "agreedOn": null,
+        "status": "proposed"
+      },
+      "blockers": [],
+      "supportingLinks": [],
+      "confirmation": {
+        "sourceCheckedOn": "2026-10-29",
+        "sourceLabel": "Author working revision and dated submission record (Oct 20)",
+        "recordReviewedOn": "2026-10-29",
+        "note": "The inspection date confirms that local evidence was read. It does not confirm the current team status, latest cloud file or completeness of this inventory."
+      },
+      "history": {
+        "linkChanges": [],
+        "submissions": [
+          {
+            "eventId": "S-asapp-submitted-20260627",
+            "eventDate": "2026-06-27",
+            "journal": "Applied Spatial Analysis and Policy",
+            "status": "submitted",
+            "note": "Submission recorded in the local project submission log.",
+            "sourceLabel": "Dated project submission record"
+          },
+          {
+            "eventId": "S-asapp-revision-20261020",
+            "eventDate": "2026-10-20",
+            "journal": "Applied Spatial Analysis and Policy",
+            "status": "revision_requested",
+            "note": "Major revision recorded; the journal recommended returning it by Dec 4, 2026. Current portal state has not been rechecked.",
+            "sourceLabel": "Dated project submission record"
+          }
+        ]
+      }
+    },
+    {
+      "id": "MS-0013",
+      "title": "Modeling NFIP-Insured Housing Losses from Texas and Florida Flood Disasters: A Comparative Analysis of Hurricane Harvey, Tax Day Flood, and Hurricane Irma",
+      "shortTitle": null,
+      "tags": [
+        "Housing losses",
+        "NFIP"
+      ],
+      "scope": {
+        "status": "candidate",
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "note": "Located during the drive inventory; CECREH scope remains unconfirmed."
+      },
+      "inventoryState": "active",
+      "writing": {
+        "stage": "journal_revision",
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "reportedOn": null,
+        "note": "A local source supports the reported stage or draft existence; the current stage has not been confirmed with an author."
+      },
+      "journal": {
+        "status": "revision_requested",
+        "name": "Urban Climate",
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "reportedOn": null,
+        "note": "The local project describes an Urban Climate revision workflow. The decision date and current portal state have not been confirmed."
+      },
+      "lead": null,
+      "steward": null,
+      "authors": {
+        "names": [],
+        "note": "No verified current byline is available. Contributor names and document metadata are not used to infer authorship."
+      },
+      "localVersion": {
+        "authority": "canonical",
+        "versionLabel": "Housing-loss manuscript · canonical editable source",
+        "versionDate": null,
+        "checkedOn": "2026-10-29",
+        "note": "The canonical editable source and distribution files were located. Local OneDrive copies also exist, but their current-version authority and sharing links have not been verified."
+      },
+      "currentDraft": {
+        "url": null,
+        "status": "unconfirmed",
+        "versionLabel": null,
+        "versionDate": null,
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "note": "A local manuscript was inspected. The current OneDrive destination and its sharing boundary have not been verified; no draft link is published."
+      },
+      "nextAction": {
+        "text": "Confirm CECREH scope, current OneDrive version, reported status and record steward.",
+        "owner": null,
+        "dueDate": null,
+        "dueStatus": "unconfirmed",
+        "agreedOn": null,
+        "status": "proposed"
+      },
+      "blockers": [],
+      "supportingLinks": [],
+      "confirmation": {
+        "sourceCheckedOn": "2026-10-29",
+        "sourceLabel": "Canonical manuscript and local project journal-workflow record",
+        "recordReviewedOn": "2026-10-29",
+        "note": "The inspection date confirms that local evidence was read. It does not confirm the current team status, latest cloud file or completeness of this inventory."
+      },
+      "history": {
+        "linkChanges": [],
+        "submissions": []
+      }
+    },
+    {
+      "id": "MS-0014",
+      "title": "Retrieval-Augmented Generation, Agentic AI, and Agent-Based Modeling in Disaster Management: Systematic Review",
+      "shortTitle": null,
+      "tags": [
+        "Disaster management",
+        "Systematic review"
+      ],
+      "scope": {
+        "status": "candidate",
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "note": "Located during the drive inventory; CECREH scope remains unconfirmed."
+      },
+      "inventoryState": "active",
+      "writing": {
+        "stage": "unconfirmed",
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "reportedOn": null,
+        "note": "A draft was located. Its existence or modification timestamp does not establish the current writing stage."
+      },
+      "journal": {
+        "status": "unconfirmed",
+        "name": null,
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "reportedOn": null,
+        "note": "No current submission or decision is confirmed. A local draft or prepared submission bundle does not establish submission."
+      },
+      "lead": null,
+      "steward": null,
+      "authors": {
+        "names": [],
+        "note": "No verified current byline is available. Contributor names and document metadata are not used to infer authorship."
+      },
+      "localVersion": {
+        "authority": "candidate",
+        "versionLabel": "Systematic review · second draft local PDF",
+        "versionDate": null,
+        "checkedOn": "2026-10-29",
+        "note": "The second-draft PDF was located. Commented derivatives are not treated as an authoritative replacement. Authorship, scope and the latest author version require confirmation."
+      },
+      "currentDraft": {
+        "url": null,
+        "status": "unconfirmed",
+        "versionLabel": null,
+        "versionDate": null,
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "note": "A local manuscript was inspected. The current OneDrive destination and its sharing boundary have not been verified; no draft link is published."
+      },
+      "nextAction": {
+        "text": "Confirm CECREH scope, current OneDrive version, reported status and record steward.",
+        "owner": null,
+        "dueDate": null,
+        "dueStatus": "unconfirmed",
+        "agreedOn": null,
+        "status": "proposed"
+      },
+      "blockers": [],
+      "supportingLinks": [],
+      "confirmation": {
+        "sourceCheckedOn": "2026-10-29",
+        "sourceLabel": "Local second-draft systematic-review PDF",
+        "recordReviewedOn": "2026-10-29",
+        "note": "The inspection date confirms that local evidence was read. It does not confirm the current team status, latest cloud file or completeness of this inventory."
+      },
+      "history": {
+        "linkChanges": [],
+        "submissions": []
+      }
+    },
+    {
+      "id": "MS-0015",
+      "title": "Projecting Future Precipitation Risk for Housing in Socially Vulnerable Communities: A High-Resolution Climate Model Analysis of Harris County, Texas",
+      "shortTitle": null,
+      "tags": [
+        "Climate projections",
+        "Housing"
+      ],
+      "scope": {
+        "status": "candidate",
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "note": "Located during the drive inventory; CECREH scope remains unconfirmed."
+      },
+      "inventoryState": "active",
+      "writing": {
+        "stage": "unconfirmed",
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "reportedOn": null,
+        "note": "A draft was located. Its existence or modification timestamp does not establish the current writing stage."
+      },
+      "journal": {
+        "status": "unconfirmed",
+        "name": null,
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "reportedOn": null,
+        "note": "No current submission or decision is confirmed. A local draft or prepared submission bundle does not establish submission."
+      },
+      "lead": null,
+      "steward": null,
+      "authors": {
+        "names": [],
+        "note": "No verified current byline is available. Contributor names and document metadata are not used to infer authorship."
+      },
+      "localVersion": {
+        "authority": "candidate",
+        "versionLabel": "Climate–housing–population manuscript · local copy",
+        "versionDate": null,
+        "checkedOn": "2026-10-29",
+        "note": "A distinct titled local draft was found. A filename containing latest is not version confirmation. This record is not merged with the NFIP claims paper."
+      },
+      "currentDraft": {
+        "url": null,
+        "status": "unconfirmed",
+        "versionLabel": null,
+        "versionDate": null,
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "note": "A local manuscript was inspected. The current OneDrive destination and its sharing boundary have not been verified; no draft link is published."
+      },
+      "nextAction": {
+        "text": "Confirm CECREH scope, current OneDrive version, reported status and record steward.",
+        "owner": null,
+        "dueDate": null,
+        "dueStatus": "unconfirmed",
+        "agreedOn": null,
+        "status": "proposed"
+      },
+      "blockers": [],
+      "supportingLinks": [],
+      "confirmation": {
+        "sourceCheckedOn": "2026-10-29",
+        "sourceLabel": "Local climate–housing–population draft",
+        "recordReviewedOn": "2026-10-29",
+        "note": "The inspection date confirms that local evidence was read. It does not confirm the current team status, latest cloud file or completeness of this inventory."
+      },
+      "history": {
+        "linkChanges": [],
+        "submissions": []
+      }
+    },
+    {
+      "id": "MS-0016",
+      "title": "A Validated National Inventory of Municipal Floodplain Regulation: Text Classification over 2.2 Million Local Ordinance Chunks",
+      "shortTitle": null,
+      "tags": [
+        "Floodplain regulation",
+        "Municipal policy"
+      ],
+      "scope": {
+        "status": "candidate",
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "note": "Located during the drive inventory; CECREH scope remains unconfirmed."
+      },
+      "inventoryState": "active",
+      "writing": {
+        "stage": "unconfirmed",
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "reportedOn": null,
+        "note": "A draft was located. Its existence or modification timestamp does not establish the current writing stage."
+      },
+      "journal": {
+        "status": "unconfirmed",
+        "name": null,
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "reportedOn": null,
+        "note": "No current submission or decision is confirmed. A local draft or prepared submission bundle does not establish submission."
+      },
+      "lead": null,
+      "steward": null,
+      "authors": {
+        "names": [
+          "Jesse R. Andrews"
+        ],
+        "note": "Names are transcribed in the inspected source order; current author order and assigned lead are unconfirmed."
+      },
+      "localVersion": {
+        "authority": "candidate",
+        "versionLabel": "Municipal floodplain-regulation manuscript · local source",
+        "versionDate": null,
+        "checkedOn": "2026-10-29",
+        "note": "A substantive local manuscript source was found. Its current workflow stage and CECREH scope require confirmation."
+      },
+      "currentDraft": {
+        "url": null,
+        "status": "unconfirmed",
+        "versionLabel": null,
+        "versionDate": null,
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "note": "A local manuscript was inspected. The current OneDrive destination and its sharing boundary have not been verified; no draft link is published."
+      },
+      "nextAction": {
+        "text": "Confirm CECREH scope, current OneDrive version, reported status and record steward.",
+        "owner": null,
+        "dueDate": null,
+        "dueStatus": "unconfirmed",
+        "agreedOn": null,
+        "status": "proposed"
+      },
+      "blockers": [],
+      "supportingLinks": [],
+      "confirmation": {
+        "sourceCheckedOn": "2026-10-29",
+        "sourceLabel": "Local municipal floodplain-regulation manuscript",
+        "recordReviewedOn": "2026-10-29",
+        "note": "The inspection date confirms that local evidence was read. It does not confirm the current team status, latest cloud file or completeness of this inventory."
+      },
+      "history": {
+        "linkChanges": [],
+        "submissions": []
+      }
+    },
+    {
+      "id": "MS-0017",
+      "title": "Narrative Composition and Financial Reporting in Texas Disaster Recovery",
+      "shortTitle": null,
+      "tags": [
+        "Texas recovery",
+        "Administrative reporting"
+      ],
+      "scope": {
+        "status": "candidate",
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "note": "Located during the drive inventory; CECREH scope remains unconfirmed."
+      },
+      "inventoryState": "active",
+      "writing": {
+        "stage": "internal_revision",
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "reportedOn": "2026-09-07",
+        "note": "A local source supports the reported stage or draft existence; the current stage has not been confirmed with an author."
+      },
+      "journal": {
+        "status": "unconfirmed",
+        "name": null,
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "reportedOn": null,
+        "note": "No current submission or decision is confirmed. A local draft or prepared submission bundle does not establish submission."
+      },
+      "lead": null,
+      "steward": null,
+      "authors": {
+        "names": [
+          "Jesse R. Andrews",
+          "Ali Nejat",
+          "Kaifa Lu"
+        ],
+        "note": "Names are transcribed in the inspected source order; current author order and assigned lead are unconfirmed."
+      },
+      "localVersion": {
+        "authority": "canonical",
+        "versionLabel": "Narrative composition · Sep 7 revised distribution version",
+        "versionDate": "2026-09-07",
+        "checkedOn": "2026-10-29",
+        "note": "The project explicitly identifies the September revised manuscript as current local authority. This is separate from the Harvey-only manuscript."
+      },
+      "currentDraft": {
+        "url": null,
+        "status": "unconfirmed",
+        "versionLabel": null,
+        "versionDate": null,
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "note": "A local manuscript was inspected. The current OneDrive destination and its sharing boundary have not been verified; no draft link is published."
+      },
+      "nextAction": {
+        "text": "Confirm CECREH scope, current OneDrive version, reported status and record steward.",
+        "owner": null,
+        "dueDate": null,
+        "dueStatus": "unconfirmed",
+        "agreedOn": null,
+        "status": "proposed"
+      },
+      "blockers": [],
+      "supportingLinks": [],
+      "confirmation": {
+        "sourceCheckedOn": "2026-10-29",
+        "sourceLabel": "Current project documentation and dated revised manuscript",
+        "recordReviewedOn": "2026-10-29",
+        "note": "The inspection date confirms that local evidence was read. It does not confirm the current team status, latest cloud file or completeness of this inventory."
+      },
+      "history": {
+        "linkChanges": [],
+        "submissions": []
+      }
+    },
+    {
+      "id": "MS-0018",
+      "title": "Recovery Narratives as Signals of Rebuilding Pace",
+      "shortTitle": null,
+      "tags": [
+        "Hurricane Harvey",
+        "Administrative reporting"
+      ],
+      "scope": {
+        "status": "candidate",
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "note": "Located during the drive inventory; CECREH scope remains unconfirmed."
+      },
+      "inventoryState": "active",
+      "writing": {
+        "stage": "unconfirmed",
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "reportedOn": null,
+        "note": "A draft was located. Its existence or modification timestamp does not establish the current writing stage."
+      },
+      "journal": {
+        "status": "unconfirmed",
+        "name": null,
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "reportedOn": null,
+        "note": "No current submission or decision is confirmed. A local draft or prepared submission bundle does not establish submission."
+      },
+      "lead": null,
+      "steward": null,
+      "authors": {
+        "names": [
+          "Jesse R. Andrews",
+          "Ali Nejat",
+          "Kaifa Lu"
+        ],
+        "note": "Names are transcribed in the inspected source order; current author order and assigned lead are unconfirmed."
+      },
+      "localVersion": {
+        "authority": "candidate",
+        "versionLabel": "Harvey recovery narratives · Jun 9 local version",
+        "versionDate": "2026-06-09",
+        "checkedOn": "2026-10-29",
+        "note": "A June 9 version was located. Project documentation still points to an earlier June 8 title, so current canonical authority needs confirmation."
+      },
+      "currentDraft": {
+        "url": null,
+        "status": "unconfirmed",
+        "versionLabel": null,
+        "versionDate": null,
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "note": "A local manuscript was inspected. The current OneDrive destination and its sharing boundary have not been verified; no draft link is published."
+      },
+      "nextAction": {
+        "text": "Confirm CECREH scope, current OneDrive version, reported status and record steward.",
+        "owner": null,
+        "dueDate": null,
+        "dueStatus": "unconfirmed",
+        "agreedOn": null,
+        "status": "proposed"
+      },
+      "blockers": [],
+      "supportingLinks": [],
+      "confirmation": {
+        "sourceCheckedOn": "2026-10-29",
+        "sourceLabel": "Dated Harvey manuscript and local project documentation",
+        "recordReviewedOn": "2026-10-29",
+        "note": "The inspection date confirms that local evidence was read. It does not confirm the current team status, latest cloud file or completeness of this inventory."
+      },
+      "history": {
+        "linkChanges": [],
+        "submissions": []
+      }
+    },
+    {
+      "id": "MS-0019",
+      "title": "Mapping Broadband Vulnerability to Natural Hazards: The Hazard-Adjusted Broadband Reliability Index for North Carolina",
+      "shortTitle": null,
+      "tags": [
+        "Broadband resilience",
+        "North Carolina"
+      ],
+      "scope": {
+        "status": "candidate",
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "note": "Located during the drive inventory; CECREH scope remains unconfirmed."
+      },
+      "inventoryState": "active",
+      "writing": {
+        "stage": "unconfirmed",
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "reportedOn": null,
+        "note": "A draft was located. Its existence or modification timestamp does not establish the current writing stage."
+      },
+      "journal": {
+        "status": "unconfirmed",
+        "name": null,
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "reportedOn": null,
+        "note": "No current submission or decision is confirmed. A local draft or prepared submission bundle does not establish submission."
+      },
+      "lead": null,
+      "steward": null,
+      "authors": {
+        "names": [
+          "Jesse R. Andrews"
+        ],
+        "note": "Names are transcribed in the inspected source order; current author order and assigned lead are unconfirmed."
+      },
+      "localVersion": {
+        "authority": "candidate",
+        "versionLabel": "HABRI North Carolina manuscript · local draft",
+        "versionDate": null,
+        "checkedOn": "2026-10-29",
+        "note": "The draft explicitly covers the North Carolina baseline. Later project extensions are not assumed to be incorporated into this manuscript."
+      },
+      "currentDraft": {
+        "url": null,
+        "status": "unconfirmed",
+        "versionLabel": null,
+        "versionDate": null,
+        "confirmedOn": null,
+        "confirmedBy": null,
+        "note": "A local manuscript was inspected. The current OneDrive destination and its sharing boundary have not been verified; no draft link is published."
+      },
+      "nextAction": {
+        "text": "Confirm CECREH scope, current OneDrive version, reported status and record steward.",
+        "owner": null,
+        "dueDate": null,
+        "dueStatus": "unconfirmed",
+        "agreedOn": null,
+        "status": "proposed"
+      },
+      "blockers": [],
+      "supportingLinks": [],
+      "confirmation": {
+        "sourceCheckedOn": "2026-10-29",
+        "sourceLabel": "Local HABRI manuscript scope note",
+        "recordReviewedOn": "2026-10-29",
+        "note": "The inspection date confirms that local evidence was read. It does not confirm the current team status, latest cloud file or completeness of this inventory."
+      },
+      "history": {
+        "linkChanges": [],
+        "submissions": []
+      }
+    }
+  ]
+}

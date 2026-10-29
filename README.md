@@ -1,59 +1,40 @@
 # CECREH manuscript register
 
-A responsive, read-only static register for unpublished manuscripts. Overview counts, search, writing/journal/person filters, agreed-date sorting, and expandable details make the current draft and next action easy to find. Candidate manuscripts stay in their own queue until their CECREH scope is confirmed.
+A responsive, read-only register of manuscript metadata: scope, writing stage, journal state, observed byline, local-version evidence, current draft links and next actions. Writing and journal status are separate. Pending-scope records stay outside the confirmed-scope count.
 
-**Publication is blocked pending a hosting decision.** The October 26, 2026 read-only GitHub organization check returned `plan: free` and `default_repository_permission: read`. GitHub Free cannot privately publish this project with GitHub Pages. A private source repository does not make Pages private. No remote repository, Pages configuration, or deployment was created. See [Hosting decision](docs/HOSTING.md).
+The owner approved a **public metadata tracker** with `noindex, nofollow` and no inbound navigation links added elsewhere. Manuscript files remain separate on OneDrive. The initial release has **19 records: 7 supported by a dated CECREH inventory and 12 awaiting scope or identity confirmation**. Every current OneDrive link is visibly unresolved. This is a provisional inventory, not a claim that every manuscript or present status has been confirmed.
 
-This source tree contains **synthetic demo data only**. Six fictional examples demonstrate active, candidate, and archived records; they are not CECREH's inventory. Real candidate metadata belongs in a sibling private-data folder outside this repository. Never copy operational records into `data/manuscripts.json` while publication boundaries remain unverified.
+No manuscript text, reviewer letters, local source paths, raw research data, protected sharing URLs, analytics, cookies or browser storage are included. Search-engine directives do not make the page private.
 
-## Preview the safe demonstration
+## Run locally
 
-Node 22 or later is recommended. The website itself has no runtime package dependencies, external fonts, analytics, cookies, browser storage, or automatic draft-link checks. Pinned development tools validate the schema and test the interface.
+Use Node 22 or later and the pinned development dependencies. The website has no runtime package dependencies or external fonts.
 
 ```sh
 npm ci --ignore-scripts
-npm run schema
-npm run validate
-npm run build
-npm run preview
+npm run check
+npm run build:public
+npm run preview:public
 ```
 
-Open `http://127.0.0.1:4173/`. The preview server binds only to loopback and serves an explicit asset allowlist. It does not serve source, tests, documentation, or sibling private data. The static build is `dist/demo/`. Its relative paths also work at a GitHub Pages project subpath.
+The loopback-only preview is at port 4173. `npm run build` and `npm run preview` instead use six synthetic fixtures. Relative asset paths support the GitHub Pages project subpath. The preview server serves only allowlisted site files.
 
-## Validate and inspect local confidential records
+## Data and maintenance
 
-```sh
-node scripts/validate.mjs ../private-data/manuscripts.json
-node scripts/build.mjs --data ../private-data/manuscripts.json --private-local --out ../private-preview
-node scripts/serve.mjs --root ../private-preview --port 4174
-```
+- `data/public-manuscripts.json`: reviewed public release metadata.
+- `data/manuscripts.json`: synthetic examples used by behavioral tests.
+- `schema/manuscripts.schema.json`: strict record schema.
+- `lib/schema-validator.mjs`: generated Ajv browser/CLI validator.
+- `lib/records.mjs`: semantic checks, history validation, search and status/date rules.
+- `scripts/build.mjs`: separate public, synthetic and local confidential builds.
+- `.github/workflows/validate.yml`: validation, accessibility/mobile checks and Pages deployment from `main` only.
 
-Open `http://127.0.0.1:4174/` only on the local computer. This preview is confidential and must not be uploaded. The build refuses confidential data without the explicit local flag, refuses confidential output inside the source repository, and keeps private preview files restricted to the local owner. Local labels and file permissions are not a substitute for verified remote access controls.
+Follow [Maintaining the register](docs/MAINTAINING.md), [Field dictionary](docs/DATA-DICTIONARY.md), [Hosting](docs/HOSTING.md), [Project status](docs/PROJECT_STATUS.md) and [Verification](docs/VERIFICATION.md). Primary maintainer and backup still require assignment; authorship does not imply either role.
 
-## Maintain the register
+Keep full source receipts, local paths and confidential history outside this repository. A separate confidential input can be validated and previewed with `--private-local --out` pointing to a dedicated directory outside the repository. It cannot be built into the public artifact.
 
-Assign one primary maintainer and one backup before operational use. Neither role is inferred from manuscript authorship. Follow [Maintainer runbook](docs/MAINTAINING.md) and the [Field dictionary](docs/DATA-DICTIONARY.md).
+## Release
 
-- `schema/manuscripts.schema.json` is the authoritative record schema, with strict fields and enumerated states.
-- `lib/schema-validator.mjs` is generated using Ajv and bundled for offline browser validation. `lib/records.mjs` adds semantic rules, history checks, filters, and date logic.
-- `data/manuscripts.json` is always the fictional demonstration in this repository.
-- `scripts/build.mjs` emits only the static asset allowlist. There is no publish command or Pages workflow.
-- `tests/` checks uncertainty, IDs/history, privacy boundaries, behavior, mobile layouts, accessibility, and failure states.
+The Pages workflow checks the application, builds `dist/public`, and uploads that directory alone. A private local preview is never a deployment source. Public deployment requires an explicit `--public` build of a `public_metadata` dataset. Changes on pull requests are tested but not deployed. Open any PR as a draft.
 
-Unknown values remain `null` or `unconfirmed`. The record-entry date never substitutes for a source or version confirmation. Staleness is calculated against today's UTC date and the configured 30-day threshold. Suggested actions and proposed dates are labeled; only agreed deadlines can become overdue. Each paper has a stable ID, independent of its title or topic. No author order is recorded or inferred.
-
-## Verification
-
-```sh
-npm test
-npm run build
-npm run test:ui
-```
-
-Local browser tests use the installed Google Chrome in a fresh context. On Linux CI, `npx playwright install --with-deps chromium` installs the pinned Playwright browser. `npm run check` runs the complete validation and test sequence. The workflow performs checks only; it never deploys or uploads screenshots. Screenshots under `artifacts/` and test reports are ignored by Git and contain synthetic examples only.
-
-The visual system follows [CECREH/grants](https://github.com/CECREH/grants): muted paper background, dark teal C mark, Georgia headline, green/gold status cues, searchable card register, and expandable source details. This is a separate application; the grants repository was only read.
-
-## Boundaries
-
-Do not store manuscripts, raw research data, reviewer letters, credentials, or hidden secrets in site assets. Protected draft URLs are confidential metadata. Grant proposals, journal referee work, and work outside CECREH scope do not belong in this inventory. Similar topics do not establish that two papers are the same manuscript. Do not add access grants, credentials, external hosting, or a public version without the required owner decision.
+The interface follows the existing CECREH grants visual conventions: paper background, teal identity mark, Georgia headline, readable status cues, search and expandable cards. The grants repository is unchanged.

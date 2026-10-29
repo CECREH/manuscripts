@@ -7,17 +7,21 @@ const root=resolve(dirname(fileURLToPath(import.meta.url)),'..');
 const args=process.argv.slice(2);
 const value=key=>args[args.indexOf(key)+1];
 try {
-  const input=resolve(args.includes('--data')?value('--data'):resolve(root,'data/manuscripts.json'));
+  const publicBuild=args.includes('--public');
+  const input=resolve(args.includes('--data')?value('--data'):resolve(root,publicBuild?'data/public-manuscripts.json':'data/manuscripts.json'));
   const data=JSON.parse(await readFile(input,'utf8'));
   const errors=validateData(data);if(errors.length) throw new Error(`Validation failed: ${errors.join('; ')}`);
   const confidential=data.dataClass==='confidential';
+  if(publicBuild&&data.dataClass!=='public_metadata') throw new Error('--public requires a reviewed public_metadata dataset.');
+  if(data.dataClass==='public_metadata'&&!publicBuild) throw new Error('Public metadata requires the explicit --public build.');
   if(confidential&&!args.includes('--private-local')) throw new Error('Confidential data requires --private-local. No remote deployment is provided.');
   if(confidential&&!args.includes('--out')) throw new Error('Confidential previews require an explicit output directory outside the repository.');
-  const output=resolve(args.includes('--out')?value('--out'):resolve(root,'dist/demo'));
+  const defaultOutput=resolve(root,publicBuild?'dist/public':'dist/demo');
+  const output=resolve(args.includes('--out')?value('--out'):defaultOutput);
   const rel=relative(root,output);
   const outside=rel==='..'||rel.startsWith('../')||isAbsolute(rel);
   if(confidential&&!outside) throw new Error('Confidential previews must stay outside the source repository.');
-  if(!confidential&&output!==resolve(root,'dist/demo')) throw new Error('Demo builds are restricted to dist/demo.');
+  if(!confidential&&output!==defaultOutput) throw new Error('Release and demo builds are restricted to their separate dist directories.');
   if(confidential&&(output===dirname(root)||output===resolve('/'))) throw new Error('Choose a dedicated local preview directory.');
   await mkdir(output,{recursive:true,mode:confidential?0o700:0o755});
   const existing=await readdir(output);
@@ -35,5 +39,5 @@ try {
     if(confidential) await chmod(target,0o600);
   }
   await writeFile(resolve(output,'.build.json'),JSON.stringify({dataClass:data.dataClass,localOnly:confidential,files:siteAssets},null,2)+'\n',{mode:confidential?0o600:0o644});
-  console.log(`Built ${data.dataClass} preview: ${output}\n${confidential?'LOCAL ONLY: hosting and repository audience are not verified.':'Synthetic demonstration only. No deployment performed.'}`);
+  console.log(`Built ${data.dataClass}: ${output}\n${confidential?'LOCAL ONLY: not a publication artifact.':publicBuild?'Reviewed public metadata only. No manuscript files included.':'Synthetic demonstration only. No deployment performed.'}`);
 } catch(error) {console.error(error.message);process.exitCode=1;}
