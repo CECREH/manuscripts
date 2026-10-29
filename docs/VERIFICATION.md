@@ -15,6 +15,20 @@ An initial local test caught a missing public-data option in the preview server;
 
 Local screenshots are Git-ignored: `artifacts/public-desktop.png`, `public-details.png`, `public-mobile-320-top.png`, `public-mobile-390-top.png`, and mobile details captures. Synthetic regression screenshots are also retained locally. No screenshots or traces are uploaded by CI.
 
-## Deployment evidence
+## Deployment evidence — October 29, 2026
 
-The destination repository was absent at the prepublication check. Existing public CECREH repository heads were recorded before any mutation. Remote commit, Pages deployment, live HTML/JSON verification and unchanged-repository comparison will be recorded here after publication succeeds.
+- Repository: `CECREH/manuscripts`, public, no homepage URL configured.
+- Site: `https://cecreh.github.io/manuscripts/`; HTTPS enforced.
+- Initial deployed commit: `87450e31aab119addd32a5b4df84f57b6705fa91`.
+- [Validation and deployment run 40797452308](https://github.com/CECREH/manuscripts/actions/runs/40797452308) succeeded: check job 58 seconds, deploy job 11 seconds. The remote run passed the same 14 Node tests and 19 browser tests.
+- Anonymous requests (no cookies or Authorization header) returned 200 for the HTML, CSS, JavaScript modules, favicon, public JSON and dependency notices. All eight bodies matched the tested local artifact byte-for-byte by SHA-256.
+- The live HTML contains `<meta name="robots" content="noindex, nofollow">`. The page is public; this is a crawler request, not access control.
+- Live browser inspection confirmed the interface renders 7 confirmed-scope records, 12 pending candidates and 19 unresolved draft links. The source/data dates and uncertainty labels render correctly.
+- `.build.json`, `package.json`, `docs/HOSTING.md` and `private-data/manuscripts.json` returned 404 on the Pages site. No manuscript files or confidential source evidence are deployed.
+- Existing repository heads and homepage values matched the prepublication snapshot: grants `448013742ffaa56c4df28a8fea840ae4c7b7f24d`; organization profile `c3b714f52712e719766a5d3f51eb38a0b798949c`; atlas `2eec068b9db2328a1c26963455e840006d3dde84`. No new inbound navigation links were added.
+
+Raw local verification receipts and the complete source inventory are kept outside the public repository. The next documentation-only commit records this completed release; it does not change the site data or application assets. The workflow also validates and redeploys documentation-only pushes.
+
+## Deferred work
+
+The owner explicitly deferred completing manuscript links. All current-draft URLs remain null and visibly unresolved. Scope/identity confirmations, current bylines/statuses, owner assignments and agreed dates remain maintenance tasks as listed in `PROJECT_STATUS.md`. No OneDrive permissions were changed, and no publishing action is awaiting approval or has an uncertain outcome.

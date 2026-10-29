@@ -13,11 +13,13 @@ Updated October 29, 2026.
 
 ## Release state
 
-Public metadata is approved. Local verification and deployment evidence are recorded in `VERIFICATION.md`; this section will be updated after the remote deployment is verified.
+**Live and verified.** The public Pages site is `https://cecreh.github.io/manuscripts/`, hosted from the separate `CECREH/manuscripts` repository. Initial release commit: `87450e31aab119addd32a5b4df84f57b6705fa91`; validation and deployment run `40797452308` succeeded. Anonymous HTTP checks and a live browser check confirmed the released data, working interface and noindex/nofollow directive. Existing grants, organization-profile and atlas heads/homepages are unchanged.
+
+The owner explicitly deferred completing manuscript links: “We can get all the links working later. Get the website working for now.” Link work is therefore remaining maintenance, not a release blocker. No OneDrive permissions were changed.
 
 ## Remaining
 
-- Verify the current OneDrive destination and intended access boundary for each of the 19 records; no public manuscript links are released yet.
+- Deferred by owner: verify the current OneDrive destination and intended access boundary for each of the 19 records; no public manuscript links are released yet.
 - Assign one maintainer and one backup, plus manuscript leads/stewards and next-action owners.
 - Refresh the seven dated CECREH scope memberships; resolve the other twelve candidates.
 - Reconcile the audit-protocol/financial-implementation identity and source-title conflict without merging by topic.

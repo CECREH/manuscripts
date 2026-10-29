@@ -25,3 +25,5 @@ The initial release publishes no manuscript URLs. Each link is unresolved until 
 7. Update project status and verification documentation with completed work, evidence and remaining tasks.
 
 Local confidential previews stay outside this repository and are not publishable. The build gates enforce dataset separation; human review still determines whether individual metadata and links are appropriate to publish.
+
+Implementation references: [GitHub Pages custom workflows](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages) and [Pages REST API](https://docs.github.com/en/rest/pages/pages). The successful workflow and live checks, rather than configuration alone, establish this release's deployment state.
