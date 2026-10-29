@@ -11,11 +11,13 @@ Updated October 29, 2026.
 - Public build includes noindex/nofollow. The deployment uploads only allowlisted public assets. No inbound navigation additions are made to other CECREH repositories.
 - Schema validation, history checks, accessibility/mobile tests and documented maintainer/backup workflow are implemented.
 
-- Abstract enhancement prepared: 17 source abstracts, one grounded summary for an empty Abstract section, and one unresolved source-title conflict. Source labels, version labels and inspection dates accompany the text. Search includes descriptions.
+- Abstract enhancement published and verified: 17 source abstracts, one grounded summary for an empty Abstract section, and one unresolved source-title conflict. Source labels, version labels and inspection dates accompany the text. Search includes descriptions.
 
 ## Release state
 
 **Live and verified.** The public Pages site is `https://cecreh.github.io/manuscripts/`, hosted from the separate `CECREH/manuscripts` repository. Initial release commit: `87450e31aab119addd32a5b4df84f57b6705fa91`; validation and deployment run `40797452308` succeeded. Anonymous HTTP checks and a live browser check confirmed the released data, working interface and noindex/nofollow directive. Existing grants, organization-profile and atlas heads/homepages are unchanged.
+
+The abstract enhancement is live from commit `eae10c8b61ccb952e7c3e2ef3a75ebf48db03e11`; [validation and deployment run 40799927372](https://github.com/CECREH/manuscripts/actions/runs/40799927372) succeeded with 15 data/build tests and 21 browser tests. Anonymous asset hashes match the tested build. Live search, abstract and summary disclosures, source labels and the unresolved-content warning were checked. All 19 draft URLs remain unresolved; the source inspection does not confirm the current shared version.
 
 The owner explicitly deferred completing manuscript links: “We can get all the links working later. Get the website working for now.” Link work is therefore remaining maintenance, not a release blocker. No OneDrive permissions were changed.
 

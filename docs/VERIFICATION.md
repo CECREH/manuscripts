@@ -8,7 +8,13 @@ The new checks enforce the distinction between an inspected abstract, a summary 
 
 Private extraction receipts record source hashes and the exact published-text hashes. The benchmark abstract comes from the explicitly designated Word editorial master; the empty Abstract section in MS-0015 supports the body-grounded summary. MS-0007 remains unresolved because its manuscript title/framing differs across local versions. No internal author-review notes or other manuscript sections are copied into the site.
 
-Screenshots: `artifacts/abstract-desktop.png`, `artifacts/summary-desktop.png`, and `artifacts/public-mobile-390-details.png` (also 320px). These remain local and Git-ignored. Remote release evidence will be recorded after deployment.
+Screenshots: `artifacts/abstract-desktop.png`, `artifacts/summary-desktop.png`, and `artifacts/public-mobile-390-details.png` (also 320px). These remain local and Git-ignored.
+
+The enhancement is published in commit `eae10c8b61ccb952e7c3e2ef3a75ebf48db03e11`. [Validation and deployment run 40799927372](https://github.com/CECREH/manuscripts/actions/runs/40799927372) succeeded: check job 1 minute 14 seconds, deploy job 53 seconds. Remote CI passed the same 15 data/build tests and 21 browser tests.
+
+Anonymous live HTTP requests returned 200 for the HTML, application JavaScript, CSS, record helpers, schema validator and public JSON. All six bodies matched the tested local artifact by SHA-256. The live dataset contains 17 abstracts, one summary and one unresolved description; all 19 current-draft URLs remain null. The live robots directive is still `noindex, nofollow`. Existing grants, organization-profile and atlas heads/homepage settings still match the prepublication snapshot, with no inbound navigation additions.
+
+Live browser checks confirmed abstract-text search finds MS-0005, its source abstract and inspection provenance expand correctly, MS-0015 is explicitly labeled as a summary written for this register, and MS-0007 displays the source-conflict warning without invented text. Private extraction and deployment receipts remain outside the public repository. No OneDrive permissions changed and no publication action was denied or left uncertain.
 
 ## Local release checks — October 29, 2026
 
