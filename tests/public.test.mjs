@@ -26,6 +26,26 @@ test('public gate rejects private paths, email addresses and unreviewed draft li
   assert.ok(validateData(changed).some(e=>/every public link requires/.test(e)));
   assert.ok(validateData(changed).some(e=>/version-confirmed/.test(e)));
 });
+test('all uploaded copies have reviewed protected destinations without invented current-version confirmations',()=>{
+  const links=data.records.flatMap(r=>r.supportingLinks.filter(l=>l.kind==='manuscript'));
+  assert.equal(links.length,19);assert.equal(new Set(links.map(l=>l.url)).size,19);
+  for(const r of data.records) {
+    const link=r.supportingLinks.find(l=>l.kind==='manuscript');const url=new URL(link.url);
+    assert.equal(url.hostname,'texastechuniversity-my.sharepoint.com');assert.equal(link.confirmedOn,'2026-10-29');
+    assert.match(url.searchParams.get('file')||url.searchParams.get('id'),new RegExp(r.id));
+    assert.ok(!['authkey','access_token','token','e'].some(key=>url.searchParams.has(key)));
+    assert.ok(data.publicLinkReviews.some(review=>review.url===link.url&&/sign-in/.test(review.audienceNote)));
+    assert.equal(r.currentDraft.confirmedOn,null);assert.equal(r.currentDraft.confirmedBy,null);assert.equal(r.currentDraft.url,null);
+    assert.deepEqual(r.history.linkChanges,[]);
+  }
+  assert.match(data.records.find(r=>r.id==='MS-0007').supportingLinks[0].label,/Apr 16, 2026/);
+  const duplicate=structuredClone(data);duplicate.records[0].supportingLinks.push({...duplicate.records[0].supportingLinks[0]});
+  assert.match(validateData(duplicate).join(),/at most one uploaded manuscript/);
+  const unchecked=structuredClone(data);unchecked.records[0].supportingLinks[0].confirmedOn=null;
+  assert.match(validateData(unchecked).join(),/destination check date/);
+  const unreviewed=structuredClone(data);unreviewed.publicLinkReviews=[];
+  assert.match(validateData(unreviewed).join(),/every public link requires/);
+});
 test('abstracts, absent-abstract summaries and unresolved descriptions require distinct evidence',()=>{
   const count=kind=>data.records.filter(r=>r.abstractOrSummary.kind===kind).length;
   assert.deepEqual([count('abstract'),count('summary'),count('unresolved')],[18,1,0]);

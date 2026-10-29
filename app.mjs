@@ -73,7 +73,8 @@ function renderCard(r) {
   if(r.journal.status!=='unconfirmed'&&!r.journal.confirmedOn) stageCell.append(paragraph('Reported · not confirmed','field-note'));
   if(r.journal.reportedOn) stageCell.append(paragraph(`Status source dated ${formatDate(r.journal.reportedOn)}`,'field-note'));
   const draft=node('div','draft-cell');
-  draft.append(paragraph('Current draft','field-label'));
+  const uploaded=r.supportingLinks.find(l=>l.kind==='manuscript');
+  draft.append(paragraph(!r.currentDraft.url&&uploaded?'Manuscript file':'Current draft','field-label'));
   const draftFreshness=freshness(r.currentDraft.confirmedOn,data.staleAfterDays,today);
   if(r.currentDraft.url) {
     const isConfirmed=r.currentDraft.status==='confirmed';
@@ -83,6 +84,11 @@ function renderCard(r) {
     else if(draftFreshness==='stale') draft.append(badge('Confirmation stale','warning'));
     draft.append(paragraph([r.currentDraft.versionLabel,r.currentDraft.versionDate ? formatDate(r.currentDraft.versionDate) : null].filter(Boolean).join(' · ')||'Version label unconfirmed','draft-status'));
     draft.append(paragraph(`Version confirmed: ${formatDate(r.currentDraft.confirmedOn)}`,'field-note'));
+  } else if(uploaded) {
+    draft.append(link(uploaded.url,'Open uploaded copy','draft-link uploaded-copy'));
+    draft.append(paragraph('Current version unconfirmed','draft-status warn'));
+    draft.append(paragraph(uploaded.label,'field-note'));
+    draft.append(paragraph('OneDrive sign-in and existing access required.','field-note'));
   } else {
     draft.append(paragraph('Current draft link unconfirmed','draft-unresolved'));
     draft.append(paragraph(r.currentDraft.status==='unavailable'?'No link available.':'A current version has not been verified.','field-note'));
@@ -170,7 +176,7 @@ function updateOverview() {
   const released=data.dataClass==='public_metadata';
   $('access-label').textContent=demo?'Demonstration · Read only':released?'Public metadata · Read only':'Confidential · Read only';
   $('mode-title').textContent=demo?'Demonstration — fictional records only':released?'Manuscript files are separate':'Confidential working register';
-  $('mode-copy').textContent=demo?'These examples show how the register works. Counts, people, dates, and draft buttons are illustrative; they do not describe CECREH manuscripts.':released?'This page contains manuscript metadata. Manuscript files are not hosted here. A located local draft is not a confirmed current OneDrive version; unresolved links and older status reports are labeled below.':'Unpublished metadata and protected draft links. Scope and current-version confirmation are still required for candidate records. This label does not establish hosting access control.';
+  $('mode-copy').textContent=demo?'These examples show how the register works. Counts, people, dates, and draft buttons are illustrative; they do not describe CECREH manuscripts.':released?'Uploaded manuscript copies open in OneDrive and require sign-in and existing access. A verified file link does not confirm the newest author-approved version. Version uncertainty and older status reports are labeled below.':'Unpublished metadata and protected draft links. Scope and current-version confirmation are still required for candidate records. This label does not establish hosting access control.';
   $('mode-banner').classList.toggle('confidential',!demo&&!released);
   $('mode-banner').hidden=false;
 }

@@ -1,5 +1,15 @@
 # Verification record
 
+## Official branding and OneDrive links — October 29, 2026
+
+Authoritative logo bytes match SHA-256 `a473da1cfcdef681f28b9228d47d07ce1db7a960cf8f2e9a949f0bdd732e4d8a`. The header and newly named favicon use identical unchanged PNG artwork. The earlier green SVG is removed from source and shipped assets. PNG has an explicit image/png preview MIME type under nosniff. No Library patch was applied.
+
+Nineteen manuscript files were uploaded to the selected TTU OneDrive folder: 16 DOCX, two PDF and one Markdown. All source/staging hashes match, all signed-in destinations show the expected manuscript, and all 19 anonymous resource-URL checks redirect to Microsoft login. The pre-existing benchmark and all source originals are preserved. No new sharing links, access grants or permission changes were made; inherited parent-folder membership is not fully enumerated.
+
+Public records feature reviewed uploaded-copy links with version labels while retaining unresolved canonical/current-version confirmations. All IDs, abstracts, writing/journal/scope evidence and canonical/submission histories remain unchanged. Regression checks cover destination-review requirements, duplicate-copy rejection, safe resource URLs, privacy boundaries and no automatic external requests.
+
+Local `npm run check` passed **17 data/build checks and 27 browser checks**, including axe WCAG 2 A/AA, 2.1 AA and 2.2 AA scans. The public artifact shows the exact red logo at 1440, 760, 380 and 320px with no horizontal overflow or tested accessibility violations. Desktop and 320px screenshots were visually inspected. An initial test used an ambiguous MS-0007 search selector because MS-0003 also cross-references that ID; narrowing the test to the stable record ID fixed the selector without changing application behavior. Local screenshots: `artifacts/official-brand-1440.png`, `artifacts/official-brand-760.png`, `artifacts/official-brand-380.png`, `artifacts/official-brand-320.png` and `artifacts/onedrive-copy-desktop.png`. Live deployment verification remains pending.
+
 ## MS-0007 selected Word abstract — October 29, 2026
 
 The owner selected the audit-protocol Word render and explicitly authorized publication of its actual abstract. Only MS-0007's description and local-version label/date/note change; all other records, IDs, histories, scope/status confirmations and draft links are preserved. The Word source matches its previously inspected hash, and the excerpt is the exact paragraph immediately following Abstract. April 16, 2026 comes from embedded creation/modification metadata; June 6 is a later distribution-copy date. Current OneDrive authority and the relationship to MS-0003 remain unconfirmed.
@@ -57,6 +67,6 @@ Local screenshots are Git-ignored: `artifacts/public-desktop.png`, `public-detai
 
 Raw local verification receipts and the complete source inventory are kept outside the public repository. The next documentation-only commit records this completed release; it does not change the site data or application assets. The workflow also validates and redeploys documentation-only pushes.
 
-## Deferred work
+## Remaining work
 
-The owner explicitly deferred completing manuscript links. All current-draft URLs remain null and visibly unresolved. Scope/identity confirmations, current bylines/statuses, owner assignments and agreed dates remain maintenance tasks as listed in `PROJECT_STATUS.md`. No OneDrive permissions were changed, and no publishing action is awaiting approval or has an uncertain outcome.
+The owner subsequently authorized the 19 inspected uploaded-copy links. Canonical/current-version confirmations remain null and visibly unresolved; destination verification is not author-version confirmation. Scope/identity confirmations, current bylines/statuses, owner assignments and agreed dates remain maintenance tasks as listed in `PROJECT_STATUS.md`. No OneDrive permissions were changed, and no publishing action is awaiting approval or has an uncertain outcome.

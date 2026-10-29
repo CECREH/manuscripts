@@ -352,6 +352,7 @@
         },
         "kind": {
           "enum": [
+            "manuscript",
             "project",
             "analysis",
             "supplement",

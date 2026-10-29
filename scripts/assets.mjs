@@ -1,1 +1,1 @@
-export const siteAssets=['index.html','styles.css','app.mjs','favicon.svg','lib/records.mjs','lib/schema-validator.mjs','data/manuscripts.json','THIRD_PARTY_NOTICES.txt','.nojekyll'];
+export const siteAssets=['index.html','styles.css','app.mjs','cecreh-logo.png','cecreh-favicon-red-a473da1c.png','lib/records.mjs','lib/schema-validator.mjs','data/manuscripts.json','THIRD_PARTY_NOTICES.txt','.nojekyll'];

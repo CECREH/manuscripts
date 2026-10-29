@@ -46,3 +46,15 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+
+Official CECREH logo and browser icon
+
+Source: https://github.com/CECREH/cdbg-dr-atlas/blob/main/cecreh-logo.png
+Original institutional artwork: https://www.depts.ttu.edu/cecreh/images/CECREH-Logo.png
+SHA-256: a473da1cfcdef681f28b9228d47d07ce1db7a960cf8f2e9a949f0bdd732e4d8a
+
+cecreh-logo.png and cecreh-favicon-red-a473da1c.png contain unchanged source
+artwork, reused for the CECREH manuscript register. CECREH and institutional
+marks remain the property of their respective owners. The dependency licenses
+above do not grant rights to those marks.

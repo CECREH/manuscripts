@@ -1,5 +1,11 @@
 # Change log
 
+## 2026-10-29 — official branding and protected uploaded-copy links
+
+Replaced the synthetic green identity with the unchanged official red/black CECREH logo, a cache-safe PNG favicon and neutral/red palette. Added 19 reviewed OneDrive manuscript-copy links with file/version labels and explicit current-version uncertainty. Existing canonical confirmations, stable IDs, abstracts, scope/status evidence and link/submission histories remain unchanged. No full manuscripts or private evidence enter the site, and no OneDrive permissions or inbound navigation links change.
+
+The logo was reconstructed from its verified authoritative source; no Library patch was retrieved or applied. Publication uses the owner-approved existing Mac setup, with no cloud connector retry or authentication changes.
+
 ## 2026-10-29 — selected MS-0007 Word abstract
 
 Added the actual abstract from the owner-selected audit-protocol Word render with explicit publication authorization. Labels identify its April 16, 2026 rendered-version metadata rather than the June distribution copy. Current OneDrive authority, source synchronization and the relationship to MS-0003 remain unconfirmed. The inventory now has 18 abstracts and one labeled summary; all other records, deferred draft links and site protections remain unchanged.

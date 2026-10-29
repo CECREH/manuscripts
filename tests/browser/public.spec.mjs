@@ -11,7 +11,7 @@ test('actual public artifact: uncertainty, noindex, authors filter and no tracki
   await load(page);await expect(page.locator('#count-candidates')).toHaveText('12');await expect(page.locator('#count-drafts')).toHaveText('19');
   await expect(page.locator('#access-label')).toHaveText('Public metadata · Read only');
   await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content','noindex, nofollow');
-  await expect(page.locator('article .draft-link')).toHaveCount(0);
+  await expect(page.locator('article .uploaded-copy')).toHaveCount(7);
   await expect(page.locator('[data-id="MS-0002"]')).toContainText('Writing status needs refresh');
   await a11y(page);await mkdir('artifacts',{recursive:true});await page.screenshot({path:'artifacts/public-desktop.png',fullPage:true});
   await page.getByLabel('Person',{exact:true}).selectOption('Ali Nejat');await expect(page.locator('article')).toHaveCount(2);
@@ -45,7 +45,7 @@ test('abstracts and summary are readable and searchable with selected-version pr
   await audit.getByText('Read abstract',{exact:true}).click();await expect(audit.locator('.synopsis-text')).toContainText('capacity-timeliness coefficient is not stably identified');
   await expect(audit.locator('.synopsis-source')).toContainText('Selected Word render · Apr 16, 2026');
   await expect(audit.locator('.synopsis-source')).toContainText('current OneDrive version and relationship to MS-0003 remain unconfirmed');
-  await expect(audit.locator('.synopsis-unresolved')).toHaveCount(0);await expect(audit).toContainText('Current draft link unconfirmed');
+  await expect(audit.locator('.synopsis-unresolved')).toHaveCount(0);await expect(audit).toContainText('Current version unconfirmed');
   await a11y(page);await page.screenshot({path:'artifacts/ms0007-word-desktop.png',fullPage:true});
   await page.getByLabel('Search manuscripts').fill('MS-0015');const summary=page.locator('[data-id="MS-0015"]');
   await summary.getByText('Read source-grounded summary',{exact:true}).click();await expect(summary).toContainText('empty Abstract section');await expect(summary.locator('.synopsis-body h4')).toHaveText('Summary — written for this register');
@@ -64,4 +64,39 @@ test('abstract text is never interpreted as HTML',async({page})=>{
   await page.route('**/data/manuscripts.json',r=>r.fulfill({json:data}));await load(page);
   const card=page.locator('[data-id="MS-0005"]');await card.getByText('Read abstract',{exact:true}).click();
   await expect(card.locator('.synopsis-text')).toHaveText('<img src=x onerror=alert(1)> source text');await expect(card.locator('.synopsis img')).toHaveCount(0);
+});
+test('nineteen uploaded-copy links remain distinct, version-cautious and private by existing OneDrive access',async({page})=>{
+  const outside=[];page.on('request',r=>{if(!r.url().startsWith('http://127.0.0.1:4174/'))outside.push(r.url());});
+  await load(page);const urls=[];
+  for(const group of ['Confirmed scope 7','Pending scope 12']) {
+    await page.getByRole('button',{name:group,exact:true}).click();
+    for(const card of await page.locator('article').all()) {
+      const link=card.locator('.uploaded-copy');await expect(link).toContainText('Open uploaded copy');
+      await expect(link).toHaveAttribute('rel','noopener noreferrer');await expect(link).toHaveAttribute('referrerpolicy','no-referrer');
+      await expect(link).toHaveAttribute('target','_blank');await expect(card).toContainText('Current version unconfirmed');
+      await expect(card).toContainText('OneDrive sign-in and existing access required.');urls.push(await link.getAttribute('href'));
+    }
+  }
+  expect(new Set(urls).size).toBe(19);expect(outside).toEqual([]);
+  await page.getByLabel('Search manuscripts').fill('MS-0007');
+  const selected=page.locator('[data-id="MS-0007"] .uploaded-copy');
+  await selected.focus();await expect(selected).toBeFocused();
+  await a11y(page);await page.screenshot({path:'artifacts/onedrive-copy-desktop.png',fullPage:true});
+});
+for(const width of [1440,760,380,320])test(`official red brand and favicon render accessibly at ${width}px`,async({page,request})=>{
+  await page.setViewportSize({width,height:1000});await load(page);
+  const logo=page.getByRole('img',{name:'Official CECREH logo',exact:true});await expect(logo).toBeVisible();
+  expect(await logo.evaluate(img=>img.complete&&img.naturalWidth>0&&img.naturalHeight>0)).toBe(true);
+  await expect(logo).toHaveCSS('width',width>760?'130px':'85px');
+  await expect(page.locator('body')).toHaveCSS('background-color','rgb(245, 245, 247)');
+  await expect(page.locator('.brand')).toHaveCSS('color','rgb(17, 17, 17)');
+  await expect(page.locator('.eyebrow').first()).toHaveCSS('color','rgb(207, 7, 2)');
+  await expect(page.locator('#search')).toHaveCSS('border-top-color','rgb(117, 117, 117)');
+  await page.locator('.brand').focus();await expect(page.locator('.brand')).toHaveCSS('outline-color','rgb(233, 8, 2)');
+  await expect(page.locator('link[rel="icon"]')).toHaveAttribute('href','./cecreh-favicon-red-a473da1c.png');
+  for(const name of ['cecreh-logo.png','cecreh-favicon-red-a473da1c.png']) {const response=await request.get(name);expect(response.status()).toBe(200);expect(response.headers()['content-type']).toBe('image/png');}
+  expect((await request.get('favicon.svg')).status()).toBe(404);
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);await a11y(page);
+  await page.locator('.brand').evaluate(el=>el.blur());
+  await page.screenshot({path:`artifacts/official-brand-${width}.png`,fullPage:false});
 });

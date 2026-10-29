@@ -2,11 +2,11 @@
 
 A responsive, read-only register of manuscript metadata: scope, writing stage, journal state, observed byline, local-version evidence, current draft links and next actions. Writing and journal status are separate. Pending-scope records stay outside the confirmed-scope count.
 
-The owner approved a **public metadata tracker** with `noindex, nofollow` and no inbound navigation links added elsewhere. Manuscript files remain separate on OneDrive. The initial release has **19 records: 7 supported by a dated CECREH inventory and 12 awaiting scope or identity confirmation**. Every current OneDrive link is visibly unresolved. This is a provisional inventory, not a claim that every manuscript or present status has been confirmed.
+The owner approved a **public metadata tracker** with `noindex, nofollow` and no inbound navigation links added elsewhere. Manuscript files remain separate on OneDrive. The initial release has **19 records: 7 supported by a dated CECREH inventory and 12 awaiting scope or identity confirmation**. Each record now links to an inspected manuscript copy in OneDrive. The newest author-approved version remains visibly unconfirmed. This is a provisional inventory, not a claim that every manuscript or present status has been confirmed.
 
 The owner authorized publication of inspected abstracts and labeled summaries: 18 abstracts and one summary for an empty Abstract section. MS-0007 uses the owner-selected Word render dated April 16, 2026; its current OneDrive version and relationship to MS-0003 remain unconfirmed. Expand “Read abstract” or “Read source-grounded summary” on a card; keyword search includes this text.
 
-No full manuscript text/files, reviewer letters, local source paths, raw research data, protected sharing URLs, analytics, cookies or browser storage are included. Search-engine directives do not make the page private.
+No full manuscript text/files, reviewer letters, local source paths, raw research data, access-granting sharing URLs, analytics, cookies or browser storage are included. Search-engine directives do not make the page private.
 
 ## Run locally
 
@@ -39,4 +39,10 @@ Keep full source receipts, local paths and confidential history outside this rep
 
 The Pages workflow checks the application, builds `dist/public`, and uploads that directory alone. A private local preview is never a deployment source. Public deployment requires an explicit `--public` build of a `public_metadata` dataset. Changes on pull requests are tested but not deployed. Open any PR as a draft.
 
-The interface follows the existing CECREH grants visual conventions: paper background, teal identity mark, Georgia headline, readable status cues, search and expandable cards. The grants repository is unchanged.
+The interface uses the official red/black CECREH artwork, a neutral paper background, Georgia headlines, readable status labels, search and expandable cards. The header and cache-safe `cecreh-favicon-red-a473da1c.png` reuse the exact [CECREH logo](https://github.com/CECREH/cdbg-dr-atlas/blob/main/cecreh-logo.png), SHA-256 `a473da1cfcdef681f28b9228d47d07ce1db7a960cf8f2e9a949f0bdd732e4d8a`. No artwork was redrawn. The grants repository is unchanged.
+
+## Uploaded manuscript copies
+
+All 19 records have a prominent “Open uploaded copy” link: 16 Word, two PDF and one Markdown draft. These are resource links to the inspected copies uploaded to the selected TTU OneDrive folder. Each opened as the signed-in owner/editor, and anonymous requests redirected to Microsoft sign-in. Existing file/folder permissions apply; no sharing links or access grants were created. Parent-folder inheritance means the observed direct-member list is not a complete audience census.
+
+Link destination checks do not establish the newest author-approved version. `supportingLinks.kind: manuscript` distinguishes an available inspected copy from `currentDraft`, whose canonical/current-version confirmation remains unresolved. MS-0007 retains the selected April 16, 2026 Word render; all scope, status and submission-history uncertainties remain.

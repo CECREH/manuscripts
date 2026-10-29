@@ -4,6 +4,7 @@ The owner authorized public tracker metadata on October 29, 2026, with a search-
 
 - Never edit CECREH/grants, the organization profile, or another repository for this tracker. Do not add inbound navigation links or a repository homepage link.
 - Publish only the reviewed `data/public-manuscripts.json` dataset and allowlisted application assets. Keep `data/manuscripts.json` synthetic for tests. Approved abstracts/summaries must record their inspected source/version and check date; unavailable or unverified content stays unresolved. Do not copy private evidence, full manuscripts, other manuscript body text, internal review notes, local paths, emails, raw research data or secrets into Git.
+- Reviewed uploaded-copy links may use `supportingLinks.kind: manuscript` with a real destination-check date and public access-review receipt. Keep current-author-version uncertainty explicit; this does not permit inventing `currentDraft` confirmation.
 - Manuscript files belong on OneDrive. Do not create or change sharing permissions. A public draft link requires a verified current destination and a recorded review of its existing audience. Unresolved links stay null.
 - This is a public site. `noindex` requests search-engine exclusion; it is not access control and does not protect the public repository or its JSON.
 - Preserve stable manuscript IDs and append-only canonical-link/submission histories. Topic similarity never establishes manuscript identity.
