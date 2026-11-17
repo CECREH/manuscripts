@@ -1,5 +1,17 @@
 # Verification record
 
+## MS-0004 Word/PDF update — November 17, 2026
+
+The author-selected November 16 Word draft was inspected against its clarity-edit receipt and uploaded to the existing manuscript folder. A matching PDF was generated from those exact bytes. All 31 rendered PDF pages were inspected; the complete normalized abstract and all 41 applicable final clarity edits are present. Both uploaded files were downloaded through the signed-in OneDrive UI and matched their source hashes. The prior August Word copy and all other files remain intact.
+
+Both exact resource destinations opened the expected manuscript. Manage Access showed the same owner/editor, no sharing links and a parent-inheritance warning for each new file. No permissions were changed. Separate cookie-free, credential-free requests reached HTTP 403 after a SharePoint redirect, with no manuscript content downloaded; the boundary was not bypassed. The public receipt explicitly retains uncertainty about the full inherited audience.
+
+The public record updates only MS-0004, adds its two link-access receipts, and advances the snapshot/coverage note. Its current Word version is author-selected and verified, with a matching PDF displayed alongside it. The previous Word link remains a reference, existing histories remain append-only, and no submission/coauthor approval or role is inferred. Schema version 1 already represents this arrangement; schema descriptions, generated validation, dictionary, runbook and tests accompany the display change.
+
+The full local `npm run check` exits **0**: schema compilation, both dataset validations, **19 data/build tests**, both builds and **31 browser tests** pass. The browser suite completed in 27.5 seconds using the existing task-local pinned Chromium 1194 cache. The first browser attempt looked in the wrong cache; the next identified test selectors that omitted the links' new-tab accessible-name suffix. Those selectors were corrected without changing application behavior. A slow module-read startup in the final run completed normally. Prior-snapshot validation independently confirms all stable IDs and append-only histories are preserved, and the other 17 records are unchanged.
+
+The Word/PDF links, latest abstract, intended journal and previous-copy reference were checked at 1440, 390 and 320px. Tested accessibility scans found no violations or horizontal overflow; desktop and 320px screenshots were visually inspected. Local evidence remains in `artifacts/ms0004-current-1440.png`, `artifacts/ms0004-current-390.png` and `artifacts/ms0004-current-320.png`. No manuscript files or private evidence are included in the public build. Publication and live verification follow this clean result.
+
 ## Single-list identity audit — October 29, 2026
 
 All 19 selected manuscript copies were compared by substantive question, data/sample, methods, outcomes and documented lineage. All 33 unique original source/documentation files still match the earlier receipt hashes. Eighteen entries are retained publicly, no duplicate record relationship is asserted, and MS-0003 is retained privately unchanged until its independent identity from MS-0007 is established. The selected MS-0007 Word render remains unchanged. Exact private retention passes the previous-record/history validator; all source and OneDrive files are preserved.
@@ -93,4 +105,4 @@ Raw local verification receipts and the complete source inventory are kept outsi
 
 ## Remaining work
 
-The owner subsequently authorized the 19 inspected uploaded-copy links. Canonical/current-version confirmations remain null and visibly unresolved; destination verification is not author-version confirmation. Scope/identity confirmations, current bylines/statuses, owner assignments and agreed dates remain maintenance tasks as listed in `PROJECT_STATUS.md`. No OneDrive permissions were changed, and no publishing action is awaiting approval or has an uncertain outcome.
+MS-0004 now has an author-selected current Word draft and matching PDF. The other 17 current-version confirmations remain unresolved; destination verification alone is not author-version confirmation. Scope/identity confirmations, current bylines/statuses, owner assignments and agreed dates remain maintenance tasks as listed in `PROJECT_STATUS.md`. No OneDrive permissions were changed. The November 17 release outcome is recorded above.

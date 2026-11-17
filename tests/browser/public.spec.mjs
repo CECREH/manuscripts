@@ -2,7 +2,7 @@ import {test,expect} from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 import {mkdir} from 'node:fs/promises';
 test.use({baseURL:'http://127.0.0.1:4174/manuscripts/'});
-test.beforeEach(async({page})=>{await page.clock.install({time:new Date('2026-10-29T20:00:00Z')});});
+test.beforeEach(async({page})=>{await page.clock.install({time:new Date('2026-11-17T20:00:00Z')});});
 async function load(page){await page.goto('./');await expect(page.locator('#result-count')).toHaveText('18 of 18 manuscripts');}
 async function a11y(page){expect((await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa','wcag22aa']).analyze()).violations).toEqual([]);}
 test('release-versioned assets avoid stale module and schema cache entries',async({page})=>{
@@ -16,10 +16,11 @@ test('release-versioned assets avoid stale module and schema cache entries',asyn
 test('actual public artifact: uncertainty, noindex, authors filter and no tracking',async({page})=>{
   const offOrigin=[];const errors=[];
   page.on('request',r=>{if(!r.url().startsWith('http://127.0.0.1:4174/'))offOrigin.push(r.url());});page.on('pageerror',e=>errors.push(e.message));
-  await load(page);await expect(page.locator('#count-manuscripts')).toHaveText('18');await expect(page.locator('#count-linked')).toHaveText('18');await expect(page.locator('#count-drafts')).toHaveText('18');
+  await load(page);await expect(page.locator('#count-manuscripts')).toHaveText('18');await expect(page.locator('#count-linked')).toHaveText('18');await expect(page.locator('#count-drafts')).toHaveText('17');
   await expect(page.locator('#access-label')).toHaveText('Public metadata · Read only');
   await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content','noindex, nofollow');
-  await expect(page.locator('article .uploaded-copy')).toHaveCount(18);
+  await expect(page.locator('article .uploaded-copy')).toHaveCount(17);
+  await expect(page.locator('article .alternate-copy')).toHaveCount(1);
   await expect(page.locator('[data-id="MS-0002"]')).toContainText('Writing status needs refresh');
   await a11y(page);await mkdir('artifacts',{recursive:true});await page.screenshot({path:'artifacts/public-desktop.png',fullPage:true});
   await page.getByLabel('Person',{exact:true}).selectOption('Ali Nejat');await expect(page.locator('article')).toHaveCount(6);
@@ -73,13 +74,16 @@ test('abstract text is never interpreted as HTML',async({page})=>{
   const card=page.locator('[data-id="MS-0005"]');await card.getByText('Read abstract',{exact:true}).click();
   await expect(card.locator('.synopsis-text')).toHaveText('<img src=x onerror=alert(1)> source text');await expect(card.locator('.synopsis img')).toHaveCount(0);
 });
-test('eighteen uploaded-copy links remain distinct, version-cautious and private by existing OneDrive access',async({page})=>{
+test('eighteen primary manuscript links retain version evidence and existing OneDrive access',async({page})=>{
   const outside=[];page.on('request',r=>{if(!r.url().startsWith('http://127.0.0.1:4174/'))outside.push(r.url());});
   await load(page);const urls=[];
     for(const card of await page.locator('article').all()) {
-      const link=card.locator('.uploaded-copy');await expect(link).toContainText('Open uploaded copy');
+      const current=await card.getAttribute('data-id')==='MS-0004';
+      const link=current?card.getByRole('link',{name:'Open current draft (opens in a new tab)',exact:true}):card.locator('.uploaded-copy');
+      await expect(link).toContainText(current?'Open current draft':'Open uploaded copy');
       await expect(link).toHaveAttribute('rel','noopener noreferrer');await expect(link).toHaveAttribute('referrerpolicy','no-referrer');
-      await expect(link).toHaveAttribute('target','_blank');await expect(card).toContainText('Current version unconfirmed');
+      await expect(link).toHaveAttribute('target','_blank');
+      if(!current) await expect(card).toContainText('Current version unconfirmed');
       await expect(card).toContainText('OneDrive sign-in and existing access required.');urls.push(await link.getAttribute('href'));
     }
   expect(new Set(urls).size).toBe(18);expect(outside).toEqual([]);
@@ -87,6 +91,22 @@ test('eighteen uploaded-copy links remain distinct, version-cautious and private
   const selected=page.locator('[data-id="MS-0007"] .uploaded-copy');
   await selected.focus();await expect(selected).toBeFocused();
   await a11y(page);await page.screenshot({path:'artifacts/onedrive-copy-desktop.png',fullPage:true});
+});
+for(const width of [1440,390,320])test(`MS-0004 exposes current Word and PDF with preserved history at ${width}px`,async({page})=>{
+  await page.setViewportSize({width,height:1000});await load(page);
+  await page.getByLabel('Search manuscripts').fill('MS-0004');const card=page.locator('[data-id="MS-0004"]');
+  const word=card.getByRole('link',{name:'Open current draft (opens in a new tab)',exact:true});const pdf=card.locator('.alternate-copy');
+  await expect(word).toBeVisible();await expect(word).toHaveAttribute('href',/D19ACE9B-9CDD-49AB-B794-ACF3D14C5BD9/);
+  await expect(pdf).toBeVisible();await expect(pdf).toHaveAccessibleName('Open PDF · Nov 16, 2026 draft (opens in a new tab)');
+  expect(new URL(await pdf.getAttribute('href')).searchParams.get('id')).toContain('MS-0004_Mapped-Flood-Zones_2026-11-16.pdf');
+  for(const link of [word,pdf]) {await expect(link).toHaveAttribute('rel','noopener noreferrer');await expect(link).toHaveAttribute('referrerpolicy','no-referrer');await expect(link).toHaveAttribute('target','_blank');}
+  await expect(card).toContainText('Earth’s Future');await expect(card).toContainText('Version confirmed: Nov 17, 2026');
+  await card.getByText('Read abstract',{exact:true}).click();await expect(card.locator('.synopsis-text')).toContainText('55,732 tracts');
+  await card.locator('.record-details>summary').click();await expect(card).toContainText('Previous Word copy · Aug 28, 2026');
+  await expect(card).toContainText('not evidence of submission or coauthor approval');
+  await pdf.focus();await expect(pdf).toBeFocused();await a11y(page);
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+  await mkdir('artifacts',{recursive:true});await page.screenshot({path:`artifacts/ms0004-current-${width}.png`,fullPage:true});
 });
 for(const width of [1440,760,380,320])test(`official red brand and favicon render accessibly at ${width}px`,async({page,request})=>{
   await page.setViewportSize({width,height:1000});await load(page);

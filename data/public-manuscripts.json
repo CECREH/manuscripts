@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "dataClass": "public_metadata",
-  "snapshotDate": "2026-10-29",
+  "snapshotDate": "2026-11-17",
   "staleAfterDays": 30,
-  "coverageNote": "18 manuscripts in one list, checked against available sources. Coverage is provisional; author-approved versions and current statuses still need confirmation.",
+  "coverageNote": "18 manuscripts in one list, checked against available sources. MS-0004 has a verified author-selected current draft; other current versions and team statuses still need confirmation.",
   "maintenance": {
     "primary": null,
     "backup": null
@@ -98,6 +98,16 @@
       "url": "https://texastechuniversity-my.sharepoint.com/shared?listurl=%2Fpersonal%2Fali%5Fnejat%5Fttu%5Fedu%2FDocuments&viewid=d38155c4%2Dbe6d%2D41f2%2Dbe8f%2D631438a31af4&ga=1&id=%2Fpersonal%2Fali%5Fnejat%5Fttu%5Fedu%2FDocuments%2FStudents%2FCECREH%2FPOSTDOCS%2FJesse%2FManuscripts%2FMS%2D0019%5FHABRI%5Flocal%2Ddraft%2Emd&parent=%2Fpersonal%2Fali%5Fnejat%5Fttu%5Fedu%2FDocuments%2FStudents%2FCECREH%2FPOSTDOCS%2FJesse%2FManuscripts",
       "checkedOn": "2026-10-29",
       "audienceNote": "Requires Microsoft/TTU sign-in and existing file/folder access. Anonymous request redirected to Microsoft login on 2026-10-29. No sharing link or permission grant was created. Inherited parent-folder membership is not fully enumerated."
+    },
+    {
+      "url": "https://texastechuniversity-my.sharepoint.com/:w:/r/personal/ali_nejat_ttu_edu/_layouts/15/Doc.aspx?sourcedoc=%7BD19ACE9B-9CDD-49AB-B794-ACF3D14C5BD9%7D&file=MS-0004_Mapped-Flood-Zones_2026-11-16.docx&action=default&mobileredirect=true&wdwpf=t",
+      "checkedOn": "2026-11-17",
+      "audienceNote": "Word destination opened while signed in and its downloaded bytes verified. Requires Microsoft/TTU sign-in and existing file/folder access. Anonymous request returned HTTP 403 without manuscript content on 2026-11-17. Existing access was reviewed; no sharing link, permission change or access grant was created. Inherited parent-folder membership is not fully enumerated."
+    },
+    {
+      "url": "https://texastechuniversity-my.sharepoint.com/shared?listurl=%2Fpersonal%2Fali%5Fnejat%5Fttu%5Fedu%2FDocuments&viewid=d38155c4%2Dbe6d%2D41f2%2Dbe8f%2D631438a31af4&id=%2Fpersonal%2Fali%5Fnejat%5Fttu%5Fedu%2FDocuments%2FStudents%2FCECREH%2FPOSTDOCS%2FJesse%2FManuscripts%2FMS%2D0004%5FMapped%2DFlood%2DZones%5F2026%2D11%2D16%2Epdf&parent=%2Fpersonal%2Fali%5Fnejat%5Fttu%5Fedu%2FDocuments%2FStudents%2FCECREH%2FPOSTDOCS%2FJesse%2FManuscripts",
+      "checkedOn": "2026-11-17",
+      "audienceNote": "PDF destination opened while signed in and its downloaded bytes verified. Requires Microsoft/TTU sign-in and existing file/folder access. Anonymous request returned HTTP 403 without manuscript content on 2026-11-17. Existing access was reviewed; no sharing link, permission change or access grant was created. Inherited parent-folder membership is not fully enumerated."
     }
   ],
   "records": [
@@ -302,11 +312,11 @@
       },
       "journal": {
         "status": "unconfirmed",
-        "name": null,
+        "name": "Earth’s Future",
         "confirmedOn": null,
         "confirmedBy": null,
         "reportedOn": null,
-        "note": "No current submission or decision is confirmed. A local draft or prepared submission bundle does not establish submission."
+        "note": "Intended journal identified by Jesse R. Andrews on November 17, 2026. Submission and decision status remain unconfirmed; the selected draft is not evidence of submission or coauthor approval."
       },
       "lead": null,
       "steward": null,
@@ -315,26 +325,26 @@
           "Jesse R. Andrews",
           "Ali Nejat"
         ],
-        "note": "Names are transcribed in the inspected source order; current author order and assigned lead are unconfirmed."
+        "note": "Names transcribed in the inspected November 16 Word source order; current author-order agreement and assigned lead remain unconfirmed."
       },
       "localVersion": {
         "authority": "canonical",
-        "versionLabel": "Hydrologic blind-spot manuscript · Aug 27 review record",
-        "versionDate": null,
-        "checkedOn": "2026-10-29",
-        "note": "The project identifies this manuscript separately from the rental-tenure paper. The current OneDrive copy has not been verified."
+        "versionLabel": "Author-selected Word draft · Nov 16, 2026 clarity edits",
+        "versionDate": "2026-11-16",
+        "checkedOn": "2026-11-17",
+        "note": "Selected by Jesse R. Andrews for the dashboard. The OneDrive Word download is byte-identical to the inspected source. The accompanying PDF was generated from that Word file on November 17 and checked against the final text; the manuscript version remains November 16."
       },
       "currentDraft": {
-        "url": null,
-        "status": "unconfirmed",
-        "versionLabel": null,
-        "versionDate": null,
-        "confirmedOn": null,
-        "confirmedBy": null,
-        "note": "The linked inspected copy was uploaded to OneDrive and its destination/access behavior checked on October 29, 2026. The newest author-approved version remains unconfirmed; the upload date is not a manuscript revision date."
+        "url": "https://texastechuniversity-my.sharepoint.com/:w:/r/personal/ali_nejat_ttu_edu/_layouts/15/Doc.aspx?sourcedoc=%7BD19ACE9B-9CDD-49AB-B794-ACF3D14C5BD9%7D&file=MS-0004_Mapped-Flood-Zones_2026-11-16.docx&action=default&mobileredirect=true&wdwpf=t",
+        "status": "confirmed",
+        "versionLabel": "Word · Author-selected Nov 16, 2026 draft",
+        "versionDate": "2026-11-16",
+        "confirmedOn": "2026-11-17",
+        "confirmedBy": "Jesse R. Andrews",
+        "note": "Author-selected current copy for the dashboard, verified against the November 16 Word source after upload. A matching PDF is available alongside it. Existing OneDrive permissions apply. This confirms the selected version, not coauthor approval, current writing stage or journal submission. The August Word copy remains available as a previous-version reference."
       },
       "nextAction": {
-        "text": "Confirm CECREH scope, current OneDrive version, reported status and record steward.",
+        "text": "Confirm CECREH scope, current writing and journal status, and record steward.",
         "owner": null,
         "dueDate": null,
         "dueStatus": "unconfirmed",
@@ -344,30 +354,44 @@
       "blockers": [],
       "supportingLinks": [
         {
-          "label": "Word · Aug 28, 2026 coauthor-review copy",
-          "url": "https://texastechuniversity-my.sharepoint.com/:w:/r/personal/ali_nejat_ttu_edu/_layouts/15/Doc.aspx?sourcedoc=%7BD8E64887-905E-4D02-9330-2E23B1242B07%7D&file=MS-0004_Mapped-Flood-Zones_2026-08-28.docx&action=default&mobileredirect=true",
+          "label": "Open PDF · Nov 16, 2026 draft",
+          "url": "https://texastechuniversity-my.sharepoint.com/shared?listurl=%2Fpersonal%2Fali%5Fnejat%5Fttu%5Fedu%2FDocuments&viewid=d38155c4%2Dbe6d%2D41f2%2Dbe8f%2D631438a31af4&id=%2Fpersonal%2Fali%5Fnejat%5Fttu%5Fedu%2FDocuments%2FStudents%2FCECREH%2FPOSTDOCS%2FJesse%2FManuscripts%2FMS%2D0004%5FMapped%2DFlood%2DZones%5F2026%2D11%2D16%2Epdf&parent=%2Fpersonal%2Fali%5Fnejat%5Fttu%5Fedu%2FDocuments%2FStudents%2FCECREH%2FPOSTDOCS%2FJesse%2FManuscripts",
           "kind": "manuscript",
+          "confirmedOn": "2026-11-17"
+        },
+        {
+          "label": "Previous Word copy · Aug 28, 2026",
+          "url": "https://texastechuniversity-my.sharepoint.com/:w:/r/personal/ali_nejat_ttu_edu/_layouts/15/Doc.aspx?sourcedoc=%7BD8E64887-905E-4D02-9330-2E23B1242B07%7D&file=MS-0004_Mapped-Flood-Zones_2026-08-28.docx&action=default&mobileredirect=true",
+          "kind": "reference",
           "confirmedOn": "2026-10-29"
         }
       ],
       "confirmation": {
-        "sourceCheckedOn": "2026-10-29",
-        "sourceLabel": "Canonical manuscript and project status dated Aug 27",
-        "recordReviewedOn": "2026-10-29",
-        "note": "The inspection date confirms that local evidence was read. It does not confirm the current team status, latest cloud file or completeness of this inventory."
+        "sourceCheckedOn": "2026-11-17",
+        "sourceLabel": "Author-selected November 16, 2026 Word draft and matching PDF",
+        "recordReviewedOn": "2026-11-17",
+        "note": "Manuscript identity, latest selected source, both OneDrive destinations and downloaded file bytes were checked. Current team status, roles and journal submission remain unconfirmed."
       },
       "history": {
-        "linkChanges": [],
+        "linkChanges": [
+          {
+            "eventId": "L-ms0004-20261117-author-selected",
+            "recordedOn": "2026-11-17",
+            "url": "https://texastechuniversity-my.sharepoint.com/:w:/r/personal/ali_nejat_ttu_edu/_layouts/15/Doc.aspx?sourcedoc=%7BD19ACE9B-9CDD-49AB-B794-ACF3D14C5BD9%7D&file=MS-0004_Mapped-Flood-Zones_2026-11-16.docx&action=default&mobileredirect=true&wdwpf=t",
+            "versionLabel": "Word · Author-selected Nov 16, 2026 draft",
+            "reason": "Jesse R. Andrews requested the latest draft on the dashboard. The selected November 16 Word source was uploaded and download-verified with existing access preserved; its matching PDF is linked separately. The previous August copy remains a reference. No submission or coauthor approval is implied."
+          }
+        ],
         "submissions": []
       },
       "abstractOrSummary": {
         "kind": "abstract",
-        "text": "Flood maps designate Special Flood Hazard Areas (SFHAs) for insurance and risk communication, but damage frequently extends beyond their boundaries. Across 83,360 tracts, we compare 2010–2024 disaster-assistance registrations, National Flood Insurance Program (NFIP) claims, and 2024 uptake. Mapped zones account for 50% of variation explained for uptake but 6% for the declaration-adjusted registration rate in states left out of training (95% interval for the difference 0.10 to 0.64). Hydrology accounts for 87% of variation in the rate, but its difference from uptake is uncertain (-0.31 to 0.59). Of claims with rating zones, 26.8% fell outside SFHAs and represented 23.2% of paid losses. Screening identifies 1,348 tracts with high hydrologic susceptibility, little SFHA exposure, and low uptake. Across eight screen definitions, selected tracts have higher renter, poverty, Black, Hispanic, and multifamily shares than other tracts in their states, while NFIP uptake averages below one active policy term per 1,000 housing units.",
+        "text": "Flood maps guide insurance requirements, but losses extend beyond mapped high-risk areas. Given this distinction between where insurance is required and where losses occur, do mapped zones align more closely with insurance participation than with recorded flood burden? We compare flood insurance uptake, claims and disaster assistance registrations across 83,360 U.S. census tracts, fitting all three outcomes on the same 55,732 tracts with calculable assistance registration rates. On held-out states, R² for the full model is 0.034 for registrations, 0.399 for claims and 0.583 for uptake. Adding mapped zone measures to hydrology and built exposure increases uptake R² by 0.133 and registration R² by 0.014. Resampling states gives a 95% interval of 0.079 to 0.187 for the difference between these gains. By contrast, the difference between registration and uptake models in the added contribution of hydrology is uncertain. Registration models perform poorly in later years and new census divisions. In the descriptive claims analysis, 26.8% of claims with recorded rating zones were rated outside Special Flood Hazard Areas and account for 23.2% of paid losses. We also identify 1,820 tracts where high model scores coincide with little mapped exposure and low insurance uptake, providing a starting point for local investigation. Allocating registrations with missing census geography using historical ZIP Code crosswalks preserves the national contrast but changes which tracts are selected. In a separate analysis of selected basins, adding rainfall measured during events improves retrospective model fit. Mapped zones align more closely with insurance participation than with assistance registrations, while weak model transfer limits local targeting.",
         "abstractPresence": "present",
         "sourceLabel": "Mapped flood zones track U.S. flood insurance uptake more closely than recorded flood burden",
-        "sourceVersionLabel": "Hydrologic blind-spot manuscript · Aug 27 review record",
-        "sourceCheckedOn": "2026-10-29",
-        "note": "Abstract from the inspected local version; the current shared version remains unconfirmed."
+        "sourceVersionLabel": "Author-selected Word draft · Nov 16, 2026 clarity edits",
+        "sourceCheckedOn": "2026-11-17",
+        "note": "Abstract transcribed from the inspected author-selected Word draft; the uploaded Word and matching PDF were verified on November 17. No submission or coauthor approval is implied."
       }
     },
     {

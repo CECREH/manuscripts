@@ -1,5 +1,11 @@
 # Change log
 
+## 2026-11-17 — current MS-0004 Word and matching PDF
+
+Updated MS-0004 to the owner's selected November 16 Word draft and a PDF generated from that exact source, with the revised source abstract, inspected version dates and intended journal Earth's Future. Both OneDrive uploads and downloaded bytes were verified with existing permissions preserved. The earlier August Word copy remains a reference and a new canonical-link event is appended. Submission, coauthor approval and other unconfirmed facts are not inferred; the other 17 records remain unchanged.
+
+Show a reviewed alternate-format manuscript link beside a confirmed current draft. Retain the single featured supporting-copy limit, URL/access validation, public asset allowlist and noindex policy. Added desktop/mobile checks for both links, version evidence and the retained previous copy.
+
 ## 2026-10-29 — reproducible browser checks
 
 Local browser tests now use the Chromium build pinned to Playwright, matching CI. The complete validation command exits successfully with 18 data/build tests and 28 browser tests; the earlier cleanup hang is resolved.

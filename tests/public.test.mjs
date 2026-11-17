@@ -9,7 +9,7 @@ test('public inventory preserves uncertainty, historical evidence and distinct m
   assert.equal(data.records.length,18);
   assert.ok(!data.records.some(r=>r.id==='MS-0003'),'ambiguous additional identity stays out of the public dataset');
   assert.equal(data.records.filter(r=>r.scope.status==='confirmed').length,7);
-  assert.ok(data.records.every(r=>r.currentDraft.url===null&&r.currentDraft.status==='unconfirmed'));
+  assert.ok(data.records.filter(r=>r.id!=='MS-0004').every(r=>r.currentDraft.url===null&&r.currentDraft.status==='unconfirmed'));
   assert.ok(data.records.every(r=>r.nextAction.dueDate===null&&r.lead===null&&r.steward===null));
   assert.equal(data.records.find(r=>r.id==='MS-0007').localVersion.authority,'conflict');
   assert.equal(data.records.find(r=>r.id==='MS-0007').scope.status,'candidate');
@@ -32,12 +32,14 @@ test('all uploaded copies have reviewed protected destinations without invented 
   assert.equal(links.length,18);assert.equal(new Set(links.map(l=>l.url)).size,18);
   for(const r of data.records) {
     const link=r.supportingLinks.find(l=>l.kind==='manuscript');const url=new URL(link.url);
-    assert.equal(url.hostname,'texastechuniversity-my.sharepoint.com');assert.equal(link.confirmedOn,'2026-10-29');
+    assert.equal(url.hostname,'texastechuniversity-my.sharepoint.com');assert.equal(link.confirmedOn,r.id==='MS-0004'?'2026-11-17':'2026-10-29');
     assert.match(url.searchParams.get('file')||url.searchParams.get('id'),new RegExp(r.id));
     assert.ok(!['authkey','access_token','token','e'].some(key=>url.searchParams.has(key)));
     assert.ok(data.publicLinkReviews.some(review=>review.url===link.url&&/sign-in/.test(review.audienceNote)));
-    assert.equal(r.currentDraft.confirmedOn,null);assert.equal(r.currentDraft.confirmedBy,null);assert.equal(r.currentDraft.url,null);
-    assert.deepEqual(r.history.linkChanges,[]);
+    if(r.id!=='MS-0004') {
+      assert.equal(r.currentDraft.confirmedOn,null);assert.equal(r.currentDraft.confirmedBy,null);assert.equal(r.currentDraft.url,null);
+      assert.deepEqual(r.history.linkChanges,[]);
+    }
   }
   assert.match(data.records.find(r=>r.id==='MS-0007').supportingLinks[0].label,/Apr 16, 2026/);
   const duplicate=structuredClone(data);duplicate.records[0].supportingLinks.push({...duplicate.records[0].supportingLinks[0]});
@@ -46,6 +48,24 @@ test('all uploaded copies have reviewed protected destinations without invented 
   assert.match(validateData(unchecked).join(),/destination check date/);
   const unreviewed=structuredClone(data);unreviewed.publicLinkReviews=[];
   assert.match(validateData(unreviewed).join(),/every public link requires/);
+});
+test('MS-0004 current Word and matching PDF preserve the previous copy without implying submission',()=>{
+  const r=data.records.find(r=>r.id==='MS-0004');
+  assert.equal(r.currentDraft.status,'confirmed');assert.equal(r.currentDraft.confirmedBy,'Jesse R. Andrews');
+  assert.equal(r.currentDraft.versionDate,'2026-11-16');assert.equal(r.currentDraft.confirmedOn,'2026-11-17');
+  assert.match(r.currentDraft.url,/D19ACE9B-9CDD-49AB-B794-ACF3D14C5BD9/);
+  assert.equal(new URL(r.currentDraft.url).searchParams.get('file'),'MS-0004_Mapped-Flood-Zones_2026-11-16.docx');
+  const pdf=r.supportingLinks.find(l=>l.kind==='manuscript');
+  assert.ok(new URL(pdf.url).searchParams.get('id').endsWith('MS-0004_Mapped-Flood-Zones_2026-11-16.pdf'));
+  assert.match(r.supportingLinks.find(l=>l.kind==='reference').url,/D8E64887-905E-4D02-9330-2E23B1242B07/);
+  assert.equal(r.history.linkChanges.at(-1).url,r.currentDraft.url);assert.deepEqual(r.history.submissions,[]);
+  assert.equal(r.journal.name,'Earth’s Future');assert.equal(r.journal.status,'unconfirmed');assert.equal(r.journal.confirmedOn,null);
+  assert.equal(r.writing.reportedOn,'2026-08-27');assert.equal(r.writing.confirmedOn,null);
+  assert.match(r.abstractOrSummary.text,/55,732 tracts/);assert.match(r.abstractOrSummary.text,/1,820 tracts/);
+  assert.match(r.abstractOrSummary.text,/Allocating registrations with missing census geography using historical ZIP Code crosswalks/);
+  assert.equal(r.abstractOrSummary.sourceCheckedOn,'2026-11-17');
+  const unchecked=structuredClone(data);unchecked.publicLinkReviews=unchecked.publicLinkReviews.filter(x=>x.url!==pdf.url);
+  assert.match(validateData(unchecked).join(),/every public link requires/);
 });
 test('abstracts, absent-abstract summaries and unresolved descriptions require distinct evidence',()=>{
   const count=kind=>data.records.filter(r=>r.abstractOrSummary.kind===kind).length;

@@ -221,6 +221,7 @@
       }
     },
     "currentDraft": {
+      "description": "Author-selected current or last-known draft. A confirmed public URL requires destination/access review and author-version evidence; it does not imply coauthor approval or journal submission.",
       "type": "object",
       "additionalProperties": false,
       "required": [
@@ -333,6 +334,7 @@
       }
     },
     "link": {
+      "description": "Reviewed supporting destination. One manuscript link may feature an inspected alternate format alongside a confirmed currentDraft. Keep superseded copies as reference links.",
       "type": "object",
       "additionalProperties": false,
       "required": [

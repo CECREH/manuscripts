@@ -1,6 +1,14 @@
 # Project status
 
-Updated October 29, 2026.
+Updated November 17, 2026.
+
+## MS-0004 current Word and PDF
+
+The owner selected the November 16 clarity-edited Word draft for the dashboard and requested both Word and PDF formats. Both are uploaded to the existing OneDrive manuscript folder, open at their recorded destinations, and match their downloaded copies byte-for-byte. The matching 31-page PDF was generated from that Word source on November 17; its manuscript version date remains November 16. Existing permissions are unchanged, no sharing links were created, and the August Word copy remains available as a previous-version reference. All earlier uploaded files are preserved.
+
+MS-0004 now records the author-selected current Word URL, a prominent matching PDF link, the exact updated abstract and source/version dates, and Earth's Future as the intended journal. The canonical-link event is appended. Submission, coauthor approval, current writing stage, roles and CECREH scope remain unconfirmed where no new evidence exists. The other 17 records and all earlier histories are unchanged. Their current-version confirmations remain unresolved.
+
+Validation and deployment evidence for this update is recorded in VERIFICATION.md. Remaining manuscript work is author/team status and role confirmation, plus the separate MS-0003 identity decision; no new access or hosting approval is required.
 
 ## Completed
 

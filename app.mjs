@@ -82,6 +82,8 @@ function renderCard(r) {
     else if(draftFreshness==='stale') draft.append(badge('Confirmation stale','warning'));
     draft.append(paragraph([r.currentDraft.versionLabel,r.currentDraft.versionDate ? formatDate(r.currentDraft.versionDate) : null].filter(Boolean).join(' · ')||'Version label unconfirmed','draft-status'));
     draft.append(paragraph(`Version confirmed: ${formatDate(r.currentDraft.confirmedOn)}`,'field-note'));
+    if(uploaded&&uploaded.url!==r.currentDraft.url) draft.append(link(uploaded.url,uploaded.label,'draft-link alternate-copy'));
+    if(data.dataClass==='public_metadata') draft.append(paragraph('OneDrive sign-in and existing access required.','field-note'));
   } else if(uploaded) {
     draft.append(link(uploaded.url,'Open uploaded copy','draft-link uploaded-copy'));
     draft.append(paragraph('Current version unconfirmed','draft-status warn'));
