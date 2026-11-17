@@ -8,7 +8,7 @@ The owner selected the November 16 clarity-edited Word draft for the dashboard a
 
 MS-0004 now records the author-selected current Word URL, a prominent matching PDF link, the exact updated abstract and source/version dates, and Earth's Future as the intended journal. The canonical-link event is appended. Submission, coauthor approval, current writing stage, roles and CECREH scope remain unconfirmed where no new evidence exists. The other 17 records and all earlier histories are unchanged. Their current-version confirmations remain unresolved.
 
-Validation and deployment evidence for this update is recorded in VERIFICATION.md. Remaining manuscript work is author/team status and role confirmation, plus the separate MS-0003 identity decision; no new access or hosting approval is required.
+The update is published and verified at commit `eb171d92e0527e1a928c911cd8226d042862512b`, with successful [validation and deployment run 44185560074](https://github.com/CECREH/manuscripts/actions/runs/44185560074). All 19 data/build and 31 browser tests passed locally and in CI; all nine served assets match the tested build. Full verification evidence is recorded in VERIFICATION.md. Remaining manuscript work is author/team status and role confirmation, plus the separate MS-0003 identity decision; no new access or hosting approval is required.
 
 ## Completed
 
@@ -37,15 +37,15 @@ The clean local aggregate check exited 0 with 18 data/build tests and 28 browser
 
 The single-list release is commit `511a9b68cc6912877160f027fe19e457ec1a3564`; [run 40818308756](https://github.com/CECREH/manuscripts/actions/runs/40818308756) completed successfully at 04:34:19 UTC on October 29, 2026. The following documentation-only update records the verified outcome without changing the release assets.
 
-The initial abstract enhancement was published in commit `eae10c8b61ccb952e7c3e2ef3a75ebf48db03e11`; [validation and deployment run 40799927372](https://github.com/CECREH/manuscripts/actions/runs/40799927372) succeeded with 15 data/build tests and 21 browser tests. All 19 draft URLs remain unresolved; source inspection does not confirm the current shared version.
+The initial abstract enhancement was published in commit `eae10c8b61ccb952e7c3e2ef3a75ebf48db03e11`; [validation and deployment run 40799927372](https://github.com/CECREH/manuscripts/actions/runs/40799927372) succeeded with 15 data/build tests and 21 browser tests. All 19 draft URLs were unresolved at that release; source inspection alone does not confirm the current shared version.
 
 The owner subsequently selected the MS-0007 Word abstract and explicitly authorized publishing it. Its version date comes from the April 16, 2026 embedded document metadata, not the June 6 distribution copy. It is published in commit `2847facc91e42f251ec0d53d64f3f680dff373db`; [validation and deployment run 40803422001](https://github.com/CECREH/manuscripts/actions/runs/40803422001) succeeded with 15 data/build tests and 22 browser tests. Anonymous live asset hashes match the tested build. Live browser inspection confirmed the exact abstract, selected-version/date labels and remaining uncertainty caveats.
 
-The earlier link deferral was superseded by the request to upload manuscript sources and link the inspected copies. All 19 files are uploaded and their signed-in destinations verified. Initial anonymous checks reached Microsoft sign-in; a subsequent unsigned check returned HTTP 403 before login for all 19 and returned no file content. The 18 listed papers retain protected-copy links. Existing OneDrive permissions remain unchanged. The latest author-approved versions remain unconfirmed.
+The earlier link deferral was superseded by the request to upload manuscript sources and link the inspected copies. All 19 original files are uploaded and their signed-in destinations were verified. Initial anonymous checks reached Microsoft sign-in; a subsequent unsigned check returned HTTP 403 before login for all 19 and returned no file content. The 18 listed papers retain protected-copy links. Existing OneDrive permissions remain unchanged. The November 17 update adds the verified MS-0004 Word/PDF pair; the other 17 current versions remain unconfirmed.
 
 ## Remaining
 
-- Confirm the latest author-approved version for each record; the inspected uploaded-copy links do not establish that authority. Maintain the existing OneDrive access boundary and review inherited access when membership decisions are needed.
+- Confirm the current author-selected versions for the other 17 records; the inspected uploaded-copy links alone do not establish that authority. Maintain the existing OneDrive access boundary and review inherited access when membership decisions are needed.
 - Assign one maintainer and one backup, plus manuscript leads/stewards and next-action owners.
 - Resolve the one privately held additional identity before restoring it to the public list. Historical scope membership is retained as provenance, not a separate user-facing inventory.
 - Reconcile the audit-protocol/financial-implementation identity and source synchronization without merging by topic. Selecting the MS-0007 Word abstract does not resolve its relationship to MS-0003 or establish the current OneDrive version.
