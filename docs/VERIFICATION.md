@@ -12,6 +12,8 @@ The full local `npm run check` exits **0**: schema compilation, both dataset val
 
 The Word/PDF links, latest abstract, intended journal and previous-copy reference were checked at 1440, 390 and 320px. Tested accessibility scans found no violations or horizontal overflow; desktop and 320px screenshots were visually inspected. Local evidence remains in `artifacts/ms0004-current-1440.png`, `artifacts/ms0004-current-390.png` and `artifacts/ms0004-current-320.png`. No manuscript files or private evidence are included in the public build. Publication and live verification follow this clean result.
 
+The authorized push of `2a6142f` succeeded. Its first [CI run 44185198658](https://github.com/CECREH/manuscripts/actions/runs/44185198658) stopped before tests or deployment: `ubuntu-latest` now selected Ubuntu 26.04, unsupported by the project's pinned Playwright 1.56.1 browser installer. The check job is now pinned to Ubuntu 24.04, which that installed Playwright release explicitly supports. No dependency version, validation gate or deployment requirement was relaxed.
+
 ## Single-list identity audit — October 29, 2026
 
 All 19 selected manuscript copies were compared by substantive question, data/sample, methods, outcomes and documented lineage. All 33 unique original source/documentation files still match the earlier receipt hashes. Eighteen entries are retained publicly, no duplicate record relationship is asserted, and MS-0003 is retained privately unchanged until its independent identity from MS-0007 is established. The selected MS-0007 Word render remains unchanged. Exact private retention passes the previous-record/history validator; all source and OneDrive files are preserved.

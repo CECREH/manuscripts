@@ -6,6 +6,8 @@ Updated MS-0004 to the owner's selected November 16 Word draft and a PDF generat
 
 Show a reviewed alternate-format manuscript link beside a confirmed current draft. Retain the single featured supporting-copy limit, URL/access validation, public asset allowlist and noindex policy. Added desktop/mobile checks for both links, version evidence and the retained previous copy.
 
+Pin the CI check runner to Ubuntu 24.04, supported by the existing Playwright 1.56.1 dependency. The moving `ubuntu-latest` runner had advanced to Ubuntu 26.04 and could no longer install that pinned browser; all validation and deployment gates remain in place.
+
 ## 2026-10-29 — reproducible browser checks
 
 Local browser tests now use the Chromium build pinned to Playwright, matching CI. The complete validation command exits successfully with 18 data/build tests and 28 browser tests; the earlier cleanup hang is resolved.
